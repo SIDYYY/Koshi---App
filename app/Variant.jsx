@@ -15,11 +15,12 @@ const Variant = () => {
     console.log("Selected Variant:", variant);
     
     // Pass the selected variant as well when navigating
-    navigation.navigate('Compare Car', { car: { ...car, variant }, slot });
+    navigation.navigate('Compare', { car: { ...car, variant }, slot });
 };
 
   const handleChangeModel = (slot, brand) => {
     navigation.navigate('Model', { slot, brand }); // Ensure brand and slot are passed correctly back
+    console.log('Changed Model (Slot# , BrandName)',slot,brand)
   };
 
   return (

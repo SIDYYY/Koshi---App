@@ -103,20 +103,23 @@ export default function HomePage() {
             inputStyle={styles.searchBarInput}
           />
         </View>
-
+        <View>
         <PopularCar/>
          <PopularMaker/>
          <Why/> 
+        </View>
 
       </ScrollView>
+      
     </SafeAreaView>
+    
   );
 }
 
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#E1D9D1 '
   },
   container: {
     padding: 15,
@@ -127,7 +130,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: 'transparent',
   },
   pinLocation: {
     width: 25,
@@ -152,11 +155,13 @@ const styles = StyleSheet.create({
     color: '#666',
   },
   banner: {
+
     height: 135,
     width: '100%'
   },
   imageBackground: {
     flex: 1,
+    margin:0, 
     justifyContent: 'center',
     alignItems: 'start',
   },

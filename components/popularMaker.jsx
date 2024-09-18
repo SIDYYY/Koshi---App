@@ -43,13 +43,12 @@ export default function Popular({ route }) {
     },
   ];
   
-  const handleChangeModel = (logo) => {
-    navigation.navigate('Model', { brand: logo.name }); 
+  const handleChangeModel = (Maker) => {
+    navigation.navigate('Model', { brand: Maker.name }); 
   };
   
 
   return (
-    <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.headContent}>
           <Text style={styles.Popular}>Popular Car Makes & Body Type</Text>
@@ -91,16 +90,11 @@ export default function Popular({ route }) {
           </View>
         </ScrollView>
       </ScrollView>
-    </SafeAreaView>
   );
 }
 
 
 const styles = StyleSheet.create({
-    safeArea: {
-        flex: 1,
-        backgroundColor: '#fff',
-      },
       container: {
         flexGrow: 1,
         justifyContent: 'flex-start',
@@ -137,7 +131,7 @@ const styles = StyleSheet.create({
       },
       frameContainer: {
         marginTop: 20,
-        marginRight: 100,
+        marginRight: 70,
         flexDirection: 'row',
         alignItems: 'center',
       },
@@ -168,6 +162,7 @@ const styles = StyleSheet.create({
       },
       logoCard: {
         width: 150,
+        height: 150,
         marginHorizontal: 10,
         backgroundColor: '#fff',
         borderRadius: 8,

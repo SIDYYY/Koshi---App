@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, SafeAreaView, TouchableOpacity} from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { carModels } from '../components/CarLISTS'; 
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const CarModel = ({ route }) => {
-  const { brand, slot } = route.params;
+  const { brand, slot } = route?.params || {};
   const models = carModels[brand] || [];
   const [search, setSearch] = useState('');
   const navigation = useNavigation();
@@ -16,8 +15,8 @@ const CarModel = ({ route }) => {
     setSearch(value);
   };
 
-  const handleCarSelect = (model, slot) => {
-    navigation.navigate('Variant', { model, slot }); // Pass model, brand, and slot
+  const handleCarSelect = (model,brand, slot) => {
+    navigation.navigate('Variant', { model,brand, slot }); // Pass model, brand, and slot
   };
 
   const handleChangeBrand = (slot) => {
@@ -47,7 +46,7 @@ const CarModel = ({ route }) => {
           <Text style={styles.header}>Select A {brand} Car Model</Text>
           <TouchableOpacity style={styles.changeBrandButton} onPress={() => handleChangeBrand(slot)}>
             <View style={styles.rowChange}>
-              <Text style={styles.changeBrandText}>Change Brand</Text>
+              <Text style={styles.changeBrandText}>Change Model</Text>
               <Ionicons name="swap-horizontal" size={20} color="#ECAE36" />
             </View>
           </TouchableOpacity>
@@ -57,7 +56,7 @@ const CarModel = ({ route }) => {
             <TouchableOpacity
               key={item.model}
               style={styles.item}
-              onPress={() => handleCarSelect(item, slot)} // Pass model, brand, and slot to Variant page
+              onPress={() => handleCarSelect(item,brand, slot)} // Pass model, brand, and slot to Variant page
             >
               <Image source={{ uri: item.image }} style={styles.image} />
               <View style={styles.modelInfo}>

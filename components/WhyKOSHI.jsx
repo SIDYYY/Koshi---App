@@ -40,8 +40,7 @@ export default function Why(){
         }).start();
       }, []);
 return(
-    <SafeAreaView>
-    <ScrollView style={styles.container}>
+    <View>
     <Text style={styles.sectionTitle}>Why trust KOSHI? </Text>
     <ScrollView horizontal contentContainerStyle={styles.horizontalReasonContainer}>
       <View style={styles.reasonSection}>
@@ -64,17 +63,13 @@ return(
         <Text style={styles.contactInfo}>Phone: +1 234 567 890</Text>
         <Text style={styles.contactInfo}>Address: 1234 Car Street, Auto City, AC 56789</Text>
       </View>
-    </ScrollView>
-    </SafeAreaView>
+    </View>
 )
 }
 
 const styles = StyleSheet.create({
-    safeArea: {
-        flex: 1,
-        backgroundColor: '#fff',
-      },
     container: {
+      flexGrow: 1,
         padding: 5,
         flex: 1,
         backgroundColor: '#fff',

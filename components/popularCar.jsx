@@ -121,8 +121,7 @@ export default function Popular(){
       };
       
     return(
-        <SafeAreaView style={styles.safeArea}>
-            <ScrollView contentContainerStyle={styles.container}>
+          <View style={styles.container}>
                 <View style={styles.headContent}>
                     <Text style={styles.Popular}>Popular New Cars</Text>
                     <Text style={styles.seeMore}>See More
@@ -167,16 +166,11 @@ export default function Popular(){
                         ))}
                     </View>
                 </ScrollView>
-            </ScrollView>
-        </SafeAreaView>
+                </View>
     );
 }
 
 const styles = StyleSheet.create({
-    safeArea: {
-        flex: 1,
-        backgroundColor: '#fff',
-      },
       container: {
         flexGrow: 1,
         justifyContent: 'flex-start',
@@ -251,7 +245,9 @@ const styles = StyleSheet.create({
         shadowOpacity: 1,
         shadowRadius: 1.8,
         paddingBottom: 20,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        aspectRatio: 1,
+        marginVertical: 20,
       },
       carImage: {
         width: 300,

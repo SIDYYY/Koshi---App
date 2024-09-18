@@ -1,32 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Alert, SafeAreaView, ScrollView, Image } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { useRouter, useSearchParams } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Compare({ route, navigation }) {
+export default function Compare({ route }) {
+    const navigation = useNavigation();
+
     const [car1, setCar1] = useState(null);
     const [car2, setCar2] = useState(null);
-    const router = useRouter();
-    const { car, slot } = useSearchParams() || {};
 
     useEffect(() => {
+        const { car, slot } = route.params || {};
         if (car && slot !== undefined) {
-            const carData = JSON.parse(car); // Parse car data if needed
-            if (slot === '1') {
-                setCar1(carData);
-            } else if (slot === '2') {
-                setCar2(carData);
+            if (slot === 1) {
+                setCar1(car);
+            } else if (slot === 2) {
+                setCar2(car);
             }
         }
-    }, [car, slot]);
+    }, [route.params]);
 
     const handleSelectCar = (slot) => {
-        router.push(`/List?slot=${slot}`); // Navigate to List with slot parameter
+        navigation.navigate('List', { slot }); // Pass slot num correctly
+        console.log('Slot #' , slot);
     };
 
     const handleComparePress = () => {
         if (car1 && car2) {
-            router.push(`/Both?car1=${encodeURIComponent(JSON.stringify(car1))}&car2=${encodeURIComponent(JSON.stringify(car2))}`); // Navigate to Both with car data
+            navigation.navigate('Both', { car1, car2 });
         } else {
             Alert.alert('Error', 'Please select two cars to compare.');
         }
@@ -80,20 +81,20 @@ const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
         backgroundColor: '#fff',
-    },
-    container: {
+      },
+      container: {
         padding: 28,
         flexGrow: 1,
         justifyContent: 'flex-start',
-    },
+      },
     header: {
-        flexDirection: 'column',
+        flexDirection: 'column'
     },
     headerTitle: {
         fontSize: 30,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginVertical: 30,
+        marginVertical: 30
     },
     headerText: {
         fontSize: 18,
@@ -103,11 +104,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignSelf: 'center',
-        marginTop: 60,
+        marginTop: 60
     },
     box: {
         alignItems: 'center',
         marginHorizontal: 20,
+        alignContent: 'center',
         backgroundColor: '#fff',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 1 },
@@ -115,7 +117,7 @@ const styles = StyleSheet.create({
         shadowRadius: 1.8,
         borderRadius: 8,
         width: 160,
-        height: 160,
+        height: 160
     },
     boxBorder: {
         padding: 5,
@@ -124,27 +126,29 @@ const styles = StyleSheet.create({
         borderColor: '#ECAE36',
         borderRadius: 8,
         marginTop: 20,
-        marginBottom: 10,
+        marginBottom: 10
     },
-    boxText: {
-        fontSize: 14,
+    boxText:{
+        fontSize: 14
     },
     compareButton: {
-        marginTop: 30,
+        marginTop: 30,  
         backgroundColor: '#9B9B9B',
         padding: 20,
-        borderRadius: 8,
+        borderRadius: 8
     },
     compareText: {
         color: '#fff',
         textAlign: 'center',
-        fontWeight: 'bold',
+        fontWeight: 'bold'
     },
     carImage: {
         resizeMode: 'contain',
         width: '100%',
         height: '85%',
+        padding: 30,
         aspectRatio: 1.5,
-        borderRadius: 4,
-    },
-});
+        borderRadius: 4
+    }
+
+})

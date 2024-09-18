@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, SafeAreaView, Image, TouchableOpacity } from 'react-native';
 import { SearchBar } from 'react-native-elements';
+import { useRoute,useNavigation } from '@react-navigation/native';
 
+//brand prototype
 const brands = [
   {
     id: '1',
@@ -35,16 +37,23 @@ const brands = [
   },
 ];
 
-export default function List({ navigation, route }) {
+
+
+export default function List() {
+  const route = useRoute();
+  const navigation = useNavigation();
   const [search, setSearch] = useState('');
-  const { slot } = route.params || {}; // Get slot from navigation params
+  const { slot } = route.params || {}; // SLOT PASSING
+
+  console.log('Received Slot# :', slot);
 
   const getSearch = (value) => {
-    setSearch(value);
+      setSearch(value);
   };
 
   const selectedBrand = (brand) => {
-    navigation.navigate('Model', { brand, slot }); // Pass brand and slot
+      navigation.navigate('Model', { brand, slot }); // Forward brand and slot to MODEL PAGE
+      console.log(brand, slot); //confirmation log
   };
 
   return (
@@ -80,6 +89,7 @@ export default function List({ navigation, route }) {
     </SafeAreaView>
   );
 }
+
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
