@@ -1,0 +1,1 @@
+import header from '../assets/images/main-logo.png'
