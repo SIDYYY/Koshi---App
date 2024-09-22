@@ -6,7 +6,7 @@ const CarTypePill = ({ item, handleFrameSelect, activeFrame }) => {
 
   return (
     <View
-      className={`mt-3 ml-2 ${item.type === "Minivans" ? "mr-4" : ""} ${
+      className={`ml-2 ${item.type === "Minivans" ? "mr-4" : ""} ${
         item.type === "SUV" ? "ml-4" : ""
       }`}
     >

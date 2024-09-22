@@ -1,14 +1,14 @@
 import { View, Text } from "react-native";
 import { router } from "expo-router";
-import CustomContainer from "@/components/CustomContainer";
-import CustomButton from "@/components/CustomButton";
-import CustomLoadingSpinner from "@/components/CustomLoadingSpinner";
-import CustomModal from "@/components/CustomModal";
+import Container from "@/components/Container";
+import Button from "@/components/Button";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import Modal from "@/components/Modal";
 
 const index = () => {
 
   return (
-    <CustomContainer>
+    <Container>
       <View className="justify-between h-full pb-[24px]">
         <View className="space-y-4">
           <Text className="font-bold text-[40px] text-center">
@@ -31,7 +31,7 @@ const index = () => {
             customRoute="/home"
             label="Log-in"
           /> */}
-          <CustomButton
+          <Button
             label="Get Started"
             otherStyles="bg-black"
             onPress={() => {
@@ -40,7 +40,7 @@ const index = () => {
           />
         </View>
       </View>
-    </CustomContainer>
+    </Container>
   );
 };
 

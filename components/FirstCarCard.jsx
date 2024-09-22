@@ -16,18 +16,18 @@ const FirstCarCard = ({ car }) => {
         offset={[0, 0]}
         distance={3}
         endColor=""
-        className="bg-white w-full rounded-b-[10px] pt-4 "
+        className="bg-white w-full rounded-b-[10px] pt-4"
       >
         <View className="w-full justify-between px-4 pb-4">
           <View className=" text-center">
             <Text className="text-base font-black text-black">{car.name}</Text>
-            <Text className="text-sm text-[#9B9B9B] my-[5px] w-full">
+            <Text className="text-sm text-[#9B9B9B] w-full">
               {car.variants} Variants & Specifications
             </Text>
           </View>
           <TouchableOpacity
             activeOpacity={0.7}
-            className="mt-6 border border-[#101820] p-2 w-full rounded-lg"
+            className="border border-[#101820] p-2 w-full rounded-lg mt-6"
             onPress={() => handleCarSelect(car)}
           >
             <Text className="text-sm font-bold text-center">View Details</Text>
