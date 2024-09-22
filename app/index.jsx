@@ -1,14 +1,46 @@
 import { View, Text } from "react-native";
-import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from "expo-router";
+import CustomContainer from "@/components/CustomContainer";
+import CustomButton from "@/components/CustomButton";
+import CustomLoadingSpinner from "@/components/CustomLoadingSpinner";
+import CustomModal from "@/components/CustomModal";
 
 const index = () => {
+
   return (
-    <SafeAreaView>
-      <View>
-        <Text>index</Text>
+    <CustomContainer>
+      <View className="justify-between h-full pb-[24px]">
+        <View className="space-y-4">
+          <Text className="font-bold text-[40px] text-center">
+            Car Buying,{" "}
+            <Text className="text-yellow-500 underline">Simplified</Text>
+          </Text>
+          <Text className="text-center text-xl">
+            Compare prices on new & used cars from official dealers across the
+            Philippines
+          </Text>
+        </View>
+        <View>
+          <Text className="text-[#9b9b9b] text-[14px] text-center mb-4">
+            Explore, compare and find the perfect car.
+          </Text>
+          {/* <CustomModal
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+            status={!isLoading}
+            customRoute="/home"
+            label="Log-in"
+          /> */}
+          <CustomButton
+            label="Get Started"
+            otherStyles="bg-black"
+            onPress={() => {
+              router.push("/home");
+            }}
+          />
+        </View>
       </View>
-    </SafeAreaView>
+    </CustomContainer>
   );
 };
 

@@ -2,16 +2,23 @@ import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   Text,
-  SafeAreaView,
   View,
   ImageBackground,
   ScrollView,
   Animated,
   Image,
+  FlatList,
+  TextInput,
 } from "react-native";
 import { SearchBar } from "react-native-elements";
 import * as Location from "expo-location";
-import icons from '../../constants/icons'
+import icons from "../../constants/icons";
+import images from "../../constants/images";
+import PopularCar from "../../components/popularCar";
+import PopularMaker from "../../components/popularMaker";
+import Why from "../../components/WhyKOSHI";
+import { TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomePage() {
   const [search, setSearch] = useState("");
@@ -61,16 +68,10 @@ export default function HomePage() {
   }, []);
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={styles.container}>
-        {/* Pin Location Section */}
-        <View style={styles.locationContainer}>
-          <Image
-            style={styles.pinLocation}
-            source={{
-              uri: "https://cdn-icons-png.flaticon.com/512/10831/10831906.png",
-            }}
-          />
+    <SafeAreaView className="bg-white ">
+      <ScrollView className="py-8">
+        <View className="flex-row px-4">
+          <Image style={styles.pinLocation} source={icons.location} />
           <View>
             <View style={styles.locationInfoHead}>
               <Text style={styles.locationInfoHeadText}>
@@ -92,44 +93,49 @@ export default function HomePage() {
         </View>
 
         {/* Banner Section */}
-        <View style={styles.banner}>
-          <ImageBackground
-            source={'ashdk'}
-            style={styles.imageBackground}
+        <View className=" justify-center mt-6 px-4">
+          <Image
+            source={images.header}
+            className="rounded-2xl w-full h-[135px] relative"
             resizeMode="cover"
-          >
-            {/* Centered Content */}
-            <View style={styles.centeredContent}>
-              <Animated.Text style={styles.welcome}>
-                Welcome, User
-              </Animated.Text>
-              <Text style={styles.sectionTitleExplore}>
-                Explore the app, and decide
-              </Text>
-            </View>
-          </ImageBackground>
+          />
+          <View className="absolute left-7">
+            <Animated.Text className="text-[#9b9b9b]">
+              Welcome, User
+            </Animated.Text>
+            <Text className="text-white text-2xl max-w-[180px]">
+              Explore the app, and decide
+            </Text>
+          </View>
         </View>
 
-        {/* Search Bar */}
-        <View style={styles.searchContainer}>
-          <SearchBar
-            placeholder="Search"
-            onChangeText={getSearch}
-            value={search}
-            lightTheme
-            round
-            searchIcon={{ size: 24, containerStyle: styles.iconContainer }}
-            clearIcon={{ size: 24, containerStyle: styles.clearContainer }}
-            containerStyle={styles.searchBarContainer}
-            inputContainerStyle={styles.searchBarInputContainer}
-            inputStyle={styles.searchBarInput}
+        <View className="border mx-4 border-[#9b9b9b] mt-8 h-14 rounded-full justify-center px-4 flex-row">
+          <TextInput
+            className="text-sm flex-1"
+            placeholder="Search..."
+            placeholderTextColor="#9b9b9b"
+          />
+          <Image
+            source={icons.search}
+            className="h-6 w-6 self-center"
+            resizeMode="contain"
           />
         </View>
-        <View>
-          <PopularCar />
-          <PopularMaker />
-          <Why />
+        <View className="flex-row mt-11 justify-between px-4 ">
+          <Text className="text-2xl font-black ">Popular New Cars</Text>
+          <TouchableOpacity className="flex-row items-center justify-center space-x-2">
+            <Text className="text-sm text-[#ECAE36]">See More</Text>
+            <Image
+              source={icons.arrow}
+              className="w-2 h-3"
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
         </View>
+
+        <PopularCar />
+        <PopularMaker />
+        <Why />
       </ScrollView>
     </SafeAreaView>
   );
@@ -138,7 +144,7 @@ export default function HomePage() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#E1D9D1 ",
+    backgroundColor: "#fff ",
   },
   container: {
     padding: 15,
