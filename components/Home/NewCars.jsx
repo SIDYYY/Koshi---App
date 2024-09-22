@@ -3,8 +3,9 @@ import { Text, View, TouchableOpacity, Image, FlatList } from "react-native";
 import cars from "../../lib/ford";
 import FirstCarCard from "../FirstCarCard";
 import carType from "../../lib/car-type";
-import CarTypePill from "../CarTypePill";
+import CarFilterPill from "../CarFilterPill";
 import Title from "../Title";
+import ProceedArrow from "../ProceedArrow";
 
 export default function Popular() {
   // const navigation = useNavigation();
@@ -27,7 +28,7 @@ export default function Popular() {
         horizontal={true}
         renderItem={({ item }) => (
           <View className="mt-3">
-            <CarTypePill
+            <CarFilterPill
               item={item}
               handleFrameSelect={handleFrameSelect}
               activeFrame={activeFrame}
@@ -46,6 +47,7 @@ export default function Popular() {
         )}
         keyExtractor={(item) => item.name}
       />
+      <ProceedArrow label="View More New Cars" />
     </>
   );
 }

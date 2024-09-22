@@ -2,6 +2,7 @@ import { View, Text, Image } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { Shadow } from "react-native-shadow-2";
+import { shadowDistance } from "../lib/shadow-distance";
 
 const FirstCarCard = ({ car }) => {
   return (
@@ -13,9 +14,7 @@ const FirstCarCard = ({ car }) => {
       />
       <Shadow
         sides={{ top: false }}
-        offset={[0, 0]}
-        distance={3}
-        endColor=""
+        distance={shadowDistance}
         className="bg-white w-full rounded-b-[10px] pt-4"
       >
         <View className="w-full justify-between px-4 pb-4">
