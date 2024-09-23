@@ -1,34 +1,15 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
-import icons from "../../constants/icons";
+import TabIcon from '../../components/Compare/TabIcon'
 
 const CompareLayout = () => {
-  // const TabIcon = ({ icon, color, name, focused }) => {
-  //   return (
-  //     <View className="items-center justify-center gap-2">
-  //       <Image
-  //         source={icon}
-  //         className="h-6 w-6"
-  //         resizeMode="contain"
-  //         tintColor={color}
-  //       />
-  //       <Text
-  //         className={`${
-  //           focused
-  //             ? "font-semibold text-[#ECAE36]"
-  //             : "font-normal text-[#9b9b9b]"
-  //         } text-xs`}
-  //       >
-  //         {name}
-  //       </Text>
-  //     </View>
-  //   );
-  // };
+
   return (
     <>
       <Tabs
         screenOptions={{
+          tabBarShowLabel: false,
           tabBarActiveTintColor: "#ECAE36",
           tabBarInactiveTintColor: "#9B9B9B",
           tabBarStyle: {
@@ -41,6 +22,9 @@ const CompareLayout = () => {
           options={{
             headerShown: false,
             title: "Brand",
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon color={color} name="Brand" focused={focused} />
+            ),
           }}
         />
         <Tabs.Screen
@@ -48,6 +32,9 @@ const CompareLayout = () => {
           options={{
             headerShown: false,
             title: "Model",
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon color={color} name="Model" focused={focused} />
+            ),
           }}
         />
         <Tabs.Screen
@@ -55,6 +42,9 @@ const CompareLayout = () => {
           options={{
             headerShown: false,
             title: "Variant",
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon color={color} name="Variant" focused={focused} />
+            ),
           }}
         />
       </Tabs>

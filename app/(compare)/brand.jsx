@@ -24,17 +24,16 @@ export default function List() {
   // };
 
   return (
-    <Container otherStyles="">
+    <Container>
       <BackButtonHeader title="Choose a Car for Comparison" />
       <SearchBar otherStyles="mx-4" />
       <View>
         <Text className="mx-4 mt-9 font-black text-base">Select A Brand</Text>
         <FlatList
-          className="pb-[100px]"
           contentContainerStyle={{
             alignItems: "center",
             gap: 14,
-            paddingBottom: 180,
+            paddingBottom: 200,
             paddingTop: 24,
           }}
           data={logos}
