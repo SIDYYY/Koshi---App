@@ -8,7 +8,7 @@ const CustomContainer = ({ children, scroll = null, otherStyles = null }) => {
     <SafeAreaView className={`bg-white px-[14px] flex-1 h-full ${otherStyles}`}>
       <StatusBar style="dark" />
       {scroll ? (
-        <ScrollView contentContainerStyle={{ minHeight: "100%" }}>
+        <ScrollView contentContainerStyle={{ minHeight: "100%", paddingTop: 24 }}>
           {children}
         </ScrollView>
       ) : (

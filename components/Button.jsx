@@ -6,7 +6,7 @@ import icons from "@/constants/icons";
 const CustomButton = ({
   label,
   otherStyles,
-  buttonCustomBg,
+  transparent = false,
   textStyle,
   withIcon,
   onPress,
@@ -16,8 +16,10 @@ const CustomButton = ({
   return (
     <TouchableOpacity
       className={`${
-        buttonCustomBg || isLoading ? "bg-[#E4E7EB]" : "bg-[#5CB88F]"
-      } h-[57px] rounded-lg relative justify-center items-center flex-row space-x-4 ${otherStyles}`}
+        transparent || isLoading ? "bg-[#E4E7EB]" : "bg-[#5CB88F]"
+      }  h-[57px] rounded-lg relative justify-center items-center flex-row space-x-4 ${otherStyles} ${
+        disabled ? "bg-[#9b9b9b]" : ""
+      }`}
       activeOpacity={0.7}
       onPress={onPress}
       disabled={disabled}

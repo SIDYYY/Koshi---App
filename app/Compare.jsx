@@ -36,42 +36,7 @@ export default function Compare({ route }) {
     return (
         <SafeAreaView style={styles.safeArea}>
             <ScrollView contentContainerStyle={styles.container}>
-                <View style={styles.header}>
-                    <Text style={styles.headerTitle}>Car Comparison Tool</Text>
-                    <Text style={styles.headerText}>
-                        Not decided on a new vehicle yet? 
-                        You can compare 2 cars using our 
-                        dynamic car comparison tool.
-                    </Text>
-                </View>
-
-                <View style={styles.comparingBox}>
-                    <TouchableOpacity style={styles.box} onPress={() => handleSelectCar(1)}>
-                        <View style={styles.boxBorder}>
-                            {car1 ? (
-                                <Image source={{ uri: car1.image }} style={styles.carImage} />
-                            ) : (
-                                <Ionicons name="add" size={60} color="#ECAE36" />
-                            )}
-                        </View>
-                        <Text style={styles.boxText}>{car1 ? car1.model : 'Select Car 1'}</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.box} onPress={() => handleSelectCar(2)}>
-                        <View style={styles.boxBorder}>
-                            {car2 ? (
-                                <Image source={{ uri: car2.image }} style={styles.carImage} />
-                            ) : (
-                                <Ionicons name="add" size={60} color="#ECAE36" />
-                            )}
-                        </View>
-                        <Text style={styles.boxText}>{car2 ? car2.model : 'Select Car 2'}</Text>
-                    </TouchableOpacity>
-                </View>
-
-                <TouchableOpacity style={styles.compareButton} onPress={handleComparePress}>
-                    <Text style={styles.compareText}>Compare Cars</Text>
-                </TouchableOpacity>
+ 
             </ScrollView>
         </SafeAreaView>
     );

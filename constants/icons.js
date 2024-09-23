@@ -6,6 +6,7 @@ import location from "../assets/icons/location.png";
 import mitsubishi from "../assets/icons/mitsubishi-logo.png";
 import nissan from "../assets/icons/nissan-logo.png";
 import plus from "../assets/icons/plus.png";
+import plus1 from "../assets/icons/plus1.png";
 import profile from "../assets/icons/profile.png";
 import search from "../assets/icons/search.png";
 
@@ -18,6 +19,7 @@ export default {
   mitsubishi,
   nissan,
   plus,
+  plus1,
   profile,
   search,
 };
