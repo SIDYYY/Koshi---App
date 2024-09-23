@@ -7,7 +7,7 @@ import LocationHeader from "../../components/Home/LocationHeader";
 import Banner from "../../components/Home/Banner";
 import SearchBar from "../../components/SearchBar";
 
-export default function HomePage() {
+const Home = () => {
   return (
     <CustomContainer scroll={true}>
       <LocationHeader />
@@ -19,3 +19,4 @@ export default function HomePage() {
     </CustomContainer>
   );
 }
+export default Home;

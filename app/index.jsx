@@ -37,7 +37,7 @@ const index = () => {
             label="Get Started"
             otherStyles="bg-black"
             onPress={() => {
-              router.replace("/brand");
+              router.replace("/home");
             }}
           />
         </View>

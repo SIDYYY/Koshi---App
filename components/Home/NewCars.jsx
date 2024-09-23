@@ -7,7 +7,7 @@ import CarFilterPill from "../CarFilterPill";
 import Title from "../Title";
 import ProceedArrow from "../ProceedArrow";
 
-export default function Popular() {
+const NewCars = () => {
   // const navigation = useNavigation();
 
   // // Function to handle frame selection
@@ -50,4 +50,5 @@ export default function Popular() {
       <ProceedArrow label="View More New Cars" />
     </>
   );
-}
+};
+export default NewCars;
