@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React, { useState } from "react";
 import { TouchableOpacity } from "react-native";
 
-const CarTypePill = ({ item, handleFrameSelect, activeFrame }) => {
+const CarFilterPill = ({ item, handleFrameSelect, activeFrame }) => {
   const value = item.type ? item.type : item;
   return (
     <View
@@ -30,4 +30,4 @@ const CarTypePill = ({ item, handleFrameSelect, activeFrame }) => {
   );
 };
 
-export default CarTypePill;
+export default CarFilterPill;

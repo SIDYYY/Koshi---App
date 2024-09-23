@@ -2,9 +2,11 @@ import { View, TextInput, Image } from 'react-native'
 import React from 'react'
 import icons from "../constants/icons";
 
-const SearchBar = () => {
+const SearchBar = ({otherStyles}) => {
   return (
-    <View className="border mx-4 border-[#9b9b9b] mt-8 h-14 rounded-full justify-center px-4 flex-row">
+    <View
+      className={`border border-[#9b9b9b] mt-8 h-14 rounded-full justify-center px-4 flex-row mx-4 ${otherStyles}`}
+    >
       <TextInput
         className="text-sm flex-1"
         placeholder="Search..."

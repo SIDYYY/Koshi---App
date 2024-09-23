@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "react-native-loading-spinner-overlay";
 
-const CustomLoadingSpinner = ({
+const LoadingSpinner = ({
   isLoading,
   textLabel = "default",
   customText = "Loading...",
@@ -18,4 +18,4 @@ const CustomLoadingSpinner = ({
   );
 };
 
-export default CustomLoadingSpinner;
+export default LoadingSpinner;

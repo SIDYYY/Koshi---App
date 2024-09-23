@@ -4,7 +4,8 @@ import icons from "../../constants/icons";
 import Container from "../../components/Container";
 import { Shadow } from "react-native-shadow-2";
 // import 3 from "../../lib/shadow-distance";
-import Button from '../../components/Button'
+import Button from "../../components/Button";
+import { router } from "expo-router";
 const Compare = () => {
   const [car1, setCar1] = useState(null);
   const [car2, setCar2] = useState(null);
@@ -21,8 +22,7 @@ const Compare = () => {
   }, []);
 
   const handleSelectCar = (slot) => {
-    navigation.navigate("List", { slot }); // Pass slot num correctly
-    console.log("Slot #", slot);
+    router.push('/brand')
   };
 
   const handleComparePress = () => {
@@ -34,8 +34,8 @@ const Compare = () => {
   };
 
   return (
-    <Container scroll={true}>
-      <View className=" items-center">
+    <Container scroll={true} centerContent={true}>
+      <View className="items-center">
         <Text className="font-black text-2xl">Car Comparison Tool</Text>
         <Text className="max-w-[90%] text-base text-center mt-2">
           Not decided on a new vehicle yet? You can compare 2 cars using our
@@ -44,7 +44,7 @@ const Compare = () => {
       </View>
 
       <View className="flex-row  justify-center mb-8 mt-14">
-        <Shadow className="p-8 rounded-lg mr-8" distance={3} >
+        <Shadow className="p-8 rounded-lg mr-8" distance={3}>
           <TouchableOpacity onPress={() => handleSelectCar(1)}>
             {car1 ? (
               <Image source={{ uri: car1.image }} style={styles.carImage} />
@@ -70,15 +70,17 @@ const Compare = () => {
                 resizeMode="contain"
               />
             )}
-            <Text>
-              {car1 ? car1.model : "Select Car 1"}
-            </Text>
+            <Text>{car1 ? car1.model : "Select Car 1"}</Text>
           </TouchableOpacity>
         </Shadow>
       </View>
 
-      <Button label="Compare Cars" onPress={handleComparePress} disabled={true} otherStyles="bg-black" />
-
+      <Button
+        label="Compare Cars"
+        onPress={handleComparePress}
+        disabled={true}
+        otherStyles="bg-black"
+      />
     </Container>
   );
 };

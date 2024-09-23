@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, SafeAreaView, TouchableOpacity} from 'react-native';
 import { SearchBar } from 'react-native-elements';
-import { carModels } from '../components/CarLISTS'; 
+import { carModels } from '../../components/CarLISTS'; 
 import { useNavigation } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 

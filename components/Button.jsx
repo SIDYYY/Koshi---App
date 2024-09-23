@@ -1,9 +1,7 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
-import icons from "@/constants/icons";
 
-const CustomButton = ({
+const Button = ({
   label,
   otherStyles,
   transparent = false,
@@ -17,7 +15,7 @@ const CustomButton = ({
     <TouchableOpacity
       className={`${
         transparent || isLoading ? "bg-[#E4E7EB]" : "bg-[#5CB88F]"
-      }  h-[57px] rounded-lg relative justify-center items-center flex-row space-x-4 ${otherStyles} ${
+      }  h-[57px] rounded-lg relative justify-center items-center flex-row space-x-4 mx-4 ${otherStyles} ${
         disabled ? "bg-[#9b9b9b]" : ""
       }`}
       activeOpacity={0.7}
@@ -40,4 +38,4 @@ const CustomButton = ({
   );
 };
 
-export default CustomButton;
+export default Button;

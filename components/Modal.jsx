@@ -3,7 +3,7 @@ import React from "react";
 import icons from "../constants/icons";
 import { router } from "expo-router";
 
-const CustomModal = ({
+const Modal = ({
   modalVisible,
   setModalVisible,
   label,
@@ -45,4 +45,4 @@ const CustomModal = ({
   );
 };
 
-export default CustomModal;
+export default Modal;

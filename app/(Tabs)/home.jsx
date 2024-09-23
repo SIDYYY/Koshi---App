@@ -9,10 +9,10 @@ import SearchBar from "../../components/SearchBar";
 
 export default function HomePage() {
   return (
-    <CustomContainer scroll={true} otherStyles="px-0">
+    <CustomContainer scroll={true}>
       <LocationHeader />
       <Banner />
-      <SearchBar />
+      <SearchBar otherStyles="" />
       <NewCars />
       <BrandAndBodyType />
       <Why />

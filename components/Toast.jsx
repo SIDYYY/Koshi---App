@@ -3,7 +3,7 @@ import React from "react";
 import icons from "@/constants/icons";
 import { Shadow } from "react-native-shadow-2";
 
-const CustomToast = ({ text1, text2 }) => {
+const Toast = ({ text1, text2 }) => {
   return (
     <Shadow
       className="min-w-[90%] max-w-[90%] rounded-lg"
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CustomToast;
+export default Toast;

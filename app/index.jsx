@@ -2,8 +2,6 @@ import { View, Text } from "react-native";
 import { router } from "expo-router";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
-import LoadingSpinner from "@/components/LoadingSpinner";
-import Modal from "@/components/Modal";
 
 const index = () => {
 
