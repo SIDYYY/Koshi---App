@@ -1,25 +1,18 @@
-import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  ScrollView,
-  SafeAreaView,
-  TouchableOpacity,
-  FlatList,
-} from "react-native";
+import React, { useState } from "react";
+import { FlatList } from "react-native";
 import Container from "../../components/Container";
 import BackButtonHeader from "../../components/BackButtonHeader";
 import SearchBar from "../../components/SearchBar";
 import ModelCarCard from "../../components/Compare/ModelCarCard";
-import { Shadow } from "react-native-shadow-2";
-import { shadowDistance } from "../../lib/shadow-distance";
 import SmallTitle from "../../components/Compare/SmallTitle";
 import everest from "../../lib/everest";
 import VariantCard from "../../components/Compare/VariantCard";
+import ConfirmSelectModal from '../../components/Compare/ConfirmSelectModal'
 
 const Variant = () => {
+  const [isClicked, setIsClicked] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
+
   //   const route = useRoute();
   //   const { model, brand, slot } = route.params; // Retrieve the passed brand and slot
   //   const navigation = useNavigation();
@@ -39,13 +32,22 @@ const Variant = () => {
   // };
 
   const model = {
-    name: "Ford Everest",
-    price: "P1,829,000 - P2,570,000",
-    variants: 7,
+    variant: "2.0L Turbo Trend 4x2 AT",
+    bodyType: "SUV",
+    price: "₱ 1,829,000",
     image:
       "https://d1hv7ee95zft1i.cloudfront.net/custom/car-model-photo/standard/next-gen-2023-ford-everest-62e21bcfe287e.jpg",
     bodyType: "SUV",
   };
+
+    const fordEverest = {
+      name: "Ford Everest",
+      price: "₱ 1,829,000",
+      variant: "2.0L Turbo Trend 4x2 AT",
+      image:
+        "https://d1hv7ee95zft1i.cloudfront.net/custom/car-model-photo/standard/next-gen-2023-ford-everest-62e21bcfe287e.jpg",
+      bodyType: "SUV",
+    };
 
   return (
     <Container>
@@ -55,12 +57,25 @@ const Variant = () => {
       <ModelCarCard model={model} otherStyles="mt-4" />
       <SmallTitle text="Select A Variant" />
       <FlatList
-        contentContainerStyle={{ 
-          paddingTop: 24
-         }}
+        contentContainerStyle={{
+          paddingTop: 24,
+        }}
         data={everest}
-        renderItem={({ item }) => <VariantCard variant={item} />}
+        renderItem={({ item }) => (
+          <VariantCard
+            variant={item}
+            setIsClicked={setIsClicked}
+            isSelected={isClicked === item.variant}
+            setModalVisible={setModalVisible}
+            value={isClicked}
+          />
+        )}
         keyExtractor={(item) => item.variant}
+      />
+      <ConfirmSelectModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        carSelected={fordEverest}
       />
     </Container>
   );

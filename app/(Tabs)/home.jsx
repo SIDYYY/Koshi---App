@@ -1,7 +1,7 @@
 import React from "react";
 import NewCars from "../../components/Home/NewCars";
 import BrandAndBodyType from "../../components/Home/BrandAndBodyType";
-import Why from "../../components/Home/WhyKOSHI";
+import WhyKoshi from "../../components/Home/WhyKoshi";
 import CustomContainer from "../../components/Container";
 import LocationHeader from "../../components/Home/LocationHeader";
 import Banner from "../../components/Home/Banner";
@@ -12,10 +12,10 @@ export default function HomePage() {
     <CustomContainer scroll={true}>
       <LocationHeader />
       <Banner />
-      <SearchBar otherStyles="" />
+      <SearchBar />
       <NewCars />
       <BrandAndBodyType />
-      <Why />
+      <WhyKoshi />
     </CustomContainer>
   );
 }

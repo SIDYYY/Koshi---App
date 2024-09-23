@@ -2,8 +2,10 @@ import { View, Text } from "react-native";
 import { router } from "expo-router";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
+import { useState } from "react";
 
 const index = () => {
+  const [modalVisible, setModalVisible] = useState(true);
 
   return (
     <Container>
@@ -29,6 +31,8 @@ const index = () => {
             customRoute="/home"
             label="Log-in"
           /> */}
+
+
           <Button
             label="Get Started"
             otherStyles="bg-black"

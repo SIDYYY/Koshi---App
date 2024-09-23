@@ -45,7 +45,10 @@ const Compare = () => {
 
       <View className="flex-row  justify-center mb-8 mt-14">
         <Shadow className="p-8 rounded-lg mr-8" distance={3}>
-          <TouchableOpacity onPress={() => handleSelectCar(1)}>
+          <TouchableOpacity
+            onPress={() => handleSelectCar(1)}
+            className="gap-4"
+          >
             {car1 ? (
               <Image source={{ uri: car1.image }} style={styles.carImage} />
             ) : (
@@ -60,7 +63,10 @@ const Compare = () => {
         </Shadow>
         {/* py-8 flex-1 border justify-center items-center space-y-2 */}
         <Shadow className="p-8 rounded-lg" distance={3}>
-          <TouchableOpacity onPress={() => handleSelectCar(1)}>
+          <TouchableOpacity
+            onPress={() => handleSelectCar(1)}
+            className="gap-4"
+          >
             {car1 ? (
               <Image source={{ uri: car1.image }} style={styles.carImage} />
             ) : (
