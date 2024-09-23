@@ -8,6 +8,7 @@ import BackButtonHeader from "../../components/BackButtonHeader";
 import Title from "../../components/Compare/SmallTitle";
 
 export default function List() {
+  const [isClicked, setIsClicked] = useState('');
   // const route = useRoute();
   // const navigation = useNavigation();
   // const [search, setSearch] = useState("");
@@ -41,7 +42,7 @@ export default function List() {
           numColumns={3}
           renderItem={({ item }) => (
             <View className="flex-1 basis-[115px] items-center">
-              <LogoCard logo={item} />
+              <LogoCard logo={item} setIsClicked={setIsClicked} isSelected={isClicked === item.name} value={isClicked} />
             </View>
           )}
           keyExtractor={(item) => item.name}
