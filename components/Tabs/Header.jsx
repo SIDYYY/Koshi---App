@@ -1,7 +1,7 @@
 import { Text, View, Animated, Image } from "react-native";
 import images from "../../constants/images";
 
-const Banner = () => {
+const Header = () => {
   return (
     <View className=" justify-center mt-6 px-4">
       <Image
@@ -19,4 +19,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Header;

@@ -33,7 +33,7 @@ const index = () => {
             label="Get Started"
             otherStyles="bg-black"
             onPress={() => {
-              router.push("/home");
+              router.replace("/brand");
             }}
           />
         </View>

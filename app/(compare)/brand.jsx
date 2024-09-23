@@ -5,6 +5,7 @@ import SearchBar from "../../components/SearchBar";
 import Container from "../../components/Container";
 import LogoCard from "../../components/LogoCard";
 import BackButtonHeader from "../../components/BackButtonHeader";
+import Title from "../../components/Compare/SmallTitle";
 
 export default function List() {
   // const route = useRoute();
@@ -28,7 +29,7 @@ export default function List() {
       <BackButtonHeader title="Choose a Car for Comparison" />
       <SearchBar otherStyles="mx-4" />
       <View>
-        <Text className="mx-4 mt-9 font-black text-base">Select A Brand</Text>
+        <Title text="Select A Brand" />
         <FlatList
           contentContainerStyle={{
             alignItems: "center",
@@ -49,4 +50,3 @@ export default function List() {
     </Container>
   );
 }
-

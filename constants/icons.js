@@ -9,6 +9,7 @@ import plus from "../assets/icons/plus.png";
 import plus1 from "../assets/icons/plus1.png";
 import profile from "../assets/icons/profile.png";
 import search from "../assets/icons/search.png";
+import change from "../assets/icons/change.png"
 
 export default {
   arrow,
@@ -22,4 +23,5 @@ export default {
   plus1,
   profile,
   search,
+  change
 };

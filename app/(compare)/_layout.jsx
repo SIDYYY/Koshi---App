@@ -1,9 +1,14 @@
 import { View, Text, Image } from "react-native";
-import React from "react";
-import { Tabs } from "expo-router";
-import TabIcon from '../../components/Compare/TabIcon'
+import React, { useState } from "react";
+import { Stack, Tabs } from "expo-router";
+import TabIcon from "../../components/Compare/TabIcon";
 
 const CompareLayout = () => {
+  const [carChosen, setCarChosen] = useState({
+    brand: "",
+    model: "",
+    variant: "",
+  });
 
   return (
     <>
@@ -48,6 +53,7 @@ const CompareLayout = () => {
           }}
         />
       </Tabs>
+
     </>
   );
 };
