@@ -1,17 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ScrollView,
-  SafeAreaView,
-  TouchableOpacity,
-  FlatList,
-} from "react-native";
-import { carModels } from "../../components/CarLISTS";
-import { useNavigation } from "@react-navigation/native";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import { FlatList } from "react-native";
 import Container from "../../components/Container";
 import BackButtonHeader from "../../components/BackButtonHeader";
 import SmallTitle from "../../components/Compare/SmallTitle";
@@ -20,8 +8,8 @@ import ford from "../../lib/ford";
 
 import ModelCarCard from "../../components/Compare/ModelCarCard";
 
-
 const CarModel = () => {
+  const [isClicked, setIsClicked] = useState("");
   // const { brand, slot } = route?.params || {};
   // const models = carModels[brand] || [];
   // const [search, setSearch] = useState('');
@@ -51,60 +39,21 @@ const CarModel = () => {
 
       <FlatList
         data={ford}
-        contentContainerStyle={{ 
-          paddingTop: 24
-         }}
+        contentContainerStyle={{
+          paddingTop: 24,
+        }}
         renderItem={({ item }) => (
-          <ModelCarCard model={item} />
+          <ModelCarCard
+            model={item}
+            setIsClicked={setIsClicked}
+            isSelected={isClicked === item.name}
+            value={isClicked}
+            clickable={true}
+          />
         )}
         keyExtractor={(item) => item.name}
       />
     </Container>
-    // <SafeAreaView style={styles.safeArea}>
-    //   <ScrollView contentContainerStyle={styles.container}>
-    //     <View style={styles.searchContainer}>
-    //       <SearchBar
-    //         placeholder="Search"
-    //         onChangeText={getSearch}
-    //         value={search}
-    //         lightTheme
-    //         round
-    //         containerStyle={styles.searchBarContainer}
-    //         inputContainerStyle={styles.searchBarInputContainer}
-    //         inputStyle={styles.searchBarInput}
-    //       />
-    //     </View>
-    //     <View style={styles.rowHead}>
-    //       <Text style={styles.header}>Select A {brand} Car Model</Text>
-    //       <TouchableOpacity style={styles.changeBrandButton} onPress={() => handleChangeBrand(slot)}>
-    //         <View style={styles.rowChange}>
-    //           <Text style={styles.changeBrandText}>Change Model</Text>
-    //           <Ionicons name="swap-horizontal" size={20} color="#ECAE36" />
-    //         </View>
-    //       </TouchableOpacity>
-    //     </View>
-    //     <ScrollView contentContainerStyle={styles.scrollContainer}>
-    //       {filteredModels.map((item) => (
-    //         <TouchableOpacity
-    //           key={item.model}
-    //           style={styles.item}
-    //           onPress={() => handleCarSelect(item,brand, slot)} // Pass model, brand, and slot to Variant page
-    //         >
-    //           <Image source={{ uri: item.image }} style={styles.image} />
-    //           <View style={styles.modelInfo}>
-    //             <Text style={styles.text}>{item.model} ({item.year})</Text>
-    //             <Text style={styles.priceText}>Price:</Text>
-    //             <Text style={styles.displayPrice}>{item.price}</Text>
-    //             <View style={styles.rowFoot}>
-    //               <Text style={styles.variants}>7 Variants & Specifications</Text>
-    //               <Text style={styles.type}>Type: {item.type}</Text>
-    //             </View>
-    //           </View>
-    //         </TouchableOpacity>
-    //       ))}
-    //     </ScrollView>
-    //   </ScrollView>
-    // </SafeAreaView>
   );
 };
 

@@ -60,7 +60,7 @@ const Variant = () => {
          }}
         data={everest}
         renderItem={({ item }) => <VariantCard variant={item} />}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item) => item.variant}
       />
     </Container>
   );

@@ -28,9 +28,9 @@ const LogoCard = ({ logo, isSelected, setIsClicked, value }) => {
         </View>
 
         {isSelected ? (
-          <View className="absolute w-full h-full bg-black/10 items-center justify-center rounded-lg">
+          <View className="absolute w-full h-full bg-black/10 items-center justify-center rounded-lg border border-[#57AE78]">
             <TouchableOpacity
-              className="rounded-md bg-[#3E9C35]"
+              className="rounded-md bg-[#57AE78]"
               activeOpacity={0.7}
               onPress={() => {
                 router.push("/model");
