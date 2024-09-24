@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Text, View, TouchableOpacity, Image, FlatList } from "react-native";
+import { View, FlatList } from "react-native";
 import cars from "../../lib/ford";
 import FirstCarCard from "../FirstCarCard";
 import carType from "../../lib/car-type";
 import CarFilterPill from "../CarFilterPill";
 import Title from "../Title";
-import ProceedArrow from "../ProceedArrow";
+import SeeMore from "../SeeMore";
 
 const NewCars = () => {
   // const navigation = useNavigation();
@@ -47,7 +47,7 @@ const NewCars = () => {
         )}
         keyExtractor={(item) => item.name}
       />
-      <ProceedArrow label="View More New Cars" />
+      <SeeMore label="View More New Cars" />
     </>
   );
 };

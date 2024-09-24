@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { Text, View, TouchableOpacity, Image } from "react-native";
 import icons from "../../constants/icons";
 import Container from "../../components/Container";
 import { Shadow } from "react-native-shadow-2";
-// import 3 from "../../lib/shadow-distance";
 import Button from "../../components/Button";
 import { router } from "expo-router";
+
+
 const Compare = () => {
   const [car1, setCar1] = useState(null);
   const [car2, setCar2] = useState(null);

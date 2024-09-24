@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, FlatList, Image } from "react-native";
+import { View, FlatList } from "react-native";
 import logos from "../../lib/logos";
 import SearchBar from "../../components/SearchBar";
 import Container from "../../components/Container";

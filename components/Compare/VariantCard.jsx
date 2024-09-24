@@ -1,9 +1,8 @@
 import { View, Text } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import { Shadow } from "react-native-shadow-2";
 import { shadowDistance } from "../../lib/shadow-distance";
 import { TouchableOpacity } from "react-native";
-import CustomModal from "../CustomModal";
 
 const VariantCard = ({ variant, isSelected, setIsClicked, value, setModalVisible }) => {
 

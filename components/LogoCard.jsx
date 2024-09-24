@@ -3,7 +3,6 @@ import React from "react";
 import { Shadow } from "react-native-shadow-2";
 import { shadowDistance } from "../lib/shadow-distance";
 import { TouchableOpacity } from "react-native";
-import { useState } from "react";
 import { router } from "expo-router";
 
 const LogoCard = ({ logo, isSelected, setIsClicked, value }) => {

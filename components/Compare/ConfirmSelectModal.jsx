@@ -1,8 +1,6 @@
 import { View, Text, Modal, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import icons from "../../constants/icons";
 import { router } from "expo-router";
-import images from "../../constants/images";
 
 const ConfirmSelectModal = ({ modalVisible, setModalVisible, carSelected }) => {
   return (

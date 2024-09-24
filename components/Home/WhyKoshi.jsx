@@ -1,14 +1,5 @@
-import React, { useRef, useEffect } from "react";
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  ScrollView,
-  Text,
-  Animated,
-  Image,
-  FlatList,
-} from "react-native";
+import React from "react";
+import { View, FlatList } from "react-native";
 import Title from "../Title";
 import reasons from "../../lib/reasons";
 import ReasonsCard from "./ReasonsCard";

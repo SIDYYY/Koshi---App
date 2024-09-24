@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import { TouchableOpacity } from "react-native";
 
 const CarFilterPill = ({ item, handleFrameSelect, activeFrame }) => {

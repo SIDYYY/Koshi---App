@@ -1,6 +1,6 @@
-import { View, Text, Image } from "react-native";
+import { Image } from "react-native";
 import React, { useState } from "react";
-import { Stack, Tabs } from "expo-router";
+import { Tabs } from "expo-router";
 import TabIcon from "../../components/Compare/TabIcon";
 
 const CompareLayout = () => {
@@ -53,7 +53,6 @@ const CompareLayout = () => {
           }}
         />
       </Tabs>
-
     </>
   );
 };

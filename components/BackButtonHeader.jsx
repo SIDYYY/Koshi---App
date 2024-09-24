@@ -1,4 +1,4 @@
-import { View, Text, Image } from "react-native";
+import {  Text, Image } from "react-native";
 import React from "react";
 import icons from "../constants/icons";
 import { TouchableOpacity } from "react-native";

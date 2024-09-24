@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
+import { View, TextInput, Image, TouchableOpacity } from "react-native";
 import icons from "../constants/icons";
 import { useEffect, useState } from "react";
 import ErrorMessage from "./ErrorMessage";

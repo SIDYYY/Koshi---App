@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Text,
-  View,
-  ScrollView,
-  TouchableOpacity,
-  Image,
-  FlatList,
-} from "react-native";
+import { View, FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 import Title from "../Title";
 import CarFilterPill from "../CarFilterPill";
@@ -14,7 +7,7 @@ import LogoCard from "../LogoCard";
 import BodyTypeCard from "../BodyTypeCard";
 import logos from "../../lib/logos";
 import carType from "../../lib/car-type";
-import ProceedArrow from "../ProceedArrow";
+import SeeMore from "../SeeMore";
 
 export default function Popular({ route }) {
   const [activeFrame, setActiveFrame] = useState("Car Makes");
@@ -69,7 +62,7 @@ export default function Popular({ route }) {
           keyExtractor={(item) => item.type}
         />
       )}
-      <ProceedArrow label={`View More ${activeFrame}`} />
+      <SeeMore label={`View More ${activeFrame}`} />
     </>
   );
 }
