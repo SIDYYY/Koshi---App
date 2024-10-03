@@ -6,20 +6,21 @@ import {
   Platform,
   Keyboard,
 } from "react-native";
-import CustomContainer from "@/components/CustomContainer";
+import Container from "@/components/Container";
 import FormInput from "@/components/FormInput";
 import { useEffect, useState } from "react";
 import { router } from "expo-router";
 import icons from "@/constants/icons";
 import { validate } from "../../utils/validation-logic";
-import CustomButton from "@/components/CustomButton";
-import CustomModal from "@/components/CustomModal";
+import Button from "@/components/Button";
+import ConfirmationModal from "@/components/Modals/ConfirmationModal";
 import resetInput from "@/utils/reset-input";
 import toast from "@/utils/toast-message";
-import CustomLoadingSpinner from "@/components/CustomLoadingSpinner";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import Toast from "react-native-toast-message";
 import { signInUser } from "@/lib/supabase";
 import { useUserContext } from "../../context/UserContext";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const SignIn = () => {
   const { authId, setAuthId } = useUserContext();
@@ -115,20 +116,20 @@ const SignIn = () => {
   };
 
   return (
-    <CustomContainer
+    <Container
       scroll={true}
       otherStyles="bg-[#5CB88F]"
       pb={false}
       ph={false}
     >
-      <CustomModal
+      <ConfirmationModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
         status={isSuccessful}
         title="Log-in Successfully!"
         customRoute={"/home"}
       />
-      <CustomLoadingSpinner isLoading={isLoading} label="register" />
+      <LoadingSpinner isLoading={isLoading} label="register" />
       <Text className="mt-2 px-4 mb-14 text-[40px] text-white font-black">
         Sign In
       </Text>
@@ -165,7 +166,7 @@ const SignIn = () => {
           <Text className="text-[#9b9b9b] text-right">Forgot Password?</Text>
         </View>
 
-        <CustomButton label="Log-in" onPress={signInWithEmail} />
+        <Button label="Log-in" onPress={signInWithEmail} />
       </KeyboardAvoidingView>
 
       <View className="bg-white px-4 flex-1">
@@ -175,7 +176,7 @@ const SignIn = () => {
           <View className="w-full flex-1 border-t border-[#EBECEE] max-h-[1px] "></View>
         </View>
         <View className=" justify-between mb-6">
-          <CustomButton
+          <Button
             label="Continue with Google"
             otherStyles="bg-[#E4E7EB]"
             textStyle="text-[#9b9b9b]"
@@ -195,7 +196,7 @@ const SignIn = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </CustomContainer>
+    </Container>
   );
 };
 

@@ -4,7 +4,7 @@ import React from "react";
 const Button = ({
   label,
   otherStyles,
-  transparent = false,
+  buttonCustomBg,
   textStyle,
   withIcon,
   onPress,
@@ -14,10 +14,8 @@ const Button = ({
   return (
     <TouchableOpacity
       className={`${
-        transparent || isLoading ? "bg-[#E4E7EB]" : "bg-[#5CB88F]"
-      }  h-[57px] rounded-lg relative justify-center items-center flex-row space-x-4 mx-4 ${otherStyles} ${
-        disabled ? "bg-[#9b9b9b]" : ""
-      }`}
+        buttonCustomBg || isLoading ? "bg-[#E4E7EB]" : "bg-[#5CB88F]"
+      } h-[57px] rounded-lg relative justify-center items-center flex-row space-x-4 ${otherStyles}`}
       activeOpacity={0.7}
       onPress={onPress}
       disabled={disabled}

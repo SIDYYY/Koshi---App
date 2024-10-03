@@ -6,16 +6,16 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import CustomContainer from "@/components/CustomContainer";
+import Container from "@/components/Container";
 import FormInput from "@/components/FormInput";
-import CustomButton from "@/components/CustomButton";
-import CustomModal from "@/components/CustomModal";
+import Button from "@/components/Button";
+import ConfirmationModal from "@/components/Modals/ConfirmationModal";
 import { router } from "expo-router";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import validationLogic from "@/utils/validation-logic";
 import resetInput from "@/utils/reset-input";
 import toast from "@/utils/toast-message";
-import CustomLoadingSpinner from "@/components/CustomLoadingSpinner";
+import LoadingSpinner from "@/components<LoadingSpinner";
 import { createUser } from "../../lib/supabase";
 import { useUserContext } from "../../context/UserContext";
 
@@ -146,20 +146,20 @@ const SignUp = () => {
   };
 
   return (
-    <CustomContainer
+    <Container
       scroll={true}
       otherStyles="bg-[#5CB88F] px-0"
       pb={false}
       ph={false}
     >
-      <CustomModal
+      <ConfirmationModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
         status={isSuccessful}
         title="Registered Successfully!"
         customRoute={"/home"}
       />
-      <CustomLoadingSpinner isLoading={isLoading} label="register" />
+      <LoadingSpinner isLoading={isLoading} label="register" />
       <Text className="mt-2 mb-14 text-[40px] text-white font-black px-4">
         Sign Up
       </Text>
@@ -261,7 +261,7 @@ const SignUp = () => {
             </TouchableOpacity>
           </View>
 
-          <CustomButton
+          <Button
             label="Create Account"
             otherStyles={`mb-6`}
             buttonCustomBg={!isCheck}
@@ -272,7 +272,7 @@ const SignUp = () => {
           />
         </View>
       </KeyboardAvoidingView>
-    </CustomContainer>
+    </Container>
   );
 };
 

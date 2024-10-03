@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { useUserContext } from "../../context/UserContext";
-import CustomContainer from "../../components/CustomContainer";
+import Container from "../../components/Container";
 import BackButtonHeader from "../../components/BackButtonHeader";
 import icons from "../../constants/icons";
 import SettingsCard from "../../components/Profile/SettingsCard";
@@ -14,7 +14,7 @@ const Profile = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <CustomContainer scroll={true}>
+    <Container scroll={true}>
       <FormModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
@@ -77,7 +77,7 @@ const Profile = () => {
         />
         <LogOutCard />
       </View>
-    </CustomContainer>
+    </Container>
   );
 };
 

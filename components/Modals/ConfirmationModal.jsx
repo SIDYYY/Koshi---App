@@ -1,9 +1,9 @@
 import { View, Text, Modal, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import icons from "../constants/icons";
+import icons from "../../constants/icons";
 import { router } from "expo-router";
 
-const CustomModal = ({
+const ConfirmationModal = ({
   modalVisible,
   setModalVisible,
   status,
@@ -48,4 +48,4 @@ const CustomModal = ({
   );
 };
 
-export default CustomModal;
+export default ConfirmationModal;

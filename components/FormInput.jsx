@@ -1,4 +1,4 @@
-import { View, TextInput, Image, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
 import icons from "../constants/icons";
 import { useEffect, useState } from "react";
 import ErrorMessage from "./ErrorMessage";
@@ -6,20 +6,24 @@ import ErrorMessage from "./ErrorMessage";
 const FormInput = ({
   label = "default",
   placeholder,
-  value,
+  value = "",
   errorMessage,
   onBlur,
   onChangeValue,
   onError,
+  sampleMessage,
+  otherStyles,
 }) => {
   const [hidePassword, setHidePassword] = useState(true);
 
   useEffect(() => {
-    value.length === 0 || value.length > 0 ? onError("") : "";
+    if (value) {
+      value.length === 0 || value.length > 0 ? onError("") : "";
+    }
   }, [value]);
 
   return (
-    <View className="mt-6">
+    <View className={`mt-6 ${otherStyles}`}>
       <View className="relative">
         <TextInput
           onBlur={onBlur}
@@ -41,8 +45,8 @@ const FormInput = ({
           inputMode={
             label === "email"
               ? "email-address"
-              : label === "phone-number"
-              ? "phone-pad"
+              : label === "phone_number"
+              ? "decimal"
               : "default"
           }
           secureTextEntry={label === "password" ? hidePassword : false}
@@ -64,7 +68,17 @@ const FormInput = ({
         )}
       </View>
 
-      <ErrorMessage value={errorMessage} />
+      {errorMessage ? (
+        <ErrorMessage value={errorMessage} />
+      ) : (
+        <Text
+          className={`text-[#9b9b9b] italic ml-2 mt-2 ${
+            !sampleMessage ? "absolute hidden" : ""
+          }`}
+        >
+          {sampleMessage}
+        </Text>
+      )}
     </View>
   );
 };

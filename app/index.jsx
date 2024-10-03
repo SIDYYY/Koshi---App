@@ -1,16 +1,17 @@
 import { View, Text, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import { router } from "expo-router";
-import CustomContainer from "@/components/CustomContainer";
+import Container from "@/components/Container";
 import icons from "@/constants/icons";
 import { useUserContext } from "../context/UserContext";
 import { supabase } from "@/lib/supabase";
-import CustomLoadingSpinner from "@/components/CustomLoadingSpinner";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import CustomModal from "@/components/CustomModal";
 
 const index = () => {
   const { isLoading, setAuthId, user } = useUserContext();
   const [modalVisible, setModalVisible] = useState(false);
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     const checkUserSession = async () => {
@@ -20,16 +21,21 @@ const index = () => {
         console.error("Error fetching session:", error);
         return; // Handle error appropriately (e.g., show a message)
       }
+
       if (data.session != null) {
         const userId = data.session.user.id;
         setAuthId(userId); // Set authId here
-        if (user != null && !isLoading) {
+
+        // Only show modal and redirect if counter is 0 (first time)
+        if (user != null && !isLoading && counter === 0) {
           setModalVisible(true);
           const timer = setTimeout(() => {
             setModalVisible(false);
             router.replace("/home");
           }, 3000);
-          return () => clearTimeout(timer);
+
+          setCounter(1); // Increment the counter to ensure this only happens once
+          return () => clearTimeout(timer); // Clean up timer
         }
       } else {
         if (data.session === null && !isLoading) {
@@ -37,12 +43,32 @@ const index = () => {
         }
       }
     };
+
     checkUserSession();
-  }, [user, isLoading, modalVisible]);
+  }, [user, isLoading]);
+
+  // Reset counter when user signs out or session ends
+  useEffect(() => {
+    const resetCounter = () => {
+      setCounter(0);
+    };
+
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (event === "SIGNED_OUT" || session === null) {
+          resetCounter();
+        }
+      }
+    );
+
+    return () => {
+      authListener?.unsubscribe();
+    };
+  }, []);
 
   return (
-    <CustomContainer otherStyles="bg-[#5CB88F]">
-      <CustomLoadingSpinner
+    <Container otherStyles="bg-[#5CB88F]">
+      <LoadingSpinner
         isLoading={isLoading}
         customText="Checking if you have logged in before"
       />
@@ -69,7 +95,7 @@ const index = () => {
           </Text>
         </View>
       </View>
-    </CustomContainer>
+    </Container>
   );
 };
 

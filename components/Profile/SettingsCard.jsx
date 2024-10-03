@@ -1,7 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import icons from "../../constants/icons";
-import DarkModeCard from "./DarkModeCard";
 import { router } from "expo-router";
 
 const SettingsCard = ({
