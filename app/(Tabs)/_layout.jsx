@@ -1,20 +1,57 @@
+import { Animated, View, Text, Image } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import icons from "../../constants/icons";
-import TabIcon from "../../components/Tabs/TabIcon";
 
 const TabsLayout = () => {
-
+  const TabIcon = ({ icon, color, name, focused }) => {
+    return (
+      <View
+        className={`items-center justify-center relative ${
+          name === "Search" && focused
+            ? "bg-[#5CB88F] w-full h-full rounded-lg absolute bottom-4"
+            : ""
+        }`}
+      >
+        <Image
+          source={icon}
+          className="h-6 w-6"
+          resizeMode="contain"
+          tintColor={name === "Search" && focused ? "#ffffff" : color}
+        />
+        {name != "Search" ? (
+          <Text
+            className={`font-semibold text-4xl absolute -m-5 bottom-0  ${
+              focused ? "text-[#5CB88F]" : "text-white"
+            }`}
+          >
+            .
+          </Text>
+        ) : null}
+      </View>
+    );
+  };
   return (
     <>
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarActiveTintColor: "#ECAE36",
+          tabBarActiveTintColor: "#5CB88F",
           tabBarInactiveTintColor: "#9B9B9B",
           tabBarStyle: {
+            position: "absolute",
             backgroundColor: "#fff",
-            height: 84,
+            borderColor: "#fff",
+            height: 60,
+            width: "92%",
+            marginHorizontal: "4%",
+            marginBottom: 12,
+            borderRadius: 8,
+            shadowColor: "transparent", // iOS: Remove shadow color
+            shadowOpacity: 0, // iOS: Make shadow invisible
+            shadowOffset: { width: 0, height: 0 }, // iOS: Reset shadow offset
+            shadowRadius: 0, // iOS: Remove shadow radius
+            elevation: 0, // Android: Remove elevation (shadow)
           },
         }}
       >
@@ -58,6 +95,21 @@ const TabsLayout = () => {
                 icon={icons.search}
                 color={color}
                 name="Search"
+                focused={focused}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="bestbuy"
+          options={{
+            headerShown: false,
+            title: "Best Buy",
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={icons.cart}
+                color={color}
+                name="Best Buy"
                 focused={focused}
               />
             ),

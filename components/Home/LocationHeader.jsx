@@ -57,7 +57,7 @@ const LocationHeader = () => {
         {address ? (
           <Text>{address}</Text>
         ) : locationError ? (
-          <Text>{locationError}</Text>
+          <Text>Location Not Specified</Text>
         ) : (
           <Text>Fetching location...</Text>
         )}
