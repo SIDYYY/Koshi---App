@@ -20,7 +20,6 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import Toast from "react-native-toast-message";
 import { signInUser } from "@/lib/supabase";
 import { useUserContext } from "../../context/UserContext";
-import LoadingSpinner from "../../components/LoadingSpinner";
 
 const SignIn = () => {
   const { authId, setAuthId } = useUserContext();

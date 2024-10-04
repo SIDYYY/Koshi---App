@@ -1,5 +1,5 @@
 import Toast from "react-native-toast-message";
-import CustomToast from "@/components/CustomToast";
+import CustomToast from "@/components/Toast";
 
 const toastConfig = {
   customToast: ({ text1, text2 }) => (

@@ -15,7 +15,7 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import validationLogic from "@/utils/validation-logic";
 import resetInput from "@/utils/reset-input";
 import toast from "@/utils/toast-message";
-import LoadingSpinner from "@/components<LoadingSpinner";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import { createUser } from "../../lib/supabase";
 import { useUserContext } from "../../context/UserContext";
 

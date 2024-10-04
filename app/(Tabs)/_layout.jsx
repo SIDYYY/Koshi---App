@@ -2,7 +2,34 @@ import { Animated, View, Text, Image } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import icons from "../../constants/icons";
-import { MainTabIcon } from "@/components/TabIcon";
+
+const TabIcon = ({ icon, color, name, focused }) => {
+  return (
+    <View
+      className={`items-center justify-center relative ${
+        name === "Search" && focused
+          ? "bg-[#5CB88F] w-full h-full rounded-lg absolute bottom-4"
+          : ""
+      }`}
+    >
+      <Image
+        source={icon}
+        className="h-6 w-6"
+        resizeMode="contain"
+        tintColor={name === "Search" && focused ? "#ffffff" : color}
+      />
+      {name != "Search" ? (
+        <Text
+          className={`font-semibold text-4xl absolute -m-5 bottom-0  ${
+            focused ? "text-[#5CB88F]" : "text-white"
+          }`}
+        >
+          .
+        </Text>
+      ) : null}
+    </View>
+  );
+};
 
 const TabsLayout = () => {
   return (
@@ -35,7 +62,7 @@ const TabsLayout = () => {
             headerShown: false,
             title: "Home",
             tabBarIcon: ({ color, focused }) => (
-              <MainTabIcon
+              <TabIcon
                 icon={icons.home}
                 color={color}
                 name="Home"
@@ -50,7 +77,7 @@ const TabsLayout = () => {
             headerShown: false,
             title: "Compare",
             tabBarIcon: ({ color, focused }) => (
-              <MainTabIcon
+              <TabIcon
                 icon={icons.compare}
                 color={color}
                 name="Compare "
@@ -65,7 +92,7 @@ const TabsLayout = () => {
             headerShown: false,
             title: "Search",
             tabBarIcon: ({ color, focused }) => (
-              <MainTabIcon
+              <TabIcon
                 icon={icons.search}
                 color={color}
                 name="Search"
@@ -80,7 +107,7 @@ const TabsLayout = () => {
             headerShown: false,
             title: "Best Buy",
             tabBarIcon: ({ color, focused }) => (
-              <MainTabIcon
+              <TabIcon
                 icon={icons.cart}
                 color={color}
                 name="Best Buy"
@@ -95,7 +122,7 @@ const TabsLayout = () => {
             headerShown: false,
             title: "Profile",
             tabBarIcon: ({ color, focused }) => (
-              <MainTabIcon
+              <TabIcon
                 icon={icons.profile}
                 color={color}
                 name="Profile"

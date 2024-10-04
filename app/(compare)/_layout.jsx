@@ -1,7 +1,7 @@
-import { Image } from "react-native";
+import { View, Text } from "react-native";
 import React, { useState } from "react";
 import { Tabs } from "expo-router";
-import TabIcon from "../../components/Compare/TabIcon";
+
 
 const CompareLayout = () => {
   const [carChosen, setCarChosen] = useState({
@@ -9,6 +9,23 @@ const CompareLayout = () => {
     model: "",
     variant: "",
   });
+  const TabIcon = ({ name, focused }) => {
+    return (
+      <View
+        className={`items-center justify-center gap-2 h-[90%] w-full ${
+          focused ? "border-t-4 border-[#ECAE36]" : null
+        }`}
+      >
+        <Text
+          className={`${
+            focused ? "font-black text-[#ECAE36]" : "font-normal text-[#9b9b9b]"
+          } text-base uppercase`}
+        >
+          {name}
+        </Text>
+      </View>
+    );
+  };
 
   return (
     <>

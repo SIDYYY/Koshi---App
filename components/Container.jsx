@@ -20,6 +20,7 @@ const Container = ({
             paddingHorizontal: ph ? 14 : 0,
             position: "relative",
             paddingBottom: pb ? 85 : 0,
+            backgroundColor: "#f7f7f7",
           }}
         >
           {children}

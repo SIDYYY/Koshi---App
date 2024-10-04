@@ -13,8 +13,8 @@ const Home = () => {
       <LocationHeader />
       <Banner />
       <SearchBar />
-      <NewCars />
       <BrandAndBodyType />
+      <NewCars />
       <WhyKoshi />
     </Container>
   );

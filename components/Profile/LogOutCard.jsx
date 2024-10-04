@@ -1,9 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import icons from "../../constants/icons";
-import { router } from "expo-router";
-import { supabase } from "../../lib/supabase";
-import CustomModal from "../CustomModal";
 import LogOutModal from "../Modals/LogOutModal";
 const LogOutCard = () => {
   const [modalVisible, setModalVisible] = useState(false);

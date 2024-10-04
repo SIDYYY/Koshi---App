@@ -6,7 +6,7 @@ import icons from "@/constants/icons";
 import { useUserContext } from "../context/UserContext";
 import { supabase } from "@/lib/supabase";
 import LoadingSpinner from "@/components/LoadingSpinner";
-import CustomModal from "@/components/CustomModal";
+import CustomModal from "@/components/Modals/ConfirmationModal";
 
 const index = () => {
   const { isLoading, setAuthId, user } = useUserContext();
@@ -47,24 +47,6 @@ const index = () => {
     checkUserSession();
   }, [user, isLoading]);
 
-  // Reset counter when user signs out or session ends
-  useEffect(() => {
-    const resetCounter = () => {
-      setCounter(0);
-    };
-
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        if (event === "SIGNED_OUT" || session === null) {
-          resetCounter();
-        }
-      }
-    );
-
-    return () => {
-      authListener?.unsubscribe();
-    };
-  }, []);
 
   return (
     <Container otherStyles="bg-[#5CB88F]">
