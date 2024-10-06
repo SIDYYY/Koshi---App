@@ -138,7 +138,7 @@ const SignIn = () => {
       >
         <View className="mb-4 space-y-2">
           <Text className="text-2xl font-black">Welcome Back!</Text>
-          <Text className="text-base text-[#9b9b9b]">
+          <Text className="text-base text-gray">
             Please Log-in your credentials
           </Text>
         </View>
@@ -162,7 +162,7 @@ const SignIn = () => {
           onError={(text) => setData("passwordError", text)}
         />
         <View className="pb-8 pt-4">
-          <Text className="text-[#9b9b9b] text-right">Forgot Password?</Text>
+          <Text className="text-gray text-right">Forgot Password?</Text>
         </View>
 
         <Button label="Log-in" onPress={signInWithEmail} />
@@ -170,15 +170,14 @@ const SignIn = () => {
 
       <View className="bg-white px-4 flex-1">
         <View className="flex-row space-x-2  items-center my-8">
-          <View className="w-full flex-1 border-t border-[#EBECEE] max-h-[1px]"></View>
+          <View className="w-full flex-1 border-t border-light_grey_border max-h-[1px]"></View>
           <Text className="text-[#9b9b9b] text-center">OR CONTINUE WITH</Text>
-          <View className="w-full flex-1 border-t border-[#EBECEE] max-h-[1px] "></View>
+          <View className="w-full flex-1 border-t border-light_grey_border max-h-[1px] "></View>
         </View>
         <View className=" justify-between mb-6">
           <Button
             label="Continue with Google"
-            otherStyles="bg-[#E4E7EB]"
-            textStyle="text-[#9b9b9b]"
+            otherStyles="bg-light_grey"
             icon={icons.googleIcon}
             disabled={true}
           />
@@ -189,7 +188,7 @@ const SignIn = () => {
               router.push("/sign-up");
             }}
           >
-            <Text className="text-center mt-8 text-base text-[#5CB88F] font-bold">
+            <Text className="text-center mt-8 text-base text-green font-bold">
               Create an Account
             </Text>
           </TouchableOpacity>

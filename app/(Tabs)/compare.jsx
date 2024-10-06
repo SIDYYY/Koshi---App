@@ -2,15 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Text, View, TouchableOpacity, Image } from "react-native";
 import icons from "../../constants/icons";
 import Container from "../../components/Container";
-import { Shadow } from "react-native-shadow-2";
 import Button from "../../components/Button";
 import { router } from "expo-router";
-
+import SelectCar from "../../components/Compare/SelectCar";
 
 const Compare = () => {
   const [car1, setCar1] = useState(null);
   const [car2, setCar2] = useState(null);
-  const [isComplete, setIsComplete] = useState(false)
+  const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
     const { car, slot } = {};
@@ -23,10 +22,6 @@ const Compare = () => {
     }
   }, []);
 
-  const handleSelectCar = (slot) => {
-    router.push('/brand')
-  };
-
   const handleComparePress = () => {
     if (car1 && car2) {
       navigation.navigate("Both", { car1, car2 });
@@ -36,59 +31,28 @@ const Compare = () => {
   };
 
   return (
-    <Container centerContent={true}>
-      <View className="items-center">
-        <Text className="font-black text-2xl">Car Comparison Tool</Text>
-        <Text className="max-w-[90%] text-base text-center mt-2">
-          Not decided on a new vehicle yet? You can compare 2 cars using our
-          dynamic car comparison tool.
-        </Text>
-      </View>
+    <Container centerContent={true} pb={false}>
+      <View className="">
+        <View className="items-center">
+          <Text className="font-black text-2xl">Car Comparison Tool</Text>
+          <Text className="max-w-[90%] text-base text-center mt-2">
+            Not decided on a new vehicle yet? You can compare 2 cars using our
+            dynamic car comparison tool.
+          </Text>
+        </View>
 
-      <View className="flex-row  justify-center mb-8 mt-14">
-        <Shadow className="p-8 rounded-lg mr-8" distance={3}>
-          <TouchableOpacity
-            onPress={() => handleSelectCar(1)}
-            className="gap-4"
-          >
-            {car1 ? (
-              <Image source={{ uri: car1.image }} style={styles.carImage} />
-            ) : (
-              <Image
-                source={icons.plus1}
-                className="w-20 h-20"
-                resizeMode="contain"
-              />
-            )}
-            <Text>{car1 ? car1.model : "Select Car 1"}</Text>
-          </TouchableOpacity>
-        </Shadow>
-        {/* py-8 flex-1 border justify-center items-center space-y-2 */}
-        <Shadow className="p-8 rounded-lg" distance={3}>
-          <TouchableOpacity
-            onPress={() => handleSelectCar(1)}
-            className="gap-4"
-          >
-            {car1 ? (
-              <Image source={{ uri: car1.image }} style={styles.carImage} />
-            ) : (
-              <Image
-                source={icons.plus1}
-                className="w-20 h-20"
-                resizeMode="contain"
-              />
-            )}
-            <Text>{car1 ? car1.model : "Select Car 1"}</Text>
-          </TouchableOpacity>
-        </Shadow>
-      </View>
+        <View className="flex-row justify-between mb-8 mt-10">
+          <SelectCar />
+          <SelectCar />
+        </View>
 
-      <Button
-        label="Compare Cars"
-        onPress={handleComparePress}
-        disabled={true}
-        complete={isComplete}
-      />
+        <Button
+          label="Compare Cars"
+          onPress={handleComparePress}
+          disabled={true}
+          complete={isComplete}
+        />
+      </View>
     </Container>
   );
 };

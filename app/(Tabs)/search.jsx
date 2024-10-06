@@ -10,7 +10,7 @@ import icons from '../../constants/icons'
 const Search = () => {
   return (
     <Container centerContent={true}>
-      <View className="space-y-14">
+      <View className="space-y-14 my-auto">
         <View className="items-center space-y-2">
           <Text className="text-3xl font-black">Looking for a car?</Text>
           <Text className="max-w-[300px] text-center text-[#9b9b9b] text-base">

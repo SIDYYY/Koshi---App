@@ -26,23 +26,24 @@ export default function List() {
   // };
 
   return (
-    <Container>
+    <Container pb={false}>
       <BackButtonHeader title="Choose a Car for Comparison" />
-      <SearchBar otherStyles="mx-4" />
+      <SearchBar otherStyles="mt-6" />
       <View>
         <Title text="Select A Brand" />
         <FlatList
           contentContainerStyle={{
             alignItems: "center",
             gap: 14,
-            paddingBottom: 200,
             paddingTop: 24,
+            paddingBottom: 16
           }}
           data={logos}
+          scrollEnabled={false}
           numColumns={3}
           renderItem={({ item }) => (
             <View className="flex-1 basis-[115px] items-center">
-              <LogoCard logo={item} setIsClicked={setIsClicked} isSelected={isClicked === item.name} value={isClicked} />
+              <LogoCard logo={item} setIsClicked={setIsClicked} />
             </View>
           )}
           keyExtractor={(item) => item.name}

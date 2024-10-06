@@ -13,12 +13,12 @@ const CompareLayout = () => {
     return (
       <View
         className={`items-center justify-center gap-2 h-[90%] w-full ${
-          focused ? "border-t-4 border-[#ECAE36]" : null
+          focused ? "border-t-2 border-green" : null
         }`}
       >
         <Text
           className={`${
-            focused ? "font-black text-[#ECAE36]" : "font-normal text-[#9b9b9b]"
+            focused ? "font-black text-green" : "font-normal text-[#9b9b9b]"
           } text-base uppercase`}
         >
           {name}
@@ -32,10 +32,11 @@ const CompareLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarActiveTintColor: "#ECAE36",
+          tabBarActiveTintColor: "#5CB88F",
           tabBarInactiveTintColor: "#9B9B9B",
           tabBarStyle: {
-            height: 40,
+            height: 50,
+
           },
         }}
       >

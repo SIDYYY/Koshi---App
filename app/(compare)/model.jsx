@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import Container from "../../components/Container";
 import BackButtonHeader from "../../components/BackButtonHeader";
 import SmallTitle from "../../components/Compare/SmallTitle";
@@ -9,7 +9,8 @@ import ford from "../../lib/ford";
 import ModelCarCard from "../../components/Compare/ModelCarCard";
 
 const CarModel = () => {
-  const [isClicked, setIsClicked] = useState("");
+  const [showCardById, setShowCardById] = useState(1);
+
   // const { brand, slot } = route?.params || {};
   // const models = carModels[brand] || [];
   // const [search, setSearch] = useState('');
@@ -32,11 +33,10 @@ const CarModel = () => {
   // );
 
   return (
-    <Container>
+    <Container pb={false}>
       <BackButtonHeader title="Choose a Car for Comparison" />
-      <SearchBar otherStyles="mx-4" />
+      <SearchBar otherStyles="mt-6" />
       <SmallTitle text="Select a Model" previous="Brand" />
-
       <FlatList
         data={ford}
         contentContainerStyle={{
@@ -45,13 +45,14 @@ const CarModel = () => {
         renderItem={({ item }) => (
           <ModelCarCard
             model={item}
-            setIsClicked={setIsClicked}
-            isSelected={isClicked === item.name}
-            value={isClicked}
-            clickable={true}
+            isShown={showCardById === item.id}
+            onToggle={() =>
+              setShowCardById(showCardById === item.id ? null : item.id)
+            }
           />
         )}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item) => item.id}
+        scrollEnabled={false}
       />
     </Container>
   );

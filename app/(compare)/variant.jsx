@@ -32,6 +32,7 @@ const Variant = () => {
   // };
 
   const model = {
+    name: 'Ford Everest',
     variant: "2.0L Turbo Trend 4x2 AT",
     bodyType: "SUV",
     price: "₱ 1,829,000",
@@ -50,7 +51,7 @@ const Variant = () => {
     };
 
   return (
-    <Container>
+    <Container pb={false} >
       <BackButtonHeader title="Choose a Car for Comparison" />
       <SearchBar otherStyles="mx-4" />
       <SmallTitle text="Model Chosen" previous="Model" />
@@ -61,6 +62,7 @@ const Variant = () => {
           paddingTop: 24,
         }}
         data={everest}
+        scrollEnabled={false}
         renderItem={({ item }) => (
           <VariantCard
             variant={item}
@@ -68,6 +70,7 @@ const Variant = () => {
             isSelected={isClicked === item.variant}
             setModalVisible={setModalVisible}
             value={isClicked}
+          
           />
         )}
         keyExtractor={(item) => item.variant}

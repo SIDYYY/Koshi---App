@@ -14,7 +14,7 @@ const Button = ({
   return (
     <TouchableOpacity
       className={`${
-        isLoading || !complete ? "bg-[#E4E7EB]" : "bg-[#5CB88F]"
+        isLoading || !complete ? "bg-light_grey" : "bg-green"
       } h-[57px] rounded-lg relative justify-center items-center flex-row space-x-4 ${otherStyles}`}
       activeOpacity={0.7}
       onPress={onPress}
@@ -32,7 +32,7 @@ const Button = ({
       )}
       <Text
         className={`text-base font-bold text-center ${
-          !complete || isLoading ? "text-[#9b9b9b]" : "text-white"
+          !complete || isLoading ? "text-gray" : "text-white"
         }`}
       >
         {label}

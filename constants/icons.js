@@ -27,7 +27,7 @@ import seller from "../assets/icons/seller.png";
 import plus from "../assets/icons/plus.png";
 import longArrow from '../assets/icons/arrow-long.png'
 import plus1 from "../assets/icons/plus1.png";
-
+import settings from '../assets/icons/settings.png'
 
 export default {
   arrow,
@@ -58,5 +58,6 @@ export default {
   mitsubishi,
   nissan,
   change,
-  longArrow
+  longArrow,
+  settings
 };

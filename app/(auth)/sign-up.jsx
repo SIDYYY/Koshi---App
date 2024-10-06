@@ -167,7 +167,7 @@ const SignUp = () => {
 
       <View className="pb-4 px-4 pt-8 space-y-2 rounded-tl-3xl rounded-tr-3xl bg-white">
         <Text className="text-2xl font-black">Create an Account</Text>
-        <Text className="text-base text-[#9b9b9b]">
+        <Text className="text-base text-gray">
           Please provide your details
         </Text>
       </View>
@@ -254,7 +254,7 @@ const SignUp = () => {
             >
               <Text
                 className={`text-base ${
-                  isCheck ? "text-[#5CB88F]" : "text-[#9b9b9b]"
+                  isCheck ? "text-green" : "text-gray"
                 }`}
               >
                 Agree to terms & conditions
