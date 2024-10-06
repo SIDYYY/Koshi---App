@@ -5,7 +5,7 @@ import icons from "../constants/icons";
 const SearchBar = ({otherStyles}) => {
   return (
     <View
-      className={`border border-[#9b9b9b] mt-8 h-14 rounded-full justify-center px-4 flex-row mx-4 ${otherStyles}`}
+      className={`bg-white h-14 rounded-lg justify-center px-4 flex-row ${otherStyles}`}
     >
       <TextInput
         className="text-sm flex-1"

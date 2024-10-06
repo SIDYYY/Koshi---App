@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, Text, Image } from "react-native";
 import cars from "../../lib/ford";
 import FirstCarCard from "../FirstCarCard";
-import carType from "../../lib/car-type";
-import CarFilterPill from "../CarFilterPill";
 import Title from "../Title";
 import SeeMore from "../SeeMore";
+import icons from "../../constants/icons";
 
 const NewCars = () => {
   // const navigation = useNavigation();
@@ -21,34 +20,17 @@ const NewCars = () => {
   };
 
   return (
-    <>
-      <Title title="Popular New Cars" />
-      <FlatList
-        data={carType}
-        horizontal={true}
-        renderItem={({ item }) => (
-          <View className="mt-3">
-            <CarFilterPill
-              item={item}
-              handleFrameSelect={handleFrameSelect}
-              activeFrame={activeFrame}
-            />
-          </View>
-        )}
-        keyExtractor={(item) => item.id}
-      />
+    <View className="">
+      <Title title="Popular Cars" /> 
       <FlatList
         data={cars}
         horizontal={true}
-        renderItem={({ item }) => (
-          <View className="mt-6 py-2 mx-3">
-            <FirstCarCard car={item} />
-          </View>
-        )}
+        renderItem={({ item }) => <FirstCarCard car={item} />}
+        className="-mx-[14px]"
         keyExtractor={(item) => item.name}
+        contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
       />
-      <SeeMore label="View More New Cars" />
-    </>
+    </View>
   );
 };
 export default NewCars;

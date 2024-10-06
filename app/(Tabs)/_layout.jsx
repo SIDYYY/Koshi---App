@@ -8,7 +8,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
     <View
       className={`items-center justify-center relative ${
         name === "Search" && focused
-          ? "bg-[#5CB88F] w-full h-full rounded-lg absolute bottom-4"
+          ? "bg-[#ECAE36] w-full h-full rounded-lg absolute bottom-4"
           : ""
       }`}
     >
@@ -21,7 +21,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
       {name != "Search" ? (
         <Text
           className={`font-semibold text-4xl absolute -m-5 bottom-0  ${
-            focused ? "text-[#5CB88F]" : "text-white"
+            focused ? "text-[#ECAE36]" : "text-white"
           }`}
         >
           .
@@ -37,7 +37,7 @@ const TabsLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarActiveTintColor: "#5CB88F",
+          tabBarActiveTintColor: "#ECAE36",
           tabBarInactiveTintColor: "#9B9B9B",
           tabBarStyle: {
             position: "absolute",

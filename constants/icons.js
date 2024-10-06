@@ -25,6 +25,7 @@ import deleteIcon from "../assets/icons/delete.png";
 import logout from "../assets/icons/logout.png";
 import seller from "../assets/icons/seller.png";
 import plus from "../assets/icons/plus.png";
+import longArrow from '../assets/icons/arrow-long.png'
 import plus1 from "../assets/icons/plus1.png";
 
 
@@ -57,4 +58,5 @@ export default {
   mitsubishi,
   nissan,
   change,
+  longArrow
 };

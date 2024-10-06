@@ -11,7 +11,7 @@ const Container = ({
   ph = true,
 }) => {
   return (
-    <SafeAreaView className={`bg-[#f7f7f7] pt-6  flex-1 h-full ${otherStyles}`}>
+    <SafeAreaView className={`bg-[#F3F5F7] pt-6  flex-1 h-full ${otherStyles}`}>
       <StatusBar style="dark" />
       {scroll ? (
         <ScrollView
@@ -20,7 +20,7 @@ const Container = ({
             paddingHorizontal: ph ? 14 : 0,
             position: "relative",
             paddingBottom: pb ? 85 : 0,
-            backgroundColor: "#f7f7f7",
+            backgroundColor: "#F3F5F7",
           }}
         >
           {children}

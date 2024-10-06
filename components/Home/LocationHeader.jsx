@@ -50,7 +50,7 @@ const LocationHeader = () => {
     fetchLocation();
   }, []);
   return (
-    <View className="flex-row px-4 space-x-4">
+    <View className="flex-row space-x-4">
       <Image className="w-6 h-9" source={icons.location} resizeMode="contain" />
       <View>
         <Text className="text-xs text-[#9b9b9b]">Your Current Location</Text>

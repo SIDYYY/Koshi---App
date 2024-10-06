@@ -1,20 +1,21 @@
-import { Text, Image } from "react-native";
+import { Text, Image, View } from "react-native";
 import React from "react";
-import { Shadow } from "react-native-shadow-2";
-import { shadowDistance } from "../../lib/shadow-distance";
 
 const ReasonsCard = ({ reasons }) => {
   return (
-    <Shadow className="max-w-[250px] rounded-lg p-4" distance={shadowDistance}>
-      <Image
-        source={{ uri: reasons.icon }}
-        className="h-10 w-10"
-        resizeMode="contain"
-        tintColor="#ECAE36"
-      />
+    <View className="max-w-[250px] rounded-lg p-4 bg-white">
+      <View className={`item h-14 w-14 rounded-full bg-[${reasons.bgColor}]`}>
+        <Image
+          source={{ uri: reasons.icon }}
+          className="h-8 w-8 m-auto"
+          resizeMode="contain"
+          tintColor={reasons.iconColor}
+        />
+      </View>
+
       <Text className="font-black text-xl mt-4">{reasons.text}</Text>
       <Text className="mt-2">{reasons.description}</Text>
-    </Shadow>
+    </View>
   );
 };
 

@@ -25,16 +25,14 @@ const WhyKoshi = () => {
   //   }, []);
   return (
     <>
-      <Title title="Why Koshi?" />
+      <Title title="Why Koshi?" more={false} />
       <FlatList
         data={reasons}
         horizontal={true}
-        renderItem={({ item }) => (
-          <View className="mt-4 py-2 mx-3 mb-10">
-            <ReasonsCard reasons={item} />
-          </View>
-        )}
-        keyExtractor={(item) => item.text}
+        renderItem={({ item }) => <ReasonsCard reasons={item} />}
+        className="-mx-4"
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
       />
       {/* Contact Information Section */}
       {/* <Text>Contact Us</Text>
