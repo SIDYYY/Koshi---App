@@ -5,28 +5,20 @@ import icons from "../../constants/icons";
 
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
-    <View
-      className={`items-center justify-center relative ${
-        name === "Search" && focused
-          ? "bg-[#ECAE36] w-full h-full rounded-lg absolute bottom-4"
-          : ""
-      }`}
-    >
+    <View className={`items-center justify-center relative `}>
       <Image
         source={icon}
         className="h-6 w-6"
         resizeMode="contain"
-        tintColor={name === "Search" && focused ? "#ffffff" : color}
+        tintColor={color}
       />
-      {name != "Search" ? (
-        <Text
-          className={`font-semibold text-4xl absolute -m-5 bottom-0  ${
-            focused ? "text-[#ECAE36]" : "text-white"
-          }`}
-        >
-          .
-        </Text>
-      ) : null}
+      <Text
+        className={`font-semibold text-4xl absolute -m-5 bottom-0  ${
+          focused ? "text-[#5CB88F]" : "text-white"
+        }`}
+      >
+        .
+      </Text>
     </View>
   );
 };
@@ -37,8 +29,9 @@ const TabsLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarActiveTintColor: "#ECAE36",
+          tabBarActiveTintColor: "#5CB88F",
           tabBarInactiveTintColor: "#9B9B9B",
+          tabBarHideOnKeyboard: true,
           tabBarStyle: {
             position: "absolute",
             backgroundColor: "#fff",

@@ -10,6 +10,7 @@ import { router } from "expo-router";
 const Compare = () => {
   const [car1, setCar1] = useState(null);
   const [car2, setCar2] = useState(null);
+  const [isComplete, setIsComplete] = useState(false)
 
   useEffect(() => {
     const { car, slot } = {};
@@ -35,7 +36,7 @@ const Compare = () => {
   };
 
   return (
-    <Container scroll={true} centerContent={true}>
+    <Container centerContent={true}>
       <View className="items-center">
         <Text className="font-black text-2xl">Car Comparison Tool</Text>
         <Text className="max-w-[90%] text-base text-center mt-2">
@@ -86,7 +87,7 @@ const Compare = () => {
         label="Compare Cars"
         onPress={handleComparePress}
         disabled={true}
-        otherStyles="bg-black"
+        complete={isComplete}
       />
     </Container>
   );

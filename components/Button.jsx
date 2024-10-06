@@ -4,30 +4,35 @@ import React from "react";
 const Button = ({
   label,
   otherStyles,
-  buttonCustomBg,
-  textStyle,
-  withIcon,
+  complete = true,
+  icon,
   onPress,
   disabled = false,
-  isLoading,
+  isLoading = false,
+  iconTint,
 }) => {
   return (
     <TouchableOpacity
       className={`${
-        buttonCustomBg || isLoading ? "bg-[#E4E7EB]" : "bg-[#5CB88F]"
+        isLoading || !complete ? "bg-[#E4E7EB]" : "bg-[#5CB88F]"
       } h-[57px] rounded-lg relative justify-center items-center flex-row space-x-4 ${otherStyles}`}
       activeOpacity={0.7}
       onPress={onPress}
       disabled={disabled}
     >
-      {withIcon ? (
-        <Image source={withIcon} className="h-6 w-6" resizeMode="contain" />
+      {icon ? (
+        <Image
+          source={icon}
+          className="h-6 w-6"
+          resizeMode="contain"
+          tintColor={!complete ? "#9b9b9b" : iconTint}
+        />
       ) : (
         ""
       )}
       <Text
         className={`text-base font-bold text-center ${
-          textStyle || isLoading ? "text-[#9b9b9b]" : "text-white"
+          !complete || isLoading ? "text-[#9b9b9b]" : "text-white"
         }`}
       >
         {label}

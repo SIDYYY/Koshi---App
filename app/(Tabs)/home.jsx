@@ -10,7 +10,7 @@ import { Text, View, Image } from "react-native";
 
 const Home = () => {
   return (
-    <Container scroll={true}>
+    <Container>
       <View className="mb-8">
         <View className="flex-row items-center space-x-4">
           <View className="w-14 h-14 bg-[#9b9b9b] rounded-full" />

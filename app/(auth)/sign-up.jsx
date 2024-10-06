@@ -265,7 +265,6 @@ const SignUp = () => {
           <Button
             label="Create Account"
             otherStyles={`mb-6`}
-            buttonCustomBg={!isCheck}
             textStyle={!isCheck}
             disabled={!isCheck ? true : false}
             onPress={signUpUser}

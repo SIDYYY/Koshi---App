@@ -179,7 +179,7 @@ const SignIn = () => {
             label="Continue with Google"
             otherStyles="bg-[#E4E7EB]"
             textStyle="text-[#9b9b9b]"
-            withIcon={icons.googleIcon}
+            icon={icons.googleIcon}
             disabled={true}
           />
           <TouchableOpacity

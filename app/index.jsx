@@ -49,7 +49,7 @@ const index = () => {
 
 
   return (
-    <Container otherStyles="bg-[#5CB88F]">
+    <Container bg="#5CB88F">
       <LoadingSpinner
         isLoading={isLoading}
         customText="Checking if you have logged in before"
