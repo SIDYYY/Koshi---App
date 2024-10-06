@@ -148,7 +148,8 @@ const SignUp = () => {
   return (
     <Container
       scroll={true}
-      otherStyles="bg-[#5CB88F] px-0"
+      bg="#5CB88F"
+      otherStyles="px-0"
       pb={false}
       ph={false}
     >

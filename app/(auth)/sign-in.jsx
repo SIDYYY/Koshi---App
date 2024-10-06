@@ -117,7 +117,7 @@ const SignIn = () => {
   return (
     <Container
       scroll={true}
-      otherStyles="bg-[#5CB88F]"
+      bg="#5CB88F"
       pb={false}
       ph={false}
     >
