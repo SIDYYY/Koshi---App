@@ -7,33 +7,34 @@ const Container = ({
   children,
   scroll = true,
   otherStyles = null,
-  bg,
-  pb = true,
-  ph = true,
-  centerContent
+  bg = "#F3F5F7",
+  pb = 85,
+  ph = 14,
+  centerContent,
 }) => {
   return (
     <SafeAreaView
-      className={`bg-[${
-        bg ? bg : "#F3F5F7"
-      }] pt-6  flex-1 h-full ${otherStyles}`}
+      className={`flex-1 h-full bg-[${bg}] ${otherStyles}`}
     >
       <StatusBar style="dark" />
       {scroll ? (
         <ScrollView
           contentContainerStyle={{
             minHeight: "100%",
-            paddingHorizontal: ph ? 14 : 0,
+            paddingHorizontal: ph,
             position: "relative",
-            paddingBottom: pb ? 85 : 0,
-            backgroundColor: bg ? bg : "#F3F5F7",
-            justifyContent: centerContent ? 'center' : null
+            paddingBottom: pb,
+            backgroundColor: bg,
+            justifyContent: centerContent ? "center" : null,
+            paddingTop: 24,
           }}
         >
           {children}
         </ScrollView>
       ) : (
-        <View className={`min-h-[100%] px-[14px] relative ${pb ? "pb-[85px]" : ''}`}>
+        <View
+          className={`min-h-[100%] px-[14px] relative ${pb ? "pb-[85px]" : ""}`}
+        >
           {children}
         </View>
       )}

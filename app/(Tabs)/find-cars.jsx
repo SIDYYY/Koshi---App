@@ -6,7 +6,7 @@ import Button from "../../components/Button";
 import icons from "../../constants/icons";
 import { router } from "expo-router";
 
-const Search = () => {
+const FindCars = () => {
   const inputRef = useRef(null);
   const [searchText, setSearchText] = useState("");
 
@@ -47,10 +47,10 @@ const Search = () => {
           <View>
             <SearchBar
               otherStyles="mb-6"
-              searchIcon={false}
+              // searchIcon={false}
               ref={inputRef}
-              onChangeText={(text) => setSearchText(text)}
-              value={searchText}              
+              // onChangeText={(text) => setSearchText(text)}
+              // value={searchText}              
             />
             <Button
               label="Find Cars Now"
@@ -72,4 +72,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default FindCars;

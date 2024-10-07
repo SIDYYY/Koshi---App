@@ -4,10 +4,10 @@ import icons from "../constants/icons";
 import { TouchableOpacity } from "react-native";
 import { router } from "expo-router";
 
-const BackButtonHeader = ({ title }) => {
+const BackButtonHeader = ({ title, otherStyles }) => {
   return (
     <TouchableOpacity
-      className="flex-row items-center mt-2"
+      className={`flex-row items-center mt-2 ${otherStyles}`}
       activeOpacity={0.7}
       onPress={() => router.back()}
     >

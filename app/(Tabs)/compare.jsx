@@ -31,7 +31,7 @@ const Compare = () => {
   };
 
   return (
-    <Container centerContent={true} >
+    <Container>
       <View className="my-auto">
         <View className="items-center">
           <Text className="font-black text-2xl">Car Comparison Tool</Text>

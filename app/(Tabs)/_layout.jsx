@@ -80,7 +80,7 @@ const TabsLayout = () => {
           }}
         />
         <Tabs.Screen
-          name="search"
+          name="find-cars"
           options={{
             headerShown: false,
             title: "Search",
@@ -95,7 +95,7 @@ const TabsLayout = () => {
           }}
         />
         <Tabs.Screen
-          name="bestbuy"
+          name="best-buy"
           options={{
             headerShown: false,
             title: "Best Buy",
