@@ -1,17 +1,16 @@
 import { View, TextInput, Image } from "react-native";
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import icons from "../constants/icons";
 import { router, usePathname } from "expo-router";
 import { TouchableOpacity } from "react-native";
 
 const SearchBar = forwardRef(
-  ({ otherStyles, searchIcon = true, onChangeText, value }, ref) => {
+  ({ otherStyles, searchIcon = true, query, setQuery }, ref) => {
     const [isFocused, setIsFocused] = useState(false);
     const pathname = usePathname();
-    const [query, setQuery] = useState("");
     return (
       <View
-        className={`bg-white h-14 rounded-lg justify-center px-4 flex-row ${otherStyles} ${
+        className={`bg-white h-14 rounded-lg justify-center px-4 flex-row relative ${otherStyles} ${
           isFocused ? "border border-green" : ""
         }`}
       >
@@ -27,15 +26,15 @@ const SearchBar = forwardRef(
         />
         {searchIcon ? (
           <TouchableOpacity
-          className=""
+            className=""
             onPress={() => {
               if (!query) {
                 return;
               }
-              if (pathname.startsWith('/search')) {                
-                router.setParams({query})                
+              if (pathname.startsWith("/search")) {
+                router.setParams({ query });
               } else {
-                router.push(`/search/${query}`)
+                router.push(`/search/${query}`);
               }
             }}
           >
