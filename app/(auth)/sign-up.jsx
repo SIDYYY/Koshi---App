@@ -12,7 +12,7 @@ import Button from "@/components/Button";
 import ConfirmationModal from "@/components/Modals/ConfirmationModal";
 import { router } from "expo-router";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
-import validationLogic from "@/utils/validation-logic";
+import { validate } from "@/utils/validation-logic";
 import resetInput from "@/utils/reset-input";
 import toast from "@/utils/toast-message";
 import LoadingSpinner from "@/components/LoadingSpinner";
@@ -64,7 +64,7 @@ const SignUp = () => {
 
   //Checks the input of our form if it qualifies the simple validation we made located in "@/utils/validation-logic" and then updates the validation text depending on what is returned from the validation-logic file
   const checkInput = (data, { type = "default", errorType }) => {
-    const value = validationLogic.validate(data, type);
+    const value = validate(data, type);
     if (value) {
       setFormData((prev) => ({
         ...prev,
@@ -167,9 +167,7 @@ const SignUp = () => {
 
       <View className="pb-4 px-4 pt-8 space-y-2 rounded-tl-3xl rounded-tr-3xl bg-white">
         <Text className="text-2xl font-black">Create an Account</Text>
-        <Text className="text-base text-gray">
-          Please provide your details
-        </Text>
+        <Text className="text-base text-gray">Please provide your details</Text>
       </View>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -253,9 +251,7 @@ const SignUp = () => {
               onPress={() => setIsCheck(!isCheck)}
             >
               <Text
-                className={`text-base ${
-                  isCheck ? "text-green" : "text-gray"
-                }`}
+                className={`text-base ${isCheck ? "text-green" : "text-gray"}`}
               >
                 Agree to terms & conditions
               </Text>

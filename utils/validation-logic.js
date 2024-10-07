@@ -4,7 +4,7 @@ export const validate = (value, type = "default") => {
   //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   if (value === "" || value.length === 0) {
-    return "Please fill out this field.";
+    return "This field is required";
   }
   if (value.length < 3) {
     return "The input is too short. Please enter at least 3 characters.";

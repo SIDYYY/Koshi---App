@@ -7,8 +7,8 @@ const Button = ({
   complete = true,
   icon,
   onPress,
-  disabled = false,
-  isLoading = false,
+  disabled,
+  isLoading,
   iconTint,
 }) => {
   return (

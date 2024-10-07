@@ -1,13 +1,14 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
-import { TouchableOpacity } from 'react-native';
-import icons from '../../constants/icons';
-import { router } from 'expo-router';
+import { View, Text, Image } from "react-native";
+import React from "react";
+import { TouchableOpacity } from "react-native";
+import icons from "../../constants/icons";
+import { router } from "expo-router";
 
-const SelectCar = ({car}) => {
+const SelectCar = ({ car }) => {
   return (
     <TouchableOpacity
-      onPress={() => router.push('/brand')}
+      activeOpacity={0.7}
+      onPress={() => router.push("/brand")}
       className="space-y-4 p-9 rounded-lg bg-white"
     >
       {car ? (
@@ -23,6 +24,6 @@ const SelectCar = ({car}) => {
       <Text>{car ? car.model : "Select Car 1"}</Text>
     </TouchableOpacity>
   );
-}
+};
 
-export default SelectCar
+export default SelectCar;

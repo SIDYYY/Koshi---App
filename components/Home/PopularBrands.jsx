@@ -19,8 +19,8 @@ export default function PopularBrands() {
   // };
 
   return (
-    <View className=" rounded-lg py-4">
-      <Title title="Popular Brands" />
+    <View className=" rounded-lg mt-4 bg-white py-4">
+      <Title title="Popular Brands"  />
       {/* <FlatList
         data={["Car Makes", "Body Type"]}
         horizontal={true}
@@ -42,7 +42,6 @@ export default function PopularBrands() {
           <LogoCard logo={item} otherStyles="" />
         )}
         keyExtractor={(item) => item.name}
-        className="-mx-4"
         contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
       />
 

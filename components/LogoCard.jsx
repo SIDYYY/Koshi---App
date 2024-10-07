@@ -12,7 +12,7 @@ const LogoCard = ({
 }) => {
   return (
     <TouchableOpacity
-      className="relative bg-white rounded-lg justify-between"
+      className="relative border border-[#e2e2e2] rounded-lg justify-between"
       activeOpacity={0.7}
       onPress={() => router.push("/model")}
     >

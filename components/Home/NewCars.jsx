@@ -20,13 +20,12 @@ const NewCars = () => {
   };
 
   return (
-    <View className="">
-      <Title title="Popular Cars" /> 
+    <View className=" rounded-lg mt-4 bg-white py-4">
+      <Title title="Popular Cars" />
       <FlatList
         data={cars}
         horizontal={true}
         renderItem={({ item }) => <FirstCarCard car={item} />}
-        className="-mx-[14px]"
         keyExtractor={(item) => item.name}
         contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
       />
