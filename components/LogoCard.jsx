@@ -1,7 +1,5 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
-import { Shadow } from "react-native-shadow-2";
-import { shadowDistance } from "../lib/shadow-distance";
 import { TouchableOpacity } from "react-native";
 import { router } from "expo-router";
 

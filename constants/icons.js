@@ -25,11 +25,14 @@ import deleteIcon from "../assets/icons/delete.png";
 import logout from "../assets/icons/logout.png";
 import seller from "../assets/icons/seller.png";
 import plus from "../assets/icons/plus.png";
-import longArrow from '../assets/icons/arrow-long.png'
+import longArrow from "../assets/icons/arrow-long.png";
 import plus1 from "../assets/icons/plus1.png";
-import settings from '../assets/icons/settings.png'
+import settings from "../assets/icons/settings.png";
 import filter from "../assets/icons/filter.png";
 import x from "../assets/icons/x.png";
+import fuelType from "../assets/icons/fuel-type.png";
+import seat from "../assets/icons/seat.png";
+import transmission from "../assets/icons/type.png";
 
 export default {
   arrow,
@@ -63,5 +66,8 @@ export default {
   longArrow,
   settings,
   filter,
-  x
+  x,
+  fuelType,
+  transmission,
+  seat,
 };

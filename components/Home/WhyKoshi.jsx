@@ -3,11 +3,12 @@ import { View, FlatList, Text } from "react-native";
 import Title from "../Title";
 import reasons from "../../lib/reasons";
 import ReasonsCard from "./ReasonsCard";
+import ContentContainer from "../ContentContainer";
 
 const WhyKoshi = () => {
   return (
-    <View className=" rounded-lg mt-4 bg-white py-4">
-      <Title title="Why Koshi?" more={false} />
+    <ContentContainer ph={false}>
+      <Title title="Why Koshi?" more={false} px={true} />
       <FlatList
         data={reasons}
         horizontal={true}
@@ -15,7 +16,7 @@ const WhyKoshi = () => {
         keyExtractor={(item) => item.id}
         contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
       />
-    </View>
+    </ContentContainer>
   );
 };
 export default WhyKoshi;

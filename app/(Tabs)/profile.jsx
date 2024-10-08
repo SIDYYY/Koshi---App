@@ -8,6 +8,7 @@ import SettingsCard from "../../components/Profile/SettingsCard";
 import DarkModeCard from "../../components/Profile/DarkModeCard";
 import LogOutCard from "../../components/Profile/LogOutCard";
 import FormModal from "../../components/Modals/FormModal";
+import ContentContainer from "../../components/ContentContainer";
 
 const Profile = () => {
   const { user } = useUserContext();
@@ -21,7 +22,8 @@ const Profile = () => {
         user={user}
       />
       <BackButtonHeader title="My Profile" />
-      <View className="w-full bg-white h-[200px] rounded-lg mt-4 justify-center items-center relative">
+      {/* className="w-full bg-white h-[200px] rounded-lg mt-4 justify-center items-center relative" */}
+      <ContentContainer otherStyles="items-center">
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={() => setModalVisible(!modalVisible)}
@@ -44,9 +46,9 @@ const Profile = () => {
         <Text className="text-[#9b9b9b] text-xs">
           {user.phone_number ? user.phone_number : "No phone number added yet"}
         </Text>
-      </View>
+      </ContentContainer>
 
-      <View className="w-full bg-white mt-4 rounded-lg p-4">
+      <ContentContainer>
         <DarkModeCard />
         <SettingsCard
           label="Personal Info"
@@ -65,9 +67,10 @@ const Profile = () => {
           icon={icons.changepwd}
           iconBg="bg-[#EAEBFF]"
           iconTint="#304FFF"
+          borderBottom={false}
         />
-      </View>
-      <View className="w-full bg-white mt-4 rounded-lg p-4">
+      </ContentContainer>
+      <ContentContainer>
         <SettingsCard
           label="Delete Account"
           icon={icons.deleteIcon}
@@ -76,7 +79,7 @@ const Profile = () => {
           borderTop={false}
         />
         <LogOutCard />
-      </View>
+      </ContentContainer>
     </Container>
   );
 };

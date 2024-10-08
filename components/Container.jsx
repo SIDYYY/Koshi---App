@@ -10,6 +10,7 @@ const Container = ({
   bg = "#F3F5F7",
   pb = 85,
   ph = 14,
+  pt = 24,
   centerContent,
 }) => {
   return (
@@ -26,7 +27,7 @@ const Container = ({
             paddingBottom: pb,
             backgroundColor: bg,
             justifyContent: centerContent ? "center" : null,
-            paddingTop: 24,
+            paddingTop: pt,
           }}
         >
           {children}

@@ -7,11 +7,12 @@ import LogoCard from "../LogoCard";
 import logos from "../../lib/logos";
 import icons from "../../constants/icons";
 import BodyTypeCard from "../../components/BodyTypeCard";
+import ContentContainer from "../ContentContainer";
 
 const BodyType = () => {
   return (
-    <View className=" rounded-lg mt-4 bg-white py-4">
-      <Title title="Body Types" more={false} />
+    <ContentContainer ph={false} >
+      <Title title="Body Types" more={false} px={true} />
       <FlatList
         data={carType.slice(0, 10)}
         horizontal={true}
@@ -19,7 +20,7 @@ const BodyType = () => {
         keyExtractor={(item) => item.type}
         contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
       />
-    </View>
+    </ContentContainer>
   );
 };
 export default BodyType;

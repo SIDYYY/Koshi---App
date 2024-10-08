@@ -10,16 +10,16 @@ const SettingsCard = ({
   label,
   route = "/profile",
   borderTop = true,
-  customStyles
+  borderBottom = true,
+  customStyles,
 }) => {
-  
   return (
     <TouchableOpacity
       activeOpacity={0.7}
       onPress={() => router.push(route)}
-      className={`flex-row  border-[#E8E8E8] items-center space-x-4 py-3 ${
-        borderTop ? "border-y" : "border-b"
-      } ${customStyles}`}
+      className={`flex-row  border-[#E8E8E8] items-center space-x-4  py-3 ${
+        borderTop ? "border-t" : "border-b"
+      } `}
     >
       <View className={`${iconBg} h-10 w-10 rounded-full`}>
         <Image

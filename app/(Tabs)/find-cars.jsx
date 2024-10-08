@@ -8,6 +8,7 @@ import { router } from "expo-router";
 
 const FindCars = () => {
   const inputRef = useRef(null);
+  const [query, setQuery] = useState('')
   const [searchText, setSearchText] = useState("");
 
   const dismissKeyboard = () => {
@@ -47,10 +48,9 @@ const FindCars = () => {
           <View>
             <SearchBar
               otherStyles="mb-6"
-              // searchIcon={false}
-              ref={inputRef}
-              // onChangeText={(text) => setSearchText(text)}
-              // value={searchText}              
+              query={query}
+              setQuery={setQuery}
+              ref={inputRef}           
             />
             <Button
               label="Find Cars Now"

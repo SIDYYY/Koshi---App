@@ -3,8 +3,8 @@ import { View, FlatList, Text, Image } from "react-native";
 import cars from "../../lib/ford";
 import FirstCarCard from "../FirstCarCard";
 import Title from "../Title";
-import SeeMore from "../SeeMore";
-import icons from "../../constants/icons";
+import ContentContainer from "../ContentContainer";
+
 
 const NewCars = () => {
   // const navigation = useNavigation();
@@ -20,16 +20,16 @@ const NewCars = () => {
   };
 
   return (
-    <View className=" rounded-lg mt-4 bg-white py-4">
-      <Title title="Popular Cars" />
+    <ContentContainer ph={false}>
+      <Title title="Popular Cars" px={true} />
       <FlatList
         data={cars}
         horizontal={true}
         renderItem={({ item }) => <FirstCarCard car={item} />}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item) => item.id}
         contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
       />
-    </View>
+    </ContentContainer>
   );
 };
 export default NewCars;

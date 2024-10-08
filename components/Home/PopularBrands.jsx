@@ -5,11 +5,12 @@ import Title from "../Title";
 import LogoCard from "../LogoCard";
 import logos from "../../lib/logos";
 import icons from "../../constants/icons";
+import ContentContainer from "../ContentContainer";
 
 export default function PopularBrands() {
   return (
-    <View className=" rounded-lg mt-4 bg-white py-4">
-      <Title title="Popular Brands" />
+    <ContentContainer ph={false}>
+      <Title title="Popular Brands" px={true} />
       <FlatList
         data={logos.slice(0, 10)}
         horizontal={true}
@@ -17,6 +18,6 @@ export default function PopularBrands() {
         keyExtractor={(item) => item.name}
         contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
       />
-    </View>
+    </ContentContainer>
   );
 }

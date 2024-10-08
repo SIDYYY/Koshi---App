@@ -12,7 +12,7 @@ const LogOutCard = () => {
         onPress={() => {
           setModalVisible(true);
         }}
-        className="flex-row border-[#E8E8E8] items-center space-x-4 py-3"
+        className="flex-row border-[#E8E8E8] items-center space-x-4 pt-3"
       >
         <View className={`bg-[#E9F5E9] h-10 w-10 rounded-full`}>
           <Image

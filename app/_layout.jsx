@@ -13,6 +13,7 @@ const App = () => {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="(compare)" options={{ headerShown: false }} />
         <Stack.Screen name="search/[query]" options={{ headerShown: false }} />
+        <Stack.Screen name="car/[carId]" options={{ headerShown: false }} />
       </Stack>
     </UserContext>
   );

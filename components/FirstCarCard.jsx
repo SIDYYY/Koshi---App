@@ -1,12 +1,16 @@
 import { View, Text, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { TouchableOpacity } from "react-native";
-import { Shadow } from "react-native-shadow-2";
-import { shadowDistance } from "../lib/shadow-distance";
+import { router } from "expo-router";
 
 const FirstCarCard = ({ car }) => {
+  const [carId, setCarId] = useState(car.id)
   return (
-    <View className="w-[220px]">
+    <TouchableOpacity
+      activeOpacity={0.7}
+      onPress={() => router.push(`/car/${carId}`)}
+      className="w-[220px]"
+    >
       <Image
         source={{ uri: car.image }}
         className="w-full h-[120px] rounded-t-lg"
@@ -20,7 +24,7 @@ const FirstCarCard = ({ car }) => {
           </Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
