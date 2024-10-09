@@ -5,7 +5,6 @@ import FirstCarCard from "../FirstCarCard";
 import Title from "../Title";
 import ContentContainer from "../ContentContainer";
 
-
 const NewCars = () => {
   // const navigation = useNavigation();
 
@@ -20,16 +19,18 @@ const NewCars = () => {
   };
 
   return (
-    <ContentContainer ph={false}>
-      <Title title="Popular Cars" px={true} />
-      <FlatList
-        data={cars}
-        horizontal={true}
-        renderItem={({ item }) => <FirstCarCard car={item} />}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
-      />
-    </ContentContainer>
+    <>
+      <Title title="Popular Cars" />
+      <ContentContainer ph={false}>
+        <FlatList
+          data={cars}
+          horizontal={true}
+          renderItem={({ item }) => <FirstCarCard car={item} />}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
+        />
+      </ContentContainer>
+    </>
   );
 };
 export default NewCars;

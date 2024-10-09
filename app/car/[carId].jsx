@@ -9,11 +9,10 @@ import Title from "../../components/Title";
 import { BlurView } from "expo-blur";
 import icons from "../../constants/icons";
 import SpecHighlight from "../../components/Car/SpecHighlight";
-
 const Car = () => {
   const { carId } = useLocalSearchParams();
   const [carInfo, setCarInfo] = useState(null);
-  const [variants, setVariants] = useState()
+  const [variants, setVariants] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -63,11 +62,34 @@ const Car = () => {
           </View>
           <View className="bg-main_bg_grey rounded-t-2xl flex-1 -mx-[14px] px-[14px]">
             <Text className="font-black text-3xl mt-8">{carInfo.name}</Text>
-            <ContentContainer>
-              <View>
-                <Text>Price:</Text>
+            <ContentContainer otherStyles="space-y-3">
+              <View className="flex-row items-center space-x-4 justify-between">
+                <Text className="">Price Range:</Text>
+                <Text className="bg-light_grey border border-gray px-2 py-1 rounded-[4px]">
+                  {carInfo.price}
+                </Text>
               </View>
-              <View className="flex-row">
+              <View className="flex-row items-center space-x-4 justify-between">
+                <Text className="">Body Type:</Text>
+                <Text className="bg-light_grey border border-gray px-2 py-1 rounded-[4px]">
+                  {carInfo.bodyType}
+                </Text>
+              </View>
+              <View className="items-center space-x-4 justify-between">
+                <Text className="">Transmission:</Text>
+                <View className="flex-row gap-4">
+                  <Text className="bg-light_grey border border-gray px-2 py-1 rounded-[4px]">
+                    Gasoline
+                  </Text>
+                  <Text className="bg-light_grey border border-gray px-2 py-1 rounded-[4px]">
+                    Diesel
+                  </Text>
+                </View>
+              </View>
+            </ContentContainer>
+
+            <ContentContainer otherStyles="relative pb-4">
+              <View className="flex-row pt-4 ">
                 <SpecHighlight
                   icon={icons.fuelType}
                   label="Gasoline"
@@ -85,9 +107,17 @@ const Car = () => {
                 <SpecHighlight
                   icon={icons.transmission}
                   label="Automatic"
-                  bg="#F6FBF7"
+                  bg="#E8F5E9"
                   title="Transmission"
                   iconColor="#439F48"
+                />
+              </View>
+              <View className="flex-row border-light_grey_border border-t items-center space-x-4  mt-8 pt-4 justify-between">
+                <Text className="">Full Details</Text>
+                <Image
+                  source={icons.arrow}
+                  className="h-4 w-4 -scale-[1]"
+                  resizeMode="contain"
                 />
               </View>
             </ContentContainer>

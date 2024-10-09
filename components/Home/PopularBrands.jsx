@@ -9,15 +9,17 @@ import ContentContainer from "../ContentContainer";
 
 export default function PopularBrands() {
   return (
-    <ContentContainer ph={false}>
-      <Title title="Popular Brands" px={true} />
-      <FlatList
-        data={logos.slice(0, 10)}
-        horizontal={true}
-        renderItem={({ item }) => <LogoCard logo={item} otherStyles="" />}
-        keyExtractor={(item) => item.name}
-        contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
-      />
-    </ContentContainer>
+    <>
+      <Title title="Popular Brands" />
+      <ContentContainer ph={false}>
+        <FlatList
+          data={logos.slice(0, 10)}
+          horizontal={true}
+          renderItem={({ item }) => <LogoCard logo={item} otherStyles="" />}
+          keyExtractor={(item) => item.name}
+          contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
+        />
+      </ContentContainer>
+    </>
   );
 }
