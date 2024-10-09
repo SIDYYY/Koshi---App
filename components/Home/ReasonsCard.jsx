@@ -4,10 +4,10 @@ import React from "react";
 const ReasonsCard = ({ reasons }) => {
   return (
     <View className="max-w-[250px] rounded-lg p-4 border border-[#e2e2e2]">
-      <View className={`item h-14 w-14 rounded-full bg-[${reasons.bgColor}]`}>
+      <View className={`item h-10 w-10 rounded-full bg-[${reasons.bgColor}]`}>
         <Image
           source={{ uri: reasons.icon }}
-          className="h-8 w-8 m-auto"
+          className="h-6 w-6 m-auto"
           resizeMode="contain"
           tintColor={reasons.iconColor}
         />
