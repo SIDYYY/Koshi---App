@@ -11,31 +11,21 @@ import icons from "../../constants/icons";
 import SpecHighlight from "../../components/Car/SpecHighlight";
 import Pill from "../../components/Pill";
 import Variants from "../../components/Car/Variants";
+import { useCarContext } from "../../context/CarContext";
 const Car = () => {
   const { carId } = useLocalSearchParams();
-  const [carInfo, setCarInfo] = useState(null);
-  const [variants, setVariants] = useState();
-  const [loading, setLoading] = useState(true);
+  const { isLoading, setIsLoading, setId, variants, car } = useCarContext();
   const [showCardByTier, setShowCardByTier] = useState("1");
 
   useEffect(() => {
-    const getCarById = (carId) => {
-      // Simulating a delay to showcase the loading state
-      setTimeout(() => {
-        const foundCar = ford.find((car) => car.id === Number(carId));
-        setCarInfo(foundCar);
-        setVariants(foundCar.variants);
-        setLoading(false); // Set loading to false after fetching data
-      }, 1000); // Simulate 1 second delay
-    };
-
-    if (carId) {
-      getCarById(carId);
+    setId(carId);
+    if (!isLoading) {
+      setIsLoading(true);
     }
-  }, [carId]); // carId as a dependency // Add carId as a dependency
+  }, []);
 
-  if (loading) {
-    // Render the loading state
+  if (isLoading) {
+    // Render the isLoading state
     return (
       <Container>
         <View
@@ -53,7 +43,7 @@ const Car = () => {
       <View>
         <View className="w-full h-[300px] rounded-b absolute -z-10">
           <Image
-            source={{ uri: carInfo.image }}
+            source={{ uri: car.image }}
             className="w-full h-full overflow-hidden"
             resizeMode="cover"
           />
@@ -64,25 +54,25 @@ const Car = () => {
           experimentalBlurMethod="dimezisBlurView"
           tint="dark"
         >
-          <BackButtonHeader title="Car Details" type="carInfo" />
+          <BackButtonHeader title="Car Details" type="car" />
           <View className="h-[270px]">
             <Image
-              source={{ uri: carInfo.image }}
+              source={{ uri: car.image }}
               className="w-full h-[200px] m-auto rounded-xl"
               resizeMode="cover"
             />
           </View>
           <View className="bg-main_bg_grey rounded-t-2xl flex-1 -mx-[14px] px-[14px]">
-            <Text className="font-black text-3xl mt-8">{carInfo.name}</Text>
+            <Text className="font-black text-3xl mt-8">{car.name}</Text>
             <Title title="Car Overview" more={false} />
             <ContentContainer otherStyles="space-y-3">
               <View className="">
                 <Text className="">Price Range:</Text>
-                <Pill label={carInfo.price} textOnly={false} />
+                <Pill label={car.price} textOnly={false} />
               </View>
               <View className="">
                 <Text className="">Body Type:</Text>
-                <Pill label={carInfo.bodyType} textOnly={false} />
+                <Pill label={car.bodyType} textOnly={false} />
               </View>
               <View className="">
                 <Text className="">Transmission:</Text>
@@ -92,8 +82,8 @@ const Car = () => {
                 </View>
               </View>
             </ContentContainer>
-            <Title title="Variants" more={false} />
-            <ContentContainer>
+            <Title title="Variants Available" more={false} otherStyles="" />
+            <>
               <FlatList
                 data={variants}
                 renderItem={({ item }) => (
@@ -101,17 +91,17 @@ const Car = () => {
                     variant={item}
                     isShown={showCardByTier === item.tier}
                     onPress={() =>
-                      setShowCardByTier(showCardByTier === item.tier ? null : item.tier)
+                      setShowCardByTier(
+                        showCardByTier === item.tier ? null : item.tier
+                      )
                     }
                   />
                 )}
                 scrollEnabled={false}
-                
                 keyExtractor={(item) => item.tier}
               />
-            </ContentContainer>
+            </>
           </View>
-          
         </BlurView>
       </View>
     </Container>
