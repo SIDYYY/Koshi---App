@@ -3,14 +3,20 @@ import React, { useEffect } from "react";
 import { useLocalSearchParams } from "expo-router";
 import Container from "../../../components/Container";
 import { useCarContext } from "../../../context/CarContext";
+import CarHeader from "../../../components/Car/CarHeader";
+import Title from "../../../components/Title";
+import SpecHighlight from "../../../components/Car/SpecHighlight";
+import ContentContainer from "../../../components/ContentContainer";
+import icons from "../../../constants/icons";
+import SpecsInfo from "../../../components/Car/Variant/SpecsInfo";
 
 const VariantSpecs = () => {
   const { variantTier } = useLocalSearchParams();
-  const { isLoading, setIsLoading, variants, setVariant, variant } =
+  const { isLoading, setIsLoading, variants, setVariant, variant, car } =
     useCarContext();
 
   useEffect(() => {
-    if (!isLoading) {
+    if (isLoading === false) {
       setIsLoading(true);
     }
     const foundVariant = variants.find(
@@ -19,7 +25,7 @@ const VariantSpecs = () => {
     setVariant(foundVariant);
   }, [variant]);
 
-  if (isLoading) {
+  if (isLoading || !variant) {
     return (
       <Container>
         <View
@@ -32,19 +38,50 @@ const VariantSpecs = () => {
     );
   }
 
-  if (!variant) {
-    return (
-      <Container>
-        <Text>No variant found for the specified tier.</Text>
-      </Container>
-    );
-  }
-
   return (
-    <Container>
-      <Text>Variant Details: {variant.variant}</Text>
-      {/* Render more details about the variant here */}
-    </Container>
+    <CarHeader carImage={car.image} backButtonTitle="Car Variant Details">
+      <Text className="font-black text-xl mt-8 -mb-6">{variant.variant}</Text>
+      <Title title={car.name} more={false} px="px-0" otherStyles="text-gray" />
+      <ContentContainer ph={false} otherStyles="mt-6">
+        <View className="flex-row space-x-4">
+          <SpecHighlight
+            icon={icons.fuelType}
+            label={variant.performance.fuelType}
+            bg="#FFEBED"
+            title="Fuel Type"
+            iconColor="#F44435"
+          />
+          <SpecHighlight
+            icon={icons.seat}
+            bg="#FFF9C5"
+            label={variant.capacity.seatingCapacity}
+            title="Capacity"
+            iconColor="#F57E16"
+            otherStyles="border-x"
+          />
+          <SpecHighlight
+            icon={icons.transmission}
+            label={variant.transmission.type}
+            bg="#E8F5E9"
+            title="Transmission"
+            iconColor="#439F48"
+          />
+        </View>
+      </ContentContainer>
+      <ContentContainer>
+        <Title title="Dimensions" more={false} px={false} mt={false} />
+        <SpecsInfo
+          title="Front Tread"
+          content={variant.dimensions.frontTread}
+        />
+        <SpecsInfo title="Rear Tread" content={variant.dimensions.rearTread} />
+        <SpecsInfo title="Length" content={variant.dimensions.length} />
+        <SpecsInfo title="Width" content={variant.dimensions.width} />
+        <SpecsInfo title="Height" content={variant.dimensions.height} />
+        <SpecsInfo title="Wheel Base" content={variant.dimensions.wheelBase} />
+        <SpecsInfo title="Number of Doors" content={variant.dimensions.numberOfDoors} />
+      </ContentContainer>
+    </CarHeader>
   );
 };
 
