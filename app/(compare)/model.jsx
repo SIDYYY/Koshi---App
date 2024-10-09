@@ -46,7 +46,7 @@ const CarModel = () => {
           <ModelCarCard
             model={item}
             isShown={showCardById === item.id}
-            onToggle={() =>
+            onPress={() =>
               setShowCardById(showCardById === item.id ? null : item.id)
             }
           />

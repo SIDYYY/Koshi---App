@@ -8,7 +8,7 @@ import BackButtonHeader from "../../components/BackButtonHeader";
 import Title from "../../components/Compare/SmallTitle";
 
 export default function List() {
-  const [isClicked, setIsClicked] = useState('');
+  const [isClicked, setIsClicked] = useState("");
   // const route = useRoute();
   // const navigation = useNavigation();
   // const [search, setSearch] = useState("");
@@ -26,17 +26,24 @@ export default function List() {
   // };
 
   return (
-    <Container pb={false}>
-      <BackButtonHeader title="Choose a Car for Comparison" />
-      <SearchBar otherStyles="mt-6" />
+    <Container pb={false} ph={false}>
+      <BackButtonHeader
+        title="Choose a Car for Comparison"
+        otherStyles="mx-[14px]"
+      />
+      <SearchBar otherStyles="mt-6 mx-4" />
       <View>
-        <Title text="Select A Brand" />
+        <Title text="Select A Brand" px="mx-4" />
         <FlatList
           contentContainerStyle={{
             alignItems: "center",
+            backgroundColor: "white",
+            borderRadius: 16,
             gap: 14,
             paddingTop: 24,
-            paddingBottom: 16
+            marginTop: 16,
+            paddingBottom: 16,
+            marginBottom: 16,
           }}
           data={logos}
           scrollEnabled={false}

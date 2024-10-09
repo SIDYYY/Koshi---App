@@ -33,6 +33,7 @@ import x from "../assets/icons/x.png";
 import fuelType from "../assets/icons/fuel-type.png";
 import seat from "../assets/icons/seat.png";
 import transmission from "../assets/icons/type.png";
+import variant from "../assets/icons/variant.png";
 
 export default {
   arrow,
@@ -70,4 +71,5 @@ export default {
   fuelType,
   transmission,
   seat,
+  variant,
 };

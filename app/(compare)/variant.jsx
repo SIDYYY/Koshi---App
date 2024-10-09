@@ -53,7 +53,7 @@ const Variant = () => {
   return (
     <Container pb={false} >
       <BackButtonHeader title="Choose a Car for Comparison" />
-      <SearchBar otherStyles="mx-4" />
+      <SearchBar otherStyles="mt-4" />
       <SmallTitle text="Model Chosen" previous="Model" />
       <ModelCarCard model={model} otherStyles="mt-4" />
       <SmallTitle text="Select A Variant" />

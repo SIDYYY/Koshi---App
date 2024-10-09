@@ -9,11 +9,14 @@ import Title from "../../components/Title";
 import { BlurView } from "expo-blur";
 import icons from "../../constants/icons";
 import SpecHighlight from "../../components/Car/SpecHighlight";
+import Pill from "../../components/Pill";
+import Variants from "../../components/Car/Variants";
 const Car = () => {
   const { carId } = useLocalSearchParams();
   const [carInfo, setCarInfo] = useState(null);
   const [variants, setVariants] = useState();
   const [loading, setLoading] = useState(true);
+  const [showCardByTier, setShowCardByTier] = useState("1");
 
   useEffect(() => {
     const getCarById = (carId) => {
@@ -75,29 +78,17 @@ const Car = () => {
             <ContentContainer otherStyles="space-y-3">
               <View className="">
                 <Text className="">Price Range:</Text>
-                <View className="flex-row space-x-4 ml-4 mt-2">
-                  <Text className="bg-light_grey px-2 py-1 rounded-[4px]">
-                    {carInfo.price}
-                  </Text>
-                </View>
+                <Pill label={carInfo.price} textOnly={false} />
               </View>
               <View className="">
                 <Text className="">Body Type:</Text>
-                <View className="flex-row space-x-4 ml-4 mt-2">
-                  <Text className="max-w- bg-light_grey px-2 py-1 rounded-[4px]">
-                    {carInfo.bodyType}
-                  </Text>
-                </View>
+                <Pill label={carInfo.bodyType} textOnly={false} />
               </View>
               <View className="">
                 <Text className="">Transmission:</Text>
-                <View className="flex-row space-x-4 ml-4 mt-2">
-                  <Text className="bg-light_grey px-2 py-1 rounded-[4px]">
-                    Gasoline
-                  </Text>
-                  <Text className="bg-light_grey px-2 py-1 rounded-[4px]">
-                    Diesel
-                  </Text>
+                <View className="flex-row ml-4 mt-2">
+                  <Pill label="Gasoline" otherStyles="mr-4" />
+                  <Pill label="Diesel" />
                 </View>
               </View>
             </ContentContainer>
@@ -106,49 +97,21 @@ const Car = () => {
               <FlatList
                 data={variants}
                 renderItem={({ item }) => (
-                  <Text>
-                    {console.log(item.variant)} {item.variant}
-                  </Text>
+                  <Variants
+                    variant={item}
+                    isShown={showCardByTier === item.tier}
+                    onPress={() =>
+                      setShowCardByTier(showCardByTier === item.tier ? null : item.tier)
+                    }
+                  />
                 )}
                 scrollEnabled={false}
-                keyExtractor={(item) => item.variant}
+                
+                keyExtractor={(item) => item.tier}
               />
             </ContentContainer>
-
-            <ContentContainer otherStyles="relative pb-4">
-              <View className="flex-row space-x-4 ml-4 mt-2 pt-4 ">
-                <SpecHighlight
-                  icon={icons.fuelType}
-                  label="Gasoline"
-                  bg="#FFEBED"
-                  title="Fuel Type"
-                  iconColor="#F44435"
-                />
-                <SpecHighlight
-                  icon={icons.seat}
-                  bg="#FFF9C5"
-                  label="7"
-                  title="Seats"
-                  iconColor="#F57E16"
-                />
-                <SpecHighlight
-                  icon={icons.transmission}
-                  label="Automatic"
-                  bg="#E8F5E9"
-                  title="Transmission"
-                  iconColor="#439F48"
-                />
-              </View>
-              <View className="flex-row border-light_grey_border border-t items-center space-x-4  mt-8 pt-4 justify-between">
-                <Text className="">Full Details</Text>
-                <Image
-                  source={icons.arrow}
-                  className="h-4 w-4 -scale-[1]"
-                  resizeMode="contain"
-                />
-              </View>
-            </ContentContainer>
           </View>
+          
         </BlurView>
       </View>
     </Container>

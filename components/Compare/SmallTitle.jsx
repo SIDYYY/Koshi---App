@@ -2,9 +2,9 @@ import { View, Text } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 
-const SmallTitle = ({ text, previous}) => {
+const SmallTitle = ({ text, previous, px }) => {
   return (
-    <View className="flex-row mt-9 items-center justify-between">
+    <View className={`flex-row mt-9 items-center justify-between ${px}`}>
       <Text className="font-bold text-base">{text}</Text>
       <View>
         {previous ? (

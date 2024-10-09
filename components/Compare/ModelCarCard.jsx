@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import { router } from "expo-router";
 import icons from "../../constants/icons";
 
-const ModelCarCard = ({ model, isShown, onToggle, otherStyles }) => {
+const ModelCarCard = ({ model, isShown, onPress, otherStyles }) => {
   return (
     <View className={`items-center bg-white rounded-lg mb-2 ${otherStyles}`}>
       <TouchableOpacity
@@ -24,10 +24,10 @@ const ModelCarCard = ({ model, isShown, onToggle, otherStyles }) => {
           }`}
         >
           <Text className="font-black text-lg">{model.name}</Text>
-          <Text className="text-gray">{model.variants} Variants Available</Text>
+          <Text className="text-gray">{model.variants ? model.variants.length : 1 } Variants Available</Text>
         </View>
         <TouchableOpacity
-          onPress={onToggle}
+          onPress={onPress}
           className={`justify-center bg-[#525252] w-12 items-center ${
             isShown ? "rounded-tr-lg" : "rounded-r-lg"
           }`}
