@@ -53,7 +53,9 @@ const LocationHeader = () => {
     <View className="flex-row space-x-4">
       <Image className="w-6 h-9" source={icons.location} resizeMode="contain" />
       <View>
-        <Text className="text-xs text-[#9b9b9b]">Your Current Location</Text>
+        <Text className="text-xs text-gray_inactive">
+          Your Current Location
+        </Text>
         {address ? (
           <Text>{address}</Text>
         ) : locationError ? (

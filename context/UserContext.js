@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { getCurrentUser } from "../lib/supabase";
-import { router } from "expo-router";
+import color from "../constants/colors";
 
 const GlobalContext = createContext();
 
@@ -10,19 +10,19 @@ const UserContext = ({ children }) => {
   const [user, setUser] = useState(null); // Initialize as null instead of an empty string
   const [authId, setAuthId] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-const [databaseError, setDatabaseError] = useState('')
+  const [databaseError, setDatabaseError] = useState("");
 
   useEffect(() => {
     const fetchUser = async () => {
       // Fetch user only if authId is set
       try {
         if (authId) {
-          const {data, error} = await getCurrentUser(authId);
+          const { data, error } = await getCurrentUser(authId);
           if (data) {
             setUser(data);
           } else {
             setUser(null);
-            setDatabaseError(error)
+            setDatabaseError(error);
           }
         }
       } catch (error) {
@@ -39,7 +39,7 @@ const [databaseError, setDatabaseError] = useState('')
 
   return (
     <GlobalContext.Provider
-      value={{ user, setUser, authId, setAuthId, isLoading, setIsLoading }}
+      value={{ user, setUser, authId, setAuthId, isLoading, setIsLoading, color }}
     >
       {children}
     </GlobalContext.Provider>

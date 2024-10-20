@@ -5,11 +5,13 @@ import Container from "../../components/Container";
 import Button from "../../components/Button";
 import icons from "../../constants/icons";
 import { router } from "expo-router";
+import { useUserContext } from "../../context/UserContext";
 
 const FindCars = () => {
   const inputRef = useRef(null);
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState("");
   const [searchText, setSearchText] = useState("");
+  const { color } = useUserContext();
 
   const dismissKeyboard = () => {
     Keyboard.dismiss(); // Hides the keyboard
@@ -41,7 +43,7 @@ const FindCars = () => {
         <View className="space-y-14 my-auto">
           <View className="items-center space-y-2">
             <Text className="text-3xl font-black">Looking for a car?</Text>
-            <Text className="max-w-[300px] text-center text-[#9b9b9b] text-base">
+            <Text className="max-w-[300px] text-center text-gray_inactive text-base">
               Find it quickly with our easy-to-use search tool.
             </Text>
           </View>
@@ -50,12 +52,12 @@ const FindCars = () => {
               otherStyles="mb-6"
               query={query}
               setQuery={setQuery}
-              ref={inputRef}           
+              ref={inputRef}
             />
             <Button
               label="Find Cars Now"
               icon={icons.search}
-              iconTint="#ffffff"
+              iconTint={color.white}
               onPress={
                 searchText
                   ? () => {

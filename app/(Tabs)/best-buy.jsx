@@ -6,8 +6,11 @@ import SearchBar from "../../components/SearchBar";
 import ford from "../../lib/ford";
 import icons from "../../constants/icons";
 import FilteredCarCard from "../../components/SearchComponents/FilteredCarCard";
+import { useUserContext } from "../../context/UserContext";
 
 const BestBuy = () => {
+  const { color } = useUserContext();
+
   const [filteredData, setFilteredData] = useState(ford);
   const [query, setQuery] = useState("");
 
@@ -18,7 +21,7 @@ const BestBuy = () => {
       item.name.toLowerCase().includes(text.toLowerCase())
     );
     console.log(filtered);
-    
+
     setFilteredData(filtered);
   };
   return (
@@ -27,7 +30,9 @@ const BestBuy = () => {
       <SearchBar query={query} setQuery={handleSearch} />
       <View className="mt-4 bg-white p-4 rounded-lg">
         <Text className="text-base text-gray">Search Results for:</Text>
-        <Text className="font-black text-xl">{`"${query ? query : "Nothing"}"`}</Text>
+        <Text className="font-black text-xl">{`"${
+          query ? query : "Nothing"
+        }"`}</Text>
       </View>
       <View className="bg-white p-4 mt-4 flex-1 rounded-lg">
         <View className="">
@@ -36,7 +41,7 @@ const BestBuy = () => {
             horizontal={true}
             renderItem={({ item }) => (
               <View>
-                <Text className="text-base font-bold px-3 border-b-2 border-green">
+                <Text className="text-base font-bold px-3 border-b-2 border-green_primary">
                   {item}
                 </Text>
               </View>

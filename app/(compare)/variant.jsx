@@ -8,10 +8,13 @@ import SmallTitle from "../../components/Compare/SmallTitle";
 import everest from "../../lib/everest";
 import VariantCard from "../../components/Compare/VariantCard";
 import ConfirmSelectModal from '../../components/Compare/ConfirmSelectModal'
+import { useUserContext } from "../../context/UserContext";
 
 const Variant = () => {
   const [isClicked, setIsClicked] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+      const { color } = useUserContext();
+
 
   //   const route = useRoute();
   //   const { model, brand, slot } = route.params; // Retrieve the passed brand and slot

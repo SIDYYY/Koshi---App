@@ -17,7 +17,7 @@ const SettingsCard = ({
     <TouchableOpacity
       activeOpacity={0.7}
       onPress={() => router.push(route)}
-      className={`flex-row  border-[#E8E8E8] items-center space-x-4  py-3 ${
+      className={`flex-row  border-gray_border items-center space-x-4  py-3 ${
         borderTop ? "border-t" : "border-b"
       } `}
     >

@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase";
 import { SkypeIndicator } from "react-native-indicators";
 
 const index = () => {
-  const { isLoading, setAuthId } = useUserContext();
+  const { isLoading, setAuthId, color } = useUserContext();
 
   useEffect(() => {
     const checkUserSession = async () => {
@@ -36,13 +36,13 @@ const index = () => {
   }, [isLoading]);
 
   return (
-    <Container bg="#5CB88F" scroll={false} pb={false} ph={false} pt={false}>
+    <Container bg={color.green_primary} scroll={false} pb={false} ph={false} pt={false}>
       <View className="relative flex-1 space-x-4 justify-center items-center flex-row ">
         <Image
           source={icons.logo}
           className="h-24 w-24"
           resizeMode="contain"
-          tintColor="#ffffff"
+          tintColor={color.white}
         />
         <View className="items-center">
           <Text className="font-black text-5xl text-white py-1 tracking-[7px]">

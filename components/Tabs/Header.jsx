@@ -10,7 +10,9 @@ const Header = () => {
         resizeMode="cover"
       />
       <View className="absolute left-7">
-        <Animated.Text className="text-[#9b9b9b]">Welcome, User</Animated.Text>
+        <Animated.Text className="text-gray_inactive">
+          Welcome, User
+        </Animated.Text>
         <Text className="text-white text-2xl max-w-[180px]">
           Explore the app, and decide
         </Text>

@@ -11,7 +11,7 @@ import icons from "../../../constants/icons";
 import SpecsInfo from "../../../components/Car/Variant/SpecsInfo";
 
 const VariantSpecs = () => {
-  const { variantTier } = useLocalSearchParams();
+  const { variantTier, color } = useLocalSearchParams();
   const { isLoading, setIsLoading, variants, setVariant, variant, car } =
     useCarContext();
 
@@ -47,24 +47,24 @@ const VariantSpecs = () => {
           <SpecHighlight
             icon={icons.fuelType}
             label={variant.performance.fuelType}
-            bg="#FFEBED"
+            bg={color.red_icon_bg}
             title="Fuel Type"
             iconColor="#F44435"
           />
           <SpecHighlight
             icon={icons.seat}
-            bg="#FFF9C5"
+            bg={color.orange_icon_bg}
             label={variant.capacity.seatingCapacity}
             title="Capacity"
-            iconColor="#F57E16"
+            iconColor={color.orange_primary}
             otherStyles="border-x"
           />
           <SpecHighlight
             icon={icons.transmission}
             label={variant.transmission.type}
-            bg="#E8F5E9"
+            bg={color.green_bg}
             title="Transmission"
-            iconColor="#439F48"
+            iconColor={color.green_secondary}
           />
         </View>
       </ContentContainer>
@@ -79,7 +79,10 @@ const VariantSpecs = () => {
         <SpecsInfo title="Width" content={variant.dimensions.width} />
         <SpecsInfo title="Height" content={variant.dimensions.height} />
         <SpecsInfo title="Wheel Base" content={variant.dimensions.wheelBase} />
-        <SpecsInfo title="Number of Doors" content={variant.dimensions.numberOfDoors} />
+        <SpecsInfo
+          title="Number of Doors"
+          content={variant.dimensions.numberOfDoors}
+        />
       </ContentContainer>
     </CarHeader>
   );

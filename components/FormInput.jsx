@@ -2,6 +2,7 @@ import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
 import icons from "../constants/icons";
 import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
+import { useUserContext } from "../context/UserContext";
 
 const FormInput = ({
   label = "default",
@@ -13,31 +14,32 @@ const FormInput = ({
   otherStyles,
 }) => {
   const [hidePassword, setHidePassword] = useState(true);
+  const { color } = useUserContext();
 
   return (
     <View className={`${otherStyles} ${value ? "mt-12" : "mt-6"}`}>
       <View className="relative">
         {value && (
           <View className=" z-10 absolute -top-6 left-2 flex-row justify-between right-2">
-            <Text className="text-[#9b9b9b]">{placeholder}</Text>
+            <Text className="text-gray_inactive">{placeholder}</Text>
             <Image
               source={errorMessage ? icons.x : icons.check}
-              tintColor={errorMessage ? "#F34336" : "#5CB88F"}
+              tintColor={errorMessage ? color.red_primary : color.green_primary}
               className={errorMessage ? "h-5 w-5" : "h-4 w-4"}
             />
           </View>
         )}
         <TextInput
           onBlur={onBlur}
-          cursorColor="#9b9b9b"
-          className={`text-base p-4 rounded-lg border ${
+          cursorColor={color.gray_inactive}
+          className={`text-base px-4 py-3 rounded-lg border ${
             errorMessage
-              ? "border border-red-500 bg-[#FFF9F9]"
+              ? "border border-red-500 bg-red_error_bg"
               : !value
-              ? "border-[#E5E4E2]"
-              : "border-[#5CB88F] bg-[#F8FFFD]"
+              ? "border-gray_border"
+              : "border-green_primary bg-form_correct_bg"
           }`}
-          placeholderTextColor="#9b9b9b"
+          placeholderTextColor={color.gray_inactive}
           placeholder={placeholder}
           onChangeText={(text) => onChangeText(text)}
           autoCapitalize={
@@ -63,7 +65,7 @@ const FormInput = ({
               className="h-7 w-7"
               resizeMode="contain"
               source={hidePassword ? icons.eyeHide : icons.eye}
-              tintColor="#E5E4E2"
+              tintColor={color.gray_border}
             />
           </TouchableOpacity>
         )}

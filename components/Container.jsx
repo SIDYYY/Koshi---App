@@ -2,12 +2,13 @@ import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import color from "@/constants/colors";
 
 const Container = ({
   children,
   scroll = true,
   otherStyles = null,
-  bg = "#F3F5F7",
+  bg = color.white,
   pb = 85,
   ph = 16,
   pt = 24,

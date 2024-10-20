@@ -18,7 +18,7 @@ const VariantCard = ({
       >
         <View className="w-[330px] h-16 rounded-md p-2 bg-white">
           <Text className="font-black text-base">{variant.variant}</Text>
-          <Text className="text-[#3E9C35]">{variant.price}</Text>
+          <Text className="text-green_primary">{variant.price}</Text>
         </View>
       </TouchableOpacity>
     </View>

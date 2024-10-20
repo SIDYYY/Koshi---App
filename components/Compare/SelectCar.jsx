@@ -3,8 +3,11 @@ import React from "react";
 import { TouchableOpacity } from "react-native";
 import icons from "../../constants/icons";
 import { router } from "expo-router";
+import { useUserContext } from "../../context/UserContext";
 
 const SelectCar = ({ car }) => {
+    const { color } = useUserContext();
+
   return (
     <TouchableOpacity
       activeOpacity={0.7}
@@ -17,7 +20,7 @@ const SelectCar = ({ car }) => {
         <Image
           source={icons.plus1}
           className="w-20 h-20"
-          tintColor="#5CB88F"
+          tintColor={color.green_primary}
           resizeMode="contain"
         />
       )}

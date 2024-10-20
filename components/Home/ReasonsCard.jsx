@@ -3,7 +3,7 @@ import React from "react";
 
 const ReasonsCard = ({ reasons }) => {
   return (
-    <View className="max-w-[250px] rounded-lg p-4 border border-[#e2e2e2]">
+    <View className="max-w-[250px] rounded-lg p-4 border border-gray_border">
       <View className={`item h-10 w-10 rounded-full bg-[${reasons.bgColor}]`}>
         <Image
           source={{ uri: reasons.icon }}

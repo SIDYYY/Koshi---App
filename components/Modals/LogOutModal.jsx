@@ -5,10 +5,12 @@ import { router } from "expo-router";
 import { logOut } from "../../lib/supabase";
 import Modal from "react-native-modal";
 import LoadingModal from "./LoadingModal";
+import { useUserContext } from "../../context/UserContext";
 
 const LogOutModal = ({ modalVisible, setModalVisible }) => {
   const [databaseError, setDatabaseError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const { color } = useUserContext();
 
   const onLogout = async () => {
     setIsLoading(true);
@@ -49,7 +51,7 @@ const LogOutModal = ({ modalVisible, setModalVisible }) => {
           <View className="items-center space-y-2">
             <Image
               source={icons.logout}
-              tintColor="#439F48"
+              tintColor={color.green_secondary}
               className="w-12 h-12"
               resizeMode="contain"
             />
@@ -59,22 +61,22 @@ const LogOutModal = ({ modalVisible, setModalVisible }) => {
             </Text>
           </View>
 
-          <View className="flex-row border-t border-[#E5E4E2]">
+          <View className="flex-row border-t border-gray_border">
             <TouchableOpacity
               activeOpacity={0.7}
               className="flex-1 pt-4"
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <Text className="text-center text-[#F34336]">Cancel</Text>
+              <Text className="text-center text-red_primary">Cancel</Text>
             </TouchableOpacity>
-            <View className="border-r border-[#E5E4E2] mt-2 -mb-2" />
+            <View className="border-r border-gray_border mt-2 -mb-2" />
 
             <TouchableOpacity
               activeOpacity={0.7}
               className="flex-1 pt-4"
               onPress={onLogout}
             >
-              <Text className="text-center text-[#5CB88F]">Confirm</Text>
+              <Text className="text-center text-green_primary">Confirm</Text>
             </TouchableOpacity>
           </View>
         </View>

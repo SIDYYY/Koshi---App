@@ -21,7 +21,7 @@ import LoadingModal from "@/components/Modals/LoadingModal";
 
 const SignUp = () => {
   const [databaseError, setDatabaseError] = useState("");
-  const { setAuthId } = useUserContext();
+  const { setAuthId, color } = useUserContext();
   const [isCheck, setIsCheck] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -77,7 +77,7 @@ const SignUp = () => {
   };
 
   return (
-    <Container scroll={true} bg="#5CB88F" pb={false} ph={false}>
+    <Container scroll={true} bg={color.green_primary} pb={false} ph={false}>
       <Text className="mt-2 mb-14 text-[40px] text-white font-black px-4">
         Sign Up
       </Text>
@@ -88,7 +88,7 @@ const SignUp = () => {
 
       <View className="pb-4 px-4 pt-8 space-y-2 rounded-tl-3xl rounded-tr-3xl bg-white">
         <Text className="text-2xl font-black">Create an Account</Text>
-        <Text className="text-base text-[#9b9b9b]">
+        <Text className="text-base text-green_primary">
           Please provide your details
         </Text>
       </View>
@@ -170,17 +170,15 @@ const SignUp = () => {
               }}
               size={16}
               className=""
-              fillColor={isCheck ? "#5CB88F" : "#9b9b9b"}
+              fillColor={isCheck ? color.green_primary : color.gray_inactive}
             />
             <TouchableOpacity
-              className="text-[#9b9b9b]"
+              className="text-green_primary"
               activeOpacity={0.7}
               onPress={() => setIsCheck(!isCheck)}
             >
               <Text
-                className={`text-base ${
-                  isCheck ? "text-[#5CB88F]" : "text-[#9b9b9b]"
-                }`}
+                className={`text-base ${isCheck ? "text-green_primary" : "text-gray_inactive"}`}
               >
                 Agree to terms & conditions
               </Text>

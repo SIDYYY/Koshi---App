@@ -6,16 +6,23 @@ import SpecHighlight from "./SpecHighlight";
 import { TouchableOpacity } from "react-native";
 import { router } from "expo-router";
 import Title from "../Title";
+import { useUserContext } from "../../context/UserContext";
 
 const Variants = ({ variant, isShown, onPress }) => {
-  const [variantTier, setVariantTier] = useState('');
+  const [variantTier, setVariantTier] = useState("");
+  const { color } = useUserContext();
+
   useEffect(() => {
     setVariantTier(variant.tier);
   }, [variantTier]);
 
   return (
     <View className={`mt-4`}>
-      <Title title={`Tier ${variant.tier}`} more={false} otherStyles="text-gray -mt-4" />
+      <Title
+        title={`Tier ${variant.tier}`}
+        more={false}
+        otherStyles="text-gray -mt-4"
+      />
       <ContentContainer>
         <TouchableOpacity
           activeOpacity={0.7}
@@ -25,7 +32,7 @@ const Variants = ({ variant, isShown, onPress }) => {
           <View className="items-center space-y-2">
             <View
               className={`${
-                isShown ? "bg-light_green" : "bg-gray_100"
+                isShown ? "bg-green_secondary" : "bg-gray_100"
               } rounded-full h-10 w-10`}
             >
               <Image
@@ -39,7 +46,7 @@ const Variants = ({ variant, isShown, onPress }) => {
 
           <View className="flex-1">
             <Text className="text-base font-bold">{variant.variant}</Text>
-            <Text className="text-green">{variant.price}</Text>
+            <Text className="text-green_primary">{variant.price}</Text>
           </View>
           <Image
             source={icons.arrow}
@@ -54,24 +61,24 @@ const Variants = ({ variant, isShown, onPress }) => {
               <SpecHighlight
                 icon={icons.fuelType}
                 label={variant.performance.fuelType}
-                bg="#FFEBED"
+                bg={color.red_icon_bg}
                 title="Fuel Type"
-                iconColor="#F44435"
+                iconColor={color.red_primary}
               />
               <SpecHighlight
                 icon={icons.seat}
-                bg="#FFF9C5"
+                bg={color.orange_icon_bg}
                 label={variant.capacity.seatingCapacity}
                 title="Capacity"
-                iconColor="#F57E16"
+                iconColor={color.orange_primary}
                 otherStyles="border-x"
               />
               <SpecHighlight
                 icon={icons.transmission}
                 label={variant.transmission.type}
-                bg="#E8F5E9"
+                bg={color.green_bg}
                 title="Transmission"
-                iconColor="#439F48"
+                iconColor={color.green_secondary}
               />
             </View>
             <TouchableOpacity

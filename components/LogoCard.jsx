@@ -3,14 +3,10 @@ import React from "react";
 import { TouchableOpacity } from "react-native";
 import { router } from "expo-router";
 
-const LogoCard = ({
-  logo,
-  isSelected,
-  otherStyles,
-}) => {
+const LogoCard = ({ logo, isSelected, otherStyles }) => {
   return (
     <TouchableOpacity
-      className="relative border border-[#e2e2e2] rounded-lg justify-between"
+      className="relative border border-gray_border rounded-lg justify-between"
       activeOpacity={0.7}
       onPress={() => router.push("/model")}
     >

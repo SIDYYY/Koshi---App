@@ -14,13 +14,15 @@ const CarFilterPill = ({ item, handleFrameSelect, activeFrame }) => {
         key={value}
         activeOpacity={0.7}
         className={`min-w-[55px] min-h-[32px] justify-center items-center px-3 rounded-md ${
-          activeFrame === value ? "bg-black" : "bg-[#E0E0E0]"
+          activeFrame === value ? "bg-black" : "bg-green_primary"
         } `}
         onPress={() => handleFrameSelect(value)}
       >
         <Text
           className={` ${
-            activeFrame === value ? "text-white  font-bold" : "text-[#9B9B9B]"
+            activeFrame === value
+              ? "text-white  font-bold"
+              : "text-gray_inactive"
           }`}
         >
           {value}

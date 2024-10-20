@@ -14,7 +14,7 @@ import Variants from "../../components/Car/Variants";
 import { useCarContext } from "../../context/CarContext";
 import CarHeader from "../../components/Car/CarHeader";
 const Car = () => {
-  const { carId } = useLocalSearchParams();
+  const { carId, color } = useLocalSearchParams();
   const { isLoading, setIsLoading, setId, variants, car } = useCarContext();
   const [showCardByTier, setShowCardByTier] = useState("1");
 

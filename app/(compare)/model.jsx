@@ -5,11 +5,12 @@ import BackButtonHeader from "../../components/BackButtonHeader";
 import SmallTitle from "../../components/Compare/SmallTitle";
 import SearchBar from "../../components/SearchBar";
 import ford from "../../lib/ford";
-
 import ModelCarCard from "../../components/Compare/ModelCarCard";
+import { useUserContext } from "../../context/UserContext";
 
 const CarModel = () => {
   const [showCardById, setShowCardById] = useState(1);
+      const { color } = useUserContext();
 
   // const { brand, slot } = route?.params || {};
   // const models = carModels[brand] || [];

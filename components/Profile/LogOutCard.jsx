@@ -2,22 +2,28 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import icons from "../../constants/icons";
 import LogOutModal from "../Modals/LogOutModal";
+import { useUserContext } from "../../context/UserContext";
 const LogOutCard = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const { color } = useUserContext();
+
   return (
     <>
-      <LogOutModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
+      <LogOutModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
       <TouchableOpacity
         activeOpacity={0.7}
         onPress={() => {
           setModalVisible(true);
         }}
-        className="flex-row border-[#E8E8E8] items-center space-x-4 pt-3"
+        className="flex-row border-gray_border items-center space-x-4 pt-3"
       >
-        <View className={`bg-[#E9F5E9] h-10 w-10 rounded-full`}>
+        <View className={`bg-green_logout_bg h-10 w-10 rounded-full`}>
           <Image
             source={icons.logout}
-            tintColor="#439F48"
+            tintColor={color.green_secondary}
             className="h-4 w-4 m-auto"
             resizeMode="contain"
           />

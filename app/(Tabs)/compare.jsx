@@ -5,8 +5,10 @@ import Container from "../../components/Container";
 import Button from "../../components/Button";
 import { router } from "expo-router";
 import SelectCar from "../../components/Compare/SelectCar";
+import { useUserContext } from "../../context/UserContext";
 
 const Compare = () => {
+  const { color } = useUserContext();
   const [car1, setCar1] = useState(null);
   const [car2, setCar2] = useState(null);
   const [isComplete, setIsComplete] = useState(false);

@@ -2,6 +2,7 @@ import { Animated, View, Text, Image } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import icons from "../../constants/icons";
+import { useUserContext } from "@/context/UserContext";
 
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
@@ -14,7 +15,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
       />
       <Text
         className={`font-semibold text-4xl absolute -m-5 bottom-0  ${
-          focused ? "text-[#5CB88F]" : "text-white"
+          focused ? "text-green_primary" : "text-white"
         }`}
       >
         .
@@ -24,18 +25,19 @@ const TabIcon = ({ icon, color, name, focused }) => {
 };
 
 const TabsLayout = () => {
+  const { color } = useUserContext();
   return (
     <>
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarActiveTintColor: "#5CB88F",
-          tabBarInactiveTintColor: "#9B9B9B",
+          tabBarActiveTintColor: color.green_primary,
+          tabBarInactiveTintColor: color.gray_inactive,
           tabBarHideOnKeyboard: true,
           tabBarStyle: {
             position: "absolute",
-            backgroundColor: "#fff",
-            borderColor: "#fff",
+            backgroundColor: color.white,
+            borderColor: color.white,
             height: 60,
             width: "92%",
             marginHorizontal: "4%",

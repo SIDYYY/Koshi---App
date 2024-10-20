@@ -10,7 +10,7 @@ import LogOutCard from "../../components/Profile/LogOutCard";
 import FormModal from "../../components/Modals/FormModal";
 
 const Profile = () => {
-  const { user } = useUserContext();
+  const { user, color } = useUserContext();
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -27,21 +27,25 @@ const Profile = () => {
           onPress={() => setModalVisible(!modalVisible)}
           className="top-4 right-4 absolute flex-row gap-2 items-center"
         >
-          <Image className=" h-4 w-4" tintColor="#9b9b9b" source={icons.edit} />
-          <Text className="text-[#9b9b9b]">Edit</Text>
+          <Image
+            className=" h-4 w-4"
+            tintColor={color.gray_inactive}
+            source={icons.edit}
+          />
+          <Text className="text-gray_inactive">Edit</Text>
         </TouchableOpacity>
-        <View className="h-20 w-20 bg-[#f7f7f7] mb-2 rounded-full">
+        <View className="h-20 w-20 bg-gray_border mb-2 rounded-full">
           <Image
             source={icons.user}
             className="h-12 w-12 m-auto"
-            tintColor="#9b9b9b"
+            tintColor={color.gray_inactive}
             resizeMode="contain"
           />
         </View>
 
         <Text className="text-lg mb-1">{user.name}</Text>
-        <Text className="text-[#9b9b9b] text-xs">{user.email}</Text>
-        <Text className="text-[#9b9b9b] text-xs">
+        <Text className="text-gray_inactive text-xs">{user.email}</Text>
+        <Text className="text-gray_inactive text-xs">
           {user.phone_number ? user.phone_number : "No phone number added yet"}
         </Text>
       </View>
@@ -51,28 +55,28 @@ const Profile = () => {
         <SettingsCard
           label="Personal Info"
           icon={icons.user}
-          iconBg="bg-[#EAEBFF]"
-          iconTint="#304FFF"
+          iconBg="bg-blue_icon_bg"
+          iconTint={color.blue_icon_bg}
         />
         <SettingsCard
           label="Become A Seller"
           icon={icons.seller}
-          iconBg="bg-[#FFF9C5]"
-          iconTint="#F57E16"
+          iconBg="bg-orange_icon_bg"
+          iconTint={color.orange_primary}
         />
         <SettingsCard
           label="Change Password"
           icon={icons.changepwd}
-          iconBg="bg-[#EAEBFF]"
-          iconTint="#304FFF"
+          iconBg="bg-blue_icon_bg"
+          iconTint={color.blue_icon_bg}
         />
       </View>
       <View className="w-full bg-white mt-4 rounded-lg p-4">
         <SettingsCard
           label="Delete Account"
           icon={icons.deleteIcon}
-          iconBg="bg-[#FFEBED]"
-          iconTint="#F34336"
+          iconBg="bg-red_icon_bg"
+          iconTint={color.red_primary}
           borderTop={false}
         />
         <LogOutCard />

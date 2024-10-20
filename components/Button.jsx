@@ -1,6 +1,7 @@
 import { Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { SkypeIndicator } from "react-native-indicators";
+import { useUserContext } from "../context/UserContext";
 
 const Button = ({
   label,
@@ -10,10 +11,11 @@ const Button = ({
   disabled = false,
   isLoading,
 }) => {
+  const { color } = useUserContext();
   return (
     <TouchableOpacity
       className={`${
-        disabled ? "bg-[#E4E7EB]" : "bg-[#5CB88F]"
+        disabled ? "bg-gray_button_focused" : "bg-green_primary"
       } h-[57px] rounded-lg relative justify-center items-center flex-row space-x-4 ${otherStyles}`}
       activeOpacity={0.7}
       onPress={onPress}
@@ -25,11 +27,11 @@ const Button = ({
         ""
       )}
       {isLoading ? (
-        <SkypeIndicator color="#5CB88F" size={35} />
+        <SkypeIndicator color={color.green_primary} size={35} />
       ) : (
         <Text
           className={`text-base font-bold text-center justify-center items-center ${
-            disabled || isLoading ? "text-[#9b9b9b]" : "text-white"
+            disabled || isLoading ? "text-gray_inactive" : "text-white"
           }`}
         >
           {label}

@@ -113,22 +113,22 @@ const FormModal = ({ modalVisible, setModalVisible }) => {
             <ErrorMessage value={databaseError} />
           </View>
 
-          <View className="flex-row border-t border-[#E5E4E2]">
+          <View className="flex-row border-t border-gray_border">
             <TouchableOpacity
               activeOpacity={0.7}
               className="flex-1 pt-4"
               onPress={onCancel}
             >
-              <Text className="text-center text-[#F34336]">Cancel</Text>
+              <Text className="text-center text-red_primary">Cancel</Text>
             </TouchableOpacity>
-            <View className="border-r border-[#E5E4E2] mt-2 -mb-2" />
+            <View className="border-r border-gray_border mt-2 -mb-2" />
 
             <TouchableOpacity
               activeOpacity={0.7}
               className="flex-1 pt-4"
               onPress={handleSubmit(onSubmit)}
             >
-              <Text className="text-center text-[#5CB88F]">Save</Text>
+              <Text className="text-center text-green_primary">Save</Text>
             </TouchableOpacity>
           </View>
         </View>

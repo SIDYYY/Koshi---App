@@ -6,9 +6,12 @@ import Container from "../../components/Container";
 import LogoCard from "../../components/LogoCard";
 import BackButtonHeader from "../../components/BackButtonHeader";
 import Title from "../../components/Compare/SmallTitle";
+import { useUserContext } from "../../context/UserContext";
 
 export default function List() {
   const [isClicked, setIsClicked] = useState("");
+    const { color } = useUserContext();
+
   // const route = useRoute();
   // const navigation = useNavigation();
   // const [search, setSearch] = useState("");

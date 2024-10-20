@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import { SkypeIndicator } from "react-native-indicators";
 import Modal from "react-native-modal";
 import icons from "../../constants/icons";
+import { useUserContext } from "../../context/UserContext";
 
-const LoadingModal = ({
-  label = "Saving Your Changes...",
-  loadingModal,
-}) => {
+const LoadingModal = ({ label = "Saving Your Changes...", loadingModal }) => {
+  const { color } = useUserContext();
+
   return (
     <Modal
       isVisible={loadingModal}
@@ -24,9 +24,9 @@ const LoadingModal = ({
             source={icons.logo}
             className="h-16 w-16 mb-8 -mt-2"
             resizeMode="contain"
-            tintColor="#5CB88F"
+            tintColor={color.green_primary}
           />
-          <SkypeIndicator size={35} color="#5CB88F" />
+          <SkypeIndicator size={35} color={color.green_primary} />
           <Text className="text-lg font-bold mt-12 ">{label}</Text>
         </View>
       </View>

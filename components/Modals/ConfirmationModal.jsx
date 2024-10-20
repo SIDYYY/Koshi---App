@@ -8,13 +8,11 @@ const ConfirmationModal = ({
   setModalVisible,
   status,
   customRoute,
-  title
+  title,
 }) => {
-  
   return (
-    
     <Modal visible={modalVisible} transparent animationType="fade">
-      <View className="bg-[#00000040] flex-1">
+      <View className="bg-gray_modal_backdrop flex-1">
         <View className="bg-white m-auto w-72 justify-between p-4 pt-8 rounded-xl space-y-12">
           <View className="items-center space-y-2">
             <Image
@@ -23,15 +21,13 @@ const ConfirmationModal = ({
               resizeMode="contain"
             />
 
-            <Text className="text-2xl font-black text-center">
-              {title}
-            </Text>
+            <Text className="text-2xl font-black text-center">{title}</Text>
           </View>
 
           <View className="flex-row space-x-2">
             <TouchableOpacity
               activeOpacity={0.7}
-              className="bg-[#5CB88F] py-2 rounded-lg flex-1"
+              className="bg-green_primary py-2 rounded-lg flex-1"
               onPress={() => {
                 if (customRoute) {
                   router.replace(customRoute);

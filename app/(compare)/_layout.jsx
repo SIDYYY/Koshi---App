@@ -1,24 +1,20 @@
 import { View, Text } from "react-native";
 import React, { useState } from "react";
 import { Tabs } from "expo-router";
-
+import { useUserContext } from "../../context/UserContext";
 
 const CompareLayout = () => {
-  const [carChosen, setCarChosen] = useState({
-    brand: "",
-    model: "",
-    variant: "",
-  });
+  const { color } = useUserContext();
   const TabIcon = ({ name, focused }) => {
     return (
       <View
         className={`items-center justify-center gap-2 h-[90%] w-full ${
-          focused ? "border-t-2 border-green" : null
+          focused ? "border-t-2 border-green_primary" : null
         }`}
       >
         <Text
           className={`${
-            focused ? "font-black text-green" : "font-normal text-[#9b9b9b]"
+            focused ? "font-black text-green_primary" : "font-normal text-gray_inactive"
           } text-base uppercase`}
         >
           {name}
@@ -32,11 +28,10 @@ const CompareLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarActiveTintColor: "#5CB88F",
-          tabBarInactiveTintColor: "#9B9B9B",
+          tabBarActiveTintColor: color.green_primary,
+          tabBarInactiveTintColor: color.gray_primary,
           tabBarStyle: {
             height: 50,
-
           },
         }}
       >

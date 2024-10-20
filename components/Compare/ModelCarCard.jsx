@@ -2,8 +2,11 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { router } from "expo-router";
 import icons from "../../constants/icons";
+import { useUserContext } from "../../context/UserContext";
 
 const ModelCarCard = ({ model, isShown, onPress, otherStyles }) => {
+    const { color } = useUserContext();
+
   return (
     <View className={`items-center bg-white rounded-lg mb-2 ${otherStyles}`}>
       <TouchableOpacity
@@ -28,7 +31,7 @@ const ModelCarCard = ({ model, isShown, onPress, otherStyles }) => {
         </View>
         <TouchableOpacity
           onPress={onPress}
-          className={`justify-center bg-[#525252] w-12 items-center ${
+          className={`justify-center bg-gray_inactive w-12 items-center ${
             isShown ? "rounded-tr-lg" : "rounded-r-lg"
           }`}
         >
@@ -36,7 +39,7 @@ const ModelCarCard = ({ model, isShown, onPress, otherStyles }) => {
             source={icons.arrow}
             className={`h-4 w-4 -scale-[1] ${isShown ? "rotate-90" : ""}`}
             resizeMode="contain"
-            tintColor="#fff"
+            tintColor={color.white}
           />
         </TouchableOpacity>
       </TouchableOpacity>
@@ -44,7 +47,7 @@ const ModelCarCard = ({ model, isShown, onPress, otherStyles }) => {
         <View className="flex-1 w-full p-4">
           <Text className="text-gray">
             Price Range:{" "}
-            <Text className="text-green font-bold">{model.price}</Text>
+            <Text className="text-green_primary font-bold">{model.price}</Text>
           </Text>
           <Text className="text-gray">
             Body Type: <Text className="font-bold">{model.bodyType}</Text>

@@ -11,7 +11,7 @@ const SearchBar = forwardRef(
     return (
       <View
         className={`bg-white h-14 rounded-lg justify-center px-4 flex-row relative ${otherStyles} ${
-          isFocused ? "border border-green" : ""
+          isFocused ? "border border-green_primary" : ""
         }`}
       >
         <TextInput
@@ -20,7 +20,7 @@ const SearchBar = forwardRef(
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           placeholder="Search..."
-          placeholderTextColor="#9b9b9b"
+          placeholderTextColor={color.gray_inactive}
           onChangeText={(text) => setQuery(text)}
           value={query}
         />
