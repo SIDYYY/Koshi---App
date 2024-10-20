@@ -2,20 +2,22 @@ import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import color from "@/constants/colors";
 
 const Container = ({
   children,
   scroll = true,
   otherStyles = null,
-  bg = color.white_secondary,
+  bg = "#F3F5F7",
   pb = 85,
   ph = 16,
   pt = 24,
   centerContent,
 }) => {
   return (
-    <SafeAreaView className={`flex-1 h-full bg-[${bg}] ${otherStyles}`}>
+    <SafeAreaView
+      className={`flex-1 h-full ${otherStyles}`}
+      style={{ backgroundColor: bg }}
+    >
       <StatusBar style="dark" />
       {scroll ? (
         <ScrollView
