@@ -5,63 +5,39 @@ import Container from "@/components/Container";
 import icons from "@/constants/icons";
 import { useUserContext } from "../context/UserContext";
 import { supabase } from "@/lib/supabase";
-import LoadingSpinner from "@/components/LoadingSpinner";
-import CustomModal from "@/components/Modals/ConfirmationModal";
+import { SkypeIndicator } from "react-native-indicators";
 
 const index = () => {
-  const { isLoading, setAuthId, user } = useUserContext();
-  const [modalVisible, setModalVisible] = useState(false);
-  const [counter, setCounter] = useState(0);
+  const { isLoading, setAuthId } = useUserContext();
 
   useEffect(() => {
     const checkUserSession = async () => {
       const { data, error } = await supabase.auth.getSession();
-
       if (error) {
         console.error("Error fetching session:", error);
         return; // Handle error appropriately (e.g., show a message)
       }
 
-      if (data.session != null) {
+      if (data.session) {
         const userId = data.session.user.id;
-        setAuthId(userId); // Set authId here
-
-        // Only show modal and redirect if counter is 0 (first time)
-        if (user != null && !isLoading && counter === 0) {
-          setModalVisible(true);
-          const timer = setTimeout(() => {
-            setModalVisible(false);
+        setAuthId(userId);
+        if (!isLoading) {
+          setTimeout(() => {
             router.replace("/home");
-          }, 3000);
-
-          setCounter(1); // Increment the counter to ensure this only happens once
-          return () => clearTimeout(timer); // Clean up timer
+          }, 1500);
         }
       } else {
-        if (data.session === null && !isLoading) {
+        if (!data.session && !isLoading) {
           router.replace("/sign-in");
         }
       }
     };
-
     checkUserSession();
-  }, [user, isLoading]);
-
+  }, [isLoading]);
 
   return (
-    <Container bg="#5CB88F">
-      <LoadingSpinner
-        isLoading={isLoading}
-        customText="Checking if you have logged in before"
-      />
-      <CustomModal
-        modalVisible={modalVisible}
-        setModalVisible={setModalVisible}
-        customRoute={"/home"}
-        title="Log-in Successfully"
-        status={true}
-      />
-      <View className=" h-full justify-center items-center flex-row gap-2">
+    <Container bg="#5CB88F" scroll={false} pb={false} ph={false} pt={false}>
+      <View className="relative flex-1 space-x-4 justify-center items-center flex-row ">
         <Image
           source={icons.logo}
           className="h-24 w-24"
@@ -72,10 +48,18 @@ const index = () => {
           <Text className="font-black text-5xl text-white py-1 tracking-[7px]">
             KOSHI
           </Text>
-          <Text className="text-white text-[13px] -mt-3 ">
+          <Text className="text-white text-[13px] -mt-3">
             Helping you pick the right ride
           </Text>
         </View>
+      </View>
+      <View className="items-center space-y-4 justify-center absolute bottom-16 left-0 right-0">
+        <SkypeIndicator className="" color="white" />
+        <Text className="text-white text-base font-bold">
+          {isLoading
+            ? "Checking if you have logged in before....."
+            : "Redirecting....."}
+        </Text>
       </View>
     </Container>
   );

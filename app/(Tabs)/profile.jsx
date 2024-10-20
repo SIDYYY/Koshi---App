@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Modal } from "react-native";
 import React, { useState } from "react";
 import { useUserContext } from "../../context/UserContext";
 import Container from "../../components/Container";
@@ -8,7 +8,6 @@ import SettingsCard from "../../components/Profile/SettingsCard";
 import DarkModeCard from "../../components/Profile/DarkModeCard";
 import LogOutCard from "../../components/Profile/LogOutCard";
 import FormModal from "../../components/Modals/FormModal";
-import ContentContainer from "../../components/ContentContainer";
 
 const Profile = () => {
   const { user } = useUserContext();
@@ -19,11 +18,10 @@ const Profile = () => {
       <FormModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
-        user={user}
       />
+
       <BackButtonHeader title="My Profile" />
-      {/* className="w-full bg-white h-[200px] rounded-lg mt-4 justify-center items-center relative" */}
-      <ContentContainer otherStyles="items-center">
+      <View className="w-full bg-white h-[200px] rounded-lg mt-4 justify-center items-center relative">
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={() => setModalVisible(!modalVisible)}
@@ -46,9 +44,9 @@ const Profile = () => {
         <Text className="text-[#9b9b9b] text-xs">
           {user.phone_number ? user.phone_number : "No phone number added yet"}
         </Text>
-      </ContentContainer>
+      </View>
 
-      <ContentContainer>
+      <View className="w-full bg-white mt-4 rounded-lg p-4">
         <DarkModeCard />
         <SettingsCard
           label="Personal Info"
@@ -67,10 +65,9 @@ const Profile = () => {
           icon={icons.changepwd}
           iconBg="bg-[#EAEBFF]"
           iconTint="#304FFF"
-          borderBottom={false}
         />
-      </ContentContainer>
-      <ContentContainer>
+      </View>
+      <View className="w-full bg-white mt-4 rounded-lg p-4">
         <SettingsCard
           label="Delete Account"
           icon={icons.deleteIcon}
@@ -79,7 +76,7 @@ const Profile = () => {
           borderTop={false}
         />
         <LogOutCard />
-      </ContentContainer>
+      </View>
     </Container>
   );
 };

@@ -10,17 +10,19 @@ const UserContext = ({ children }) => {
   const [user, setUser] = useState(null); // Initialize as null instead of an empty string
   const [authId, setAuthId] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+const [databaseError, setDatabaseError] = useState('')
 
   useEffect(() => {
     const fetchUser = async () => {
       // Fetch user only if authId is set
       try {
         if (authId) {
-          const response = await getCurrentUser(authId);
-          if (response) {
-            setUser(response);
+          const {data, error} = await getCurrentUser(authId);
+          if (data) {
+            setUser(data);
           } else {
             setUser(null);
+            setDatabaseError(error)
           }
         }
       } catch (error) {

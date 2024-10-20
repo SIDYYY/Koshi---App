@@ -3,30 +3,18 @@ import { Stack } from "expo-router";
 import Toast from "react-native-toast-message";
 import toast from "@/utils/toast-message";
 import UserContext from "@/context/UserContext";
-import CarContext from "@/context/CarContext"; // Use consistent import path
 
-const App = () => {
+const RootLayout = () => {
   return (
     <UserContext>
-      <CarContext>
-        <Stack>
-          <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="(compare)" options={{ headerShown: false }} />
-          <Stack.Screen
-            name="search/[query]"
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen name="car/[carId]" options={{ headerShown: false }} />
-          <Stack.Screen
-            name="car/variant/[variantTier]"
-            options={{ headerShown: false }}
-          />
-        </Stack>
-      </CarContext>
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+      <Toast config={toast.toastConfig} />
     </UserContext>
   );
 };
 
-export default App;
+export default RootLayout;

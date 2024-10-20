@@ -9,14 +9,12 @@ const Container = ({
   otherStyles = null,
   bg = "#F3F5F7",
   pb = 85,
-  ph = 14,
+  ph = 16,
   pt = 24,
   centerContent,
 }) => {
   return (
-    <SafeAreaView
-      className={`flex-1 h-full bg-[${bg}] ${otherStyles}`}
-    >
+    <SafeAreaView className={`flex-1 h-full bg-[${bg}] ${otherStyles}`}>
       <StatusBar style="dark" />
       {scroll ? (
         <ScrollView
@@ -34,7 +32,9 @@ const Container = ({
         </ScrollView>
       ) : (
         <View
-          className={`min-h-[100%] px-[14px] relative ${pb ? "pb-[85px]" : ""}`}
+          className={`min-h-[100%] ${ph && "px-4"}  relative ${
+            pb && "pb-[85px]"
+          }`}
         >
           {children}
         </View>

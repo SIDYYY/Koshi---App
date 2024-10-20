@@ -1,42 +1,40 @@
 import { Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
+import { SkypeIndicator } from "react-native-indicators";
 
 const Button = ({
   label,
   otherStyles,
-  complete = true,
-  icon,
+  withIcon,
   onPress,
-  disabled,
+  disabled = false,
   isLoading,
-  iconTint,
 }) => {
   return (
     <TouchableOpacity
       className={`${
-        isLoading || !complete ? "bg-light_grey" : "bg-green"
+        disabled ? "bg-[#E4E7EB]" : "bg-[#5CB88F]"
       } h-[57px] rounded-lg relative justify-center items-center flex-row space-x-4 ${otherStyles}`}
       activeOpacity={0.7}
       onPress={onPress}
       disabled={disabled}
     >
-      {icon ? (
-        <Image
-          source={icon}
-          className="h-6 w-6"
-          resizeMode="contain"
-          tintColor={!complete ? "#9b9b9b" : iconTint}
-        />
+      {withIcon ? (
+        <Image source={withIcon} className="h-6 w-6" resizeMode="contain" />
       ) : (
         ""
       )}
-      <Text
-        className={`text-base font-bold text-center ${
-          !complete || isLoading ? "text-gray" : "text-white"
-        }`}
-      >
-        {label}
-      </Text>
+      {isLoading ? (
+        <SkypeIndicator color="#5CB88F" size={35} />
+      ) : (
+        <Text
+          className={`text-base font-bold text-center justify-center items-center ${
+            disabled || isLoading ? "text-[#9b9b9b]" : "text-white"
+          }`}
+        >
+          {label}
+        </Text>
+      )}
     </TouchableOpacity>
   );
 };
