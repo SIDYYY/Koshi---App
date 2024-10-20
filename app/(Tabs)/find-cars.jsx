@@ -57,7 +57,7 @@ const FindCars = () => {
             <Button
               label="Find Cars Now"
               icon={icons.search}
-              iconTint={color.white}
+              iconTint={color.white_secondary}
               onPress={
                 searchText
                   ? () => {

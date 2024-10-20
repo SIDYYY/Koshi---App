@@ -55,27 +55,27 @@ const Profile = () => {
         <SettingsCard
           label="Personal Info"
           icon={icons.user}
-          iconBg="bg-blue_icon_bg"
-          iconTint={color.blue_icon_bg}
+          iconBg={color.blue_icon_bg}
+          iconTint={color.blue_primary}
         />
         <SettingsCard
           label="Become A Seller"
           icon={icons.seller}
-          iconBg="bg-orange_icon_bg"
+          iconBg={color.orange_icon_bg}
           iconTint={color.orange_primary}
         />
         <SettingsCard
           label="Change Password"
           icon={icons.changepwd}
-          iconBg="bg-blue_icon_bg"
-          iconTint={color.blue_icon_bg}
+          iconBg={color.blue_icon_bg}
+          iconTint={color.blue_primary}
         />
       </View>
       <View className="w-full bg-white mt-4 rounded-lg p-4">
         <SettingsCard
           label="Delete Account"
           icon={icons.deleteIcon}
-          iconBg="bg-red_icon_bg"
+          iconBg={color.red_icon_bg}
           iconTint={color.red_primary}
           borderTop={false}
         />

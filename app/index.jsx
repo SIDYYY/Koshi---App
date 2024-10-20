@@ -34,15 +34,23 @@ const index = () => {
     };
     checkUserSession();
   }, [isLoading]);
+  console.log(color.green_primary);
+  
 
   return (
-    <Container bg={color.green_primary} scroll={false} pb={false} ph={false} pt={false}>
+    <Container
+      bg={color.green_primary}
+      scroll={false}
+      pb={false}
+      ph={false}
+      pt={false}
+    >
       <View className="relative flex-1 space-x-4 justify-center items-center flex-row ">
         <Image
           source={icons.logo}
           className="h-24 w-24"
           resizeMode="contain"
-          tintColor={color.white}
+          tintColor={color.white_secondary}
         />
         <View className="items-center">
           <Text className="font-black text-5xl text-white py-1 tracking-[7px]">

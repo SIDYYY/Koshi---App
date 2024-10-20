@@ -12,7 +12,8 @@ module.exports = {
         green_logout_bg: "#E9F5E9", // Logout background color
 
         // White
-        white: "#F3F5F7", // Main white color for icons
+        white: "#ffffff",
+        white_secondary: "#F3F5F7", // Main white color for icons
 
         black_icon_bg: "#B8B8B8",
 

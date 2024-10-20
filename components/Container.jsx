@@ -8,7 +8,7 @@ const Container = ({
   children,
   scroll = true,
   otherStyles = null,
-  bg = color.white,
+  bg = color.white_secondary,
   pb = 85,
   ph = 16,
   pt = 24,

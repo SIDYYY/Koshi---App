@@ -10,8 +10,6 @@ const SettingsCard = ({
   label,
   route = "/profile",
   borderTop = true,
-  borderBottom = true,
-  customStyles,
 }) => {
   return (
     <TouchableOpacity
@@ -21,7 +19,7 @@ const SettingsCard = ({
         borderTop ? "border-t" : "border-b"
       } `}
     >
-      <View className={`${iconBg} h-10 w-10 rounded-full`}>
+      <View className={` bg-[${iconBg}] h-10 w-10 rounded-full`}>
         <Image
           source={icon}
           tintColor={iconTint}

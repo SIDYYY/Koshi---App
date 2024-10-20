@@ -5,7 +5,7 @@ import icons from "../../constants/icons";
 import { useUserContext } from "../../context/UserContext";
 
 const ModelCarCard = ({ model, isShown, onPress, otherStyles }) => {
-    const { color } = useUserContext();
+  const { color } = useUserContext();
 
   return (
     <View className={`items-center bg-white rounded-lg mb-2 ${otherStyles}`}>
@@ -27,7 +27,9 @@ const ModelCarCard = ({ model, isShown, onPress, otherStyles }) => {
           }`}
         >
           <Text className="font-black text-lg">{model.name}</Text>
-          <Text className="text-gray">{model.variants ? model.variants.length : 1 } Variants Available</Text>
+          <Text className="text-gray">
+            {model.variants ? model.variants.length : 1} Variants Available
+          </Text>
         </View>
         <TouchableOpacity
           onPress={onPress}
@@ -39,7 +41,7 @@ const ModelCarCard = ({ model, isShown, onPress, otherStyles }) => {
             source={icons.arrow}
             className={`h-4 w-4 -scale-[1] ${isShown ? "rotate-90" : ""}`}
             resizeMode="contain"
-            tintColor={color.white}
+            tintColor={color.white_secondary}
           />
         </TouchableOpacity>
       </TouchableOpacity>

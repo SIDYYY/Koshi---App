@@ -8,7 +8,8 @@ const colors = {
   form_correct_bg: "#F8FFFD", // Correct form input background
 
   // White
-  white: "#F3F5F7", // Main white color for icons
+  white: "#ffffff",
+  white_secondary: "#F3F5F7", // Main white color for icons
 
   // Gray Variants
   gray_inactive: "#9B9B9B", // Inactive/disabled text, borders, placeholders

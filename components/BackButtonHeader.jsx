@@ -18,7 +18,7 @@ const BackButtonHeader = ({ title, type, otherStyles }) => {
         <Image
           source={icons.arrow}
           className="w-6 h-6 m-auto "
-          tintColor={type ? color.white : color.black}
+          tintColor={type ? color.white_secondary : color.black}
           resizeMode="contain"
         />
       </View>

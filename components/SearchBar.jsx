@@ -3,11 +3,14 @@ import React, { forwardRef, useEffect, useState } from "react";
 import icons from "../constants/icons";
 import { router, usePathname } from "expo-router";
 import { TouchableOpacity } from "react-native";
+import { useUserContext } from "../context/UserContext";
 
 const SearchBar = forwardRef(
   ({ otherStyles, searchIcon = true, query, setQuery }, ref) => {
     const [isFocused, setIsFocused] = useState(false);
     const pathname = usePathname();
+    const { color } = useUserContext();
+
     return (
       <View
         className={`bg-white h-14 rounded-lg justify-center px-4 flex-row relative ${otherStyles} ${
