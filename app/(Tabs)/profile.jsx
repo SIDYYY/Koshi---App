@@ -9,6 +9,9 @@ import DarkModeCard from "../../components/Profile/DarkModeCard";
 import LogOutCard from "../../components/Profile/LogOutCard";
 import FormModal from "../../components/Modals/FormModal";
 
+    // <Text>Error - Name is null/undefined sakong side </Text>
+
+
 const Profile = () => {
   const { user, color } = useUserContext();
   const [modalVisible, setModalVisible] = useState(false);
@@ -43,11 +46,12 @@ const Profile = () => {
           />
         </View>
 
-        <Text className="text-lg mb-1">{user.name}</Text>
-        <Text className="text-gray_inactive text-xs">{user.email}</Text>
+        <Text className="text-lg mb-1">{user ? user.name : "User"}</Text>
+        <Text className="text-gray_inactive text-xs">{user ? user.email : "Email"}</Text>
         <Text className="text-gray_inactive text-xs">
-          {user.phone_number ? user.phone_number : "No phone number added yet"}
+          {user && user.phone_number ? user.phone_number : "Phone Number"}
         </Text>
+
       </View>
 
       <View className="w-full bg-white mt-4 rounded-lg p-4">
@@ -69,6 +73,13 @@ const Profile = () => {
           icon={icons.changepwd}
           iconBg={color.blue_icon_bg}
           iconTint={color.blue_primary}
+        />
+        <SettingsCard
+          label="Loan Calculator"
+          icon={icons.Calcu}
+          iconBg={color.blue_icon_bg}
+          iconTint={color.gray_inactive}
+          route="/LoanCalculator"
         />
       </View>
       <View className="w-full bg-white mt-4 rounded-lg p-4">

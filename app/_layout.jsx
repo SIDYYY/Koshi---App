@@ -9,8 +9,9 @@ const RootLayout = () => {
     <UserContext>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="LoanCalculator" options={{title: "Loan Calculator"}}/>
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(Tabs)" options={{ headerShown: false }} />
       </Stack>
       <Toast config={toast.toastConfig} />
     </UserContext>
