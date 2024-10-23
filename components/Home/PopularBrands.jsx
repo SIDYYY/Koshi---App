@@ -9,17 +9,16 @@ import ContentContainer from "../ContentContainer";
 
 export default function PopularBrands() {
   return (
-    <>
-      <Title title="Popular Brands" />
-      <ContentContainer ph={false}>
-        <FlatList
-          data={logos.slice(0, 10)}
-          horizontal={true}
-          renderItem={({ item }) => <LogoCard logo={item} otherStyles="" />}
-          keyExtractor={(item) => item.name}
-          contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
-        />
-      </ContentContainer>
-    </>
+    <ContentContainer ph={false}>
+      <Title title="Popular Brands" mt={false} px="p-5"/>
+      <View className="border-b border-gray_border mb-5" />
+      <FlatList
+        data={logos.slice(0, 10)}
+        horizontal={true}
+        renderItem={({ item }) => <LogoCard logo={item} otherStyles="" />}
+        keyExtractor={(item) => item.name}
+        contentContainerStyle={{ paddingHorizontal: 20, gap: 16, marginBottom: 20 }}
+      />
+    </ContentContainer>
   );
 }

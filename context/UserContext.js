@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { getCurrentUser } from "../lib/supabase";
-import color from "../constants/colors";
+import color from "../constants/custom-colors";
 
 const GlobalContext = createContext();
 

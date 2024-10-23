@@ -6,7 +6,7 @@ const ContentContainer = ({ children, otherStyles, ph = true }) => {
     <View
       className={`rounded-xl ${
         ph ? "px-4" : ""
-      } mt-4 bg-white py-4 ${otherStyles}`}
+      } mt-4 bg-white  ${otherStyles}`}
     >
       {children}
     </View>

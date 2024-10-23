@@ -7,18 +7,16 @@ import ContentContainer from "../ContentContainer";
 
 const NewCars = () => {
   return (
-    <>
-      <Title title="Popular Cars" />
-      <ContentContainer ph={false}>
-        <FlatList
-          data={cars}
-          horizontal={true}
-          renderItem={({ item }) => <MainCarCard car={item} />}
-          keyExtractor={(item) => item.id}
-          contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
-        />
-      </ContentContainer>
-    </>
+    <ContentContainer ph={false}>
+      <Title title="Popular Cars" mt={false} px="p-5" />
+      <FlatList
+        data={cars}
+        horizontal={true}
+        renderItem={({ item }) => <MainCarCard car={item} />}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={{ paddingHorizontal: 14, gap: 16 }}
+      />
+    </ContentContainer>
   );
 };
 export default NewCars;

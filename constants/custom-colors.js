@@ -1,4 +1,4 @@
-const colors = {
+const customColors = {
   // Green Variants
   green_primary: "#5CB88F", // Active checkbox, tabBarActiveTintColor, etc.
   green_secondary: "#439F48", // Secondary green for icons
@@ -43,4 +43,4 @@ const colors = {
   car_model_card: "#525252", // Model car card text
 };
 
-export default colors;
+export default customColors;
