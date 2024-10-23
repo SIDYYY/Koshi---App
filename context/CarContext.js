@@ -18,9 +18,8 @@ const CarContext = ({ children }) => {
       setTimeout(() => {
         const foundCar = ford.find((car) => car.id === Number(Id));
         setCar(foundCar);
-        console.log(Id);
         setVariants(foundCar.variants);
-        setIsLoading(false)
+        setIsLoading(false);
       }, 1000); // Simulate 1 second delay
     };
 

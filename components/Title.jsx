@@ -9,8 +9,8 @@ const Title = ({
   mt = "mt-6 ",
 }) => {
   return (
-    <View className={`flex-row justify-between items-center -mb-2 ${px} ${mt} `}>
-      <Text className={`text-base font-semibold ${otherStyles}`}>{title}</Text>
+    <View className={`flex-row justify-between items-center ${px} ${mt} `}>
+      <Text className={`text-base font-bold ${otherStyles}`}>{title}</Text>
       {more ? <Text className="text-gray font-bold">View all</Text> : ""}
     </View>
   );

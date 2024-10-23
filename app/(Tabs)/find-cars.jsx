@@ -9,7 +9,6 @@ import { useUserContext } from "../../context/UserContext";
 
 const FindCars = () => {
   const inputRef = useRef(null);
-  const pathname = usePathname();
   const [query, setQuery] = useState("");
   const { color } = useUserContext();
 
@@ -35,11 +34,7 @@ const FindCars = () => {
 
   return (
     <Container>
-      {/* Invoke dismissKeyboard correctly */}
-      <TouchableWithoutFeedback
-        className="h-full"
-        onPress={dismissKeyboard} // Call the function directly, without the arrow function
-      >
+      <TouchableWithoutFeedback className="h-full" onPress={dismissKeyboard}>
         <View className="space-y-14 my-auto">
           <View className="items-center space-y-2">
             <Text className="text-3xl font-black">Looking for a car?</Text>
@@ -49,7 +44,7 @@ const FindCars = () => {
           </View>
           <View>
             <SearchBar
-              otherStyles="mb-6"
+              otherStyles="mb-6 bg-white"
               query={query}
               setQuery={setQuery}
               ref={inputRef}

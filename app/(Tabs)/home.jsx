@@ -9,16 +9,16 @@ import BodyType from "../../components/Home/BodyType";
 import Contact from "../../components/Home/Contact";
 
 const Home = () => {
-    const inputRef = useRef(null);
+  const inputRef = useRef(null);
 
-    const dismissKeyboard = () => {
-      Keyboard.dismiss(); // Hides the keyboard
-      inputRef.current?.blur(); // Blurs the TextInput
-    };
+  const dismissKeyboard = () => {
+    Keyboard.dismiss(); // Hides the keyboard
+    inputRef.current?.blur(); // Blurs the TextInput
+  };
   return (
     <Container>
-      <Banner />
-      <SearchBar />
+      {/* <Banner /> */}
+      <SearchBar otherStyles="bg-white" />
       <PopularBrands />
       <NewCars />
       <BodyType />
