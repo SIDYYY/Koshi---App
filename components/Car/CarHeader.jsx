@@ -30,7 +30,7 @@ const CarHeader = ({children ,carImage , backButtonTitle }) => {
             />
           </View>
 
-          <View className="bg-main_bg_grey rounded-t-2xl flex-1 -mx-[14px] px-[14px]">
+          <View className="bg-white_tertiary rounded-t-2xl flex-1 -mx-[14px] px-[14px]">
             {children}
           </View>
         </BlurView>

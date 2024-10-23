@@ -28,8 +28,8 @@ const Car = () => {
   if (isLoading) {
     // Render the isLoading state
     return (
-      <Container>
-        <View
+      <Container pb={false}>
+        <View 
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
           <ActivityIndicator size="large" color="#0000ff" />

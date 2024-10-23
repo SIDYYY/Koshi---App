@@ -39,7 +39,15 @@ const UserContext = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{ user, setUser, authId, setAuthId, isLoading, setIsLoading, color }}
+      value={{
+        user,
+        setUser,
+        authId,
+        setAuthId,
+        isLoading,
+        setIsLoading,
+        color,
+      }}
     >
       {children}
     </GlobalContext.Provider>

@@ -30,6 +30,7 @@ const Container = ({
             justifyContent: centerContent ? "center" : null,
             paddingTop: pt,
           }}
+          keyboardShouldPersistTaps='handled'
         >
           {children}
         </ScrollView>
