@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, View, TouchableOpacity, Image, FlatList } from "react-native";
 import cars from "../../lib/ford";
-import FirstCarCard from "../FirstCarCard";
+import MainCarCard from "../MainCarCard";
 import carType from "../../lib/car-type";
 import CarFilterPill from "../CarFilterPill";
 import Title from "../Title";
@@ -42,7 +42,7 @@ export default function Popular() {
         horizontal={true}
         renderItem={({ item }) => (
           <View className="mt-6 py-2 mx-3">
-            <FirstCarCard car={item} />
+            <MainCarCard car={item} />
           </View>
         )}
         keyExtractor={(item) => item.name}

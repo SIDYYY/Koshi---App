@@ -34,7 +34,6 @@ const index = () => {
     };
     checkUserSession();
   }, [isLoading]);
-  console.log(color.green_primary);
   
 
   return (

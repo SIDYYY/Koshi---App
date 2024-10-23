@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { TouchableOpacity } from "react-native";
 import { router } from "expo-router";
 
-const FirstCarCard = ({ car }) => {
-  const [carId, setCarId] = useState(car.id);
+const MainCarCard = ({ car }) => {
+  const carId = car.id;
   return (
     <TouchableOpacity
       activeOpacity={0.7}
@@ -28,4 +28,4 @@ const FirstCarCard = ({ car }) => {
   );
 };
 
-export default FirstCarCard;
+export default MainCarCard;

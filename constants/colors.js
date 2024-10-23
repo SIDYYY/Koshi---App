@@ -10,6 +10,7 @@ const colors = {
   // White
   white: "#ffffff",
   white_secondary: "#F3F5F7", // Main white color for icons
+  white_tertiary: "#F4F5F7",
 
   // Gray Variants
   gray_inactive: "#9B9B9B", // Inactive/disabled text, borders, placeholders
@@ -21,6 +22,7 @@ const colors = {
   // Blue Variants
   blue_icon_bg: "#EAEBFF", // Blue background for icons
   blue_primary: "#304FFF", // Main blue color for icons
+  blue_secondary: "#42526E",
 
   // Orange/Yellow Variants
   orange_primary: "#F57E16", // Main orange/yellow color for icons
