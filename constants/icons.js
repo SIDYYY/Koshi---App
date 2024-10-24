@@ -35,6 +35,7 @@ import seat from "../assets/icons/seat.png";
 import transmission from "../assets/icons/type.png";
 import variant from "../assets/icons/variant.png";
 import Calcu from "../assets/icons/calcu.png";
+import star from "../assets/icons/star.png";
 
 export default {
   arrow,
@@ -74,4 +75,5 @@ export default {
   seat,
   variant,
   Calcu,
+  star,
 };
