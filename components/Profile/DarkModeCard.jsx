@@ -18,7 +18,7 @@ const DarkModeCard = () => {
         onPress={() => setDark(!dark)}
         className="flex-row items-center justify-between flex-1"
       >
-        <Text className="text-lg">Dark Mode</Text>
+        <Text className="text-lg font-pregular">Dark Mode</Text>
         <View
           className={`w-14 rounded-full p-[2px] ${
             dark ? "bg-green_primary items-end" : "bg-gray_border items-start"

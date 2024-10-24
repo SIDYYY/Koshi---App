@@ -26,8 +26,8 @@ const ModelCarCard = ({ model, isShown, onPress, otherStyles }) => {
             isShown ? "" : "justify-between"
           }`}
         >
-          <Text className="font-black text-lg">{model.name}</Text>
-          <Text className="text-gray">
+          <Text className="font-pblack text-lg">{model.name}</Text>
+          <Text className="text-gray font-pregular">
             {model.variants ? model.variants.length : 1} Variants Available
           </Text>
         </View>
@@ -47,12 +47,14 @@ const ModelCarCard = ({ model, isShown, onPress, otherStyles }) => {
       </TouchableOpacity>
       {isShown ? (
         <View className="flex-1 w-full p-4">
-          <Text className="text-gray">
+          <Text className="text-gray font-pregular">
             Price Range:{" "}
-            <Text className="text-green_primary font-bold">{model.price}</Text>
+            <Text className="text-green_primary font-pbold">
+              {model.price}
+            </Text>
           </Text>
-          <Text className="text-gray">
-            Body Type: <Text className="font-bold">{model.bodyType}</Text>
+          <Text className="text-gray font-pregular">
+            Body Type: <Text className="font-pbold">{model.bodyType}</Text>
           </Text>
         </View>
       ) : null}

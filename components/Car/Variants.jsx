@@ -18,11 +18,7 @@ const Variants = ({ variant, isShown, onPress }) => {
 
   return (
     <View className={`mt-4`}>
-      <Title
-        title={`Tier ${variant.tier}`}
-        more={false}
-        otherStyles="text-gray -mt-4"
-      />
+      <Title title={`Tier ${variant.tier}`} more={false} />
       <ContentContainer>
         <TouchableOpacity
           activeOpacity={0.7}
@@ -45,8 +41,10 @@ const Variants = ({ variant, isShown, onPress }) => {
           </View>
 
           <View className="flex-1">
-            <Text className="text-base font-bold">{variant.variant}</Text>
-            <Text className="text-green_primary">{variant.price}</Text>
+            <Text className="text-base font-pbold">{variant.variant}</Text>
+            <Text className="text-green_primary font-pregular">
+              {variant.price}
+            </Text>
           </View>
           <Image
             source={icons.arrow}
@@ -85,7 +83,7 @@ const Variants = ({ variant, isShown, onPress }) => {
               onPress={() => router.push(`car/variant/${variantTier}`)}
               className="flex-row border-light_grey_border px-2 border-t items-center space-x-4 pt-4 justify-between"
             >
-              <Text className="font-bold">Full Details</Text>
+              <Text className="font-pbold">Full Details</Text>
               <Image
                 source={icons.arrow}
                 className="h-4 w-4 -scale-[1]"

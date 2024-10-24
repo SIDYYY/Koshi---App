@@ -14,7 +14,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
         tintColor={color}
       />
       <Text
-        className={`font-semibold text-4xl absolute -m-5 bottom-0  ${
+        className={`font-psemibold text-4xl absolute -m-5 bottom-0  ${
           focused ? "text-green_primary" : "text-white"
         }`}
       >

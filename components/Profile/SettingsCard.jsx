@@ -31,7 +31,7 @@ const SettingsCard = ({
         />
       </View>
       <View className="flex-row items-center justify-between flex-1">
-        <Text className="text-lg">{label}</Text>
+        <Text className="text-lg font-pregular">{label}</Text>
         <Image
           source={icons.arrow}
           className="h-4 w-4 scale-x-[-1]"

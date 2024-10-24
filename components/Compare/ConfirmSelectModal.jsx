@@ -9,7 +9,7 @@ const ConfirmSelectModal = ({ modalVisible, setModalVisible, carSelected }) => {
       <View className="bg-gray_modal_backdrop flex-1">
         <View className="bg-white m-auto w-72 h-96 justify-between p-2 rounded-xl">
           <View className="items-center space-y-3">
-            <Text className="text-2xl font-black text-green_primary">
+            <Text className="text-2xl font-pblack text-green_primary">
               Confirm Changes?
             </Text>
             <View className=" w-[256px] h-[160px] rounded-lg">
@@ -23,16 +23,22 @@ const ConfirmSelectModal = ({ modalVisible, setModalVisible, carSelected }) => {
             </View>
           </View>
           <View className="flex-1 px-3 pt-2">
-            <Text className="text-gray_inactive ">You Selected</Text>
-            <Text className="text-2xl font-black">{carSelected.name}</Text>
-            <Text className="text-yellow_primary">{carSelected.bodyType}</Text>
-            <View className="flex-1 justify-end pb-2">
+            <Text className="text-gray_inactive font-pregular">
+              You Selected
+            </Text>
+            <Text className="text-2xl font-pblack ">{carSelected.name}</Text>
+            <Text className="text-yellow_primary font-pregular">
+              {carSelected.bodyType}
+            </Text>
+            <View className="flex-1 justify-end pb-2 font-pregular">
               <Text className="">
-                <Text className="text-gray_inactive ">Variant:</Text>
+                <Text className="text-gray_inactive font-pregular">
+                  Variant:
+                </Text>
                 {""} {carSelected.variant}
               </Text>
-              <Text className="text-green_primary">
-                <Text className="text-gray_inactive">Price:</Text>{" "}
+              <Text className="text-green_primary font-pregular">
+                <Text className="text-gray_inactive font-pregular">Price:</Text>{" "}
                 {carSelected.price}
               </Text>
             </View>
@@ -46,7 +52,7 @@ const ConfirmSelectModal = ({ modalVisible, setModalVisible, carSelected }) => {
                 setModalVisible(!modalVisible);
               }}
             >
-              <Text className="text-center">Cancel</Text>
+              <Text className="text-center font-pregular">Cancel</Text>
             </TouchableOpacity>
             <TouchableOpacity
               activeOpacity={0.7}
@@ -56,7 +62,9 @@ const ConfirmSelectModal = ({ modalVisible, setModalVisible, carSelected }) => {
                 setModalVisible(!modalVisible);
               }}
             >
-              <Text className="text-center text-white">Confirm</Text>
+              <Text className="text-center font-pregular text-white">
+                Confirm
+              </Text>
             </TouchableOpacity>
           </View>
         </View>

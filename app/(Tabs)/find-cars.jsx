@@ -37,8 +37,8 @@ const FindCars = () => {
       <TouchableWithoutFeedback className="h-full" onPress={dismissKeyboard}>
         <View className="space-y-14 my-auto">
           <View className="items-center space-y-2">
-            <Text className="text-3xl font-black">Looking for a car?</Text>
-            <Text className="max-w-[300px] text-center text-gray_inactive text-base">
+            <Text className="text-3xl font-pblack">Looking for a car?</Text>
+            <Text className="max-w-[300px] text-center font-pregular text-gray_inactive text-base">
               Find it quickly with our easy-to-use search tool.
             </Text>
           </View>

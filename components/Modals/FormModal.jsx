@@ -73,7 +73,7 @@ const FormModal = ({ modalVisible, setModalVisible }) => {
         <View className="bg-white m-auto w-[90%] p-4 rounded-xl">
           <View className="items-center space-x-2 flex-row">
             <View className="items-center flex-1">
-              <Text className="text-2xl font-black text-center">
+              <Text className="text-2xl font-pblack text-center">
                 Update Details
               </Text>
             </View>
@@ -119,7 +119,9 @@ const FormModal = ({ modalVisible, setModalVisible }) => {
               className="flex-1 pt-4"
               onPress={onCancel}
             >
-              <Text className="text-center text-red_primary">Cancel</Text>
+              <Text className="text-center text-red_primary font-pregular">
+                Cancel
+              </Text>
             </TouchableOpacity>
             <View className="border-r border-gray_border mt-2 -mb-2" />
 
@@ -128,7 +130,9 @@ const FormModal = ({ modalVisible, setModalVisible }) => {
               className="flex-1 pt-4"
               onPress={handleSubmit(onSubmit)}
             >
-              <Text className="text-center text-green_primary">Save</Text>
+              <Text className="text-center text-green_primary font-pregular">
+                Save
+              </Text>
             </TouchableOpacity>
           </View>
         </View>

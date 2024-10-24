@@ -17,7 +17,7 @@ const Home = () => {
   };
   return (
     <Container>
-      {/* <Banner /> */}
+      <Banner />
       <SearchBar otherStyles="bg-white" />
       <PopularBrands />
       <NewCars />

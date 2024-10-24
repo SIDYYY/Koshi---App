@@ -27,7 +27,7 @@ const LoadingModal = ({ label = "Saving Your Changes...", loadingModal }) => {
             tintColor={color.green_primary}
           />
           <SkypeIndicator size={35} color={color.green_primary} />
-          <Text className="text-lg font-bold mt-12 ">{label}</Text>
+          <Text className="text-lg font-psemibold mt-12 ">{label}</Text>
         </View>
       </View>
     </Modal>

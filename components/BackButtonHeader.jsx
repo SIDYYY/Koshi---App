@@ -26,7 +26,7 @@ const BackButtonHeader = ({ title, type, otherStyles }) => {
       <Text
         className={`text-lg text-${
           type ? "white" : "black"
-        }  font-bold flex-1 text-center`}
+        }  font-pbold flex-1 text-center`}
       >
         {title}
       </Text>

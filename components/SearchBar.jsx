@@ -12,13 +12,13 @@ const SearchBar = forwardRef(({ otherStyles, query, setQuery }, ref) => {
 
   return (
     <View
-      className={`bg-white_tertiary h-14 rounded-lg justify-center px-4 flex-row relative z-0 ${otherStyles} ${
+      className={`bg-white_tertiary h-14 rounded-lg  justify-center px-4 flex-row relative z-0 ${otherStyles} ${
         isFocused ? "border border-green_primary" : ""
       }`}
     >
       <TextInput
         ref={ref}
-        className="text-sm flex-1"
+        className="text-sm flex-1 font-pregular"
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         placeholder="Search..."

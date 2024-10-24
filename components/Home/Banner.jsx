@@ -8,7 +8,7 @@ const Banner = () => {
 
   return (
     <>
-      <ContentContainer otherStyles="mb-4">
+      <ContentContainer otherStyles="p-5 mb-4">
         <View className="flex-row items-center space-x-4">
           <View className="w-12 h-12 bg-gray_border rounded-full">
             <Image
@@ -19,11 +19,13 @@ const Banner = () => {
             />
           </View>
           <View className="flex-row justify-between flex-1">
-            <Text className="text-lg font-bold">{user ? user.name : "Guest"}</Text>
+            <Text className="text-lg font-pbold">
+              {user ? user.name : "Guest"}
+            </Text>
             <Image
-              source={icons.search}
+              source={icons.settings}
               className="h-6 w-6"
-              tintColor={color.black}
+              tintColor={color.green_primary}
               resizeMode="contain"
             />
           </View>

@@ -21,7 +21,9 @@ const FormInput = ({
       <View className="relative">
         {value && (
           <View className=" z-10 absolute -top-6 left-2 flex-row justify-between right-2">
-            <Text className="text-gray_inactive">{placeholder}</Text>
+            <Text className="text-gray_inactive font-pregular">
+              {placeholder}
+            </Text>
             <Image
               source={errorMessage ? icons.x : icons.check}
               tintColor={errorMessage ? color.red_primary : color.green_primary}
@@ -32,7 +34,7 @@ const FormInput = ({
         <TextInput
           onBlur={onBlur}
           cursorColor={color.gray_inactive}
-          className={`text-base px-4 py-3 rounded-lg border ${
+          className={`text-base px-4 py-3 rounded-lg font-pregular border ${
             errorMessage
               ? "border border-red-500 bg-red_error_bg"
               : !value

@@ -30,7 +30,7 @@ const Button = ({
         <SkypeIndicator color={color.green_primary} size={35} />
       ) : (
         <Text
-          className={`text-base font-bold text-center justify-center items-center ${
+          className={`text-base font-psemibold text-center justify-center items-center ${
             disabled || isLoading ? "text-gray_inactive" : "text-white"
           }`}
         >

@@ -35,7 +35,7 @@ const Profile = () => {
             tintColor={color.gray_inactive}
             source={icons.edit}
           />
-          <Text className="text-gray_inactive">Edit</Text>
+          <Text className="text-gray_inactive font-pregular">Edit</Text>
         </TouchableOpacity>
         <View className="h-20 w-20 bg-gray_border mb-2 rounded-full">
           <Image
@@ -46,12 +46,15 @@ const Profile = () => {
           />
         </View>
 
-        <Text className="text-lg mb-1">{user ? user.name : "User"}</Text>
-        <Text className="text-gray_inactive text-xs">{user ? user.email : "Email"}</Text>
-        <Text className="text-gray_inactive text-xs">
+        <Text className="text-lg mb-1 font-pregular">
+          {user ? user.name : "User"}
+        </Text>
+        <Text className="text-gray_inactive text-xs font-pregular">
+          {user ? user.email : "Email"}
+        </Text>
+        <Text className="text-gray_inactive text-xs font-pregular">
           {user && user.phone_number ? user.phone_number : "Phone Number"}
         </Text>
-
       </View>
 
       <View className="w-full bg-white mt-4 rounded-lg p-4">

@@ -29,7 +29,7 @@ const LogOutCard = () => {
           />
         </View>
         <View className="flex-row items-center justify-between flex-1">
-          <Text className="text-lg">Log-Out</Text>
+          <Text className="text-lg font-pregular">Log-Out</Text>
           <Image
             source={icons.arrow}
             className="h-4 w-4 scale-x-[-1]"

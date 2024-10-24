@@ -14,7 +14,9 @@ const CompareLayout = () => {
       >
         <Text
           className={`${
-            focused ? "font-black text-green_primary" : "font-normal text-gray_inactive"
+            focused
+              ? "font-pblack text-green_primary"
+              : "font-normal text-gray_inactive"
           } text-base uppercase`}
         >
           {name}

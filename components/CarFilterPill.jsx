@@ -21,7 +21,7 @@ const CarFilterPill = ({ item, handleFrameSelect, activeFrame }) => {
         <Text
           className={` ${
             activeFrame === value
-              ? "text-white  font-bold"
+              ? "text-white  font-pbold"
               : "text-gray_inactive"
           }`}
         >

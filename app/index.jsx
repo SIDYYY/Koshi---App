@@ -34,7 +34,6 @@ const index = () => {
     };
     checkUserSession();
   }, [isLoading]);
-  
 
   return (
     <Container
@@ -52,17 +51,17 @@ const index = () => {
           tintColor={color.white_secondary}
         />
         <View className="items-center">
-          <Text className="font-black text-5xl text-white py-1 tracking-[7px]">
+          <Text className="font-pbold text-5xl text-white py-1 tracking-[7px]">
             KOSHI
           </Text>
-          <Text className="text-white text-[13px] -mt-3">
+          <Text className="text-white text-[13px] font-pregular -mt-3">
             Helping you pick the right ride
           </Text>
         </View>
       </View>
       <View className="items-center space-y-4 justify-center absolute bottom-16 left-0 right-0">
         <SkypeIndicator className="" color="white" />
-        <Text className="text-white text-base font-bold">
+        <Text className="text-white text-base font-pmedium">
           {isLoading
             ? "Checking if you have logged in before....."
             : "Redirecting....."}

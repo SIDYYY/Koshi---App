@@ -36,8 +36,8 @@ const Compare = () => {
     <Container scroll={false}>
       <View className="my-auto">
         <View className="items-center">
-          <Text className="font-black text-2xl">Car Comparison Tool</Text>
-          <Text className="max-w-[90%] text-base text-center mt-2">
+          <Text className="font-pblack text-2xl">Car Comparison Tool</Text>
+          <Text className="max-w-[90%] text-base font-pregular text-center mt-2">
             Not decided on a new vehicle yet? You can compare 2 cars using our
             dynamic car comparison tool.
           </Text>

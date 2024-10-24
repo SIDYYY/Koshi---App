@@ -29,7 +29,7 @@ const Car = () => {
     // Render the isLoading state
     return (
       <Container pb={false}>
-        <View 
+        <View
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
           <ActivityIndicator size="large" color="#0000ff" />
@@ -41,7 +41,7 @@ const Car = () => {
 
   return (
     <CarHeader carImage={car.image} backButtonTitle="Car Details">
-      <Text className="font-black text-3xl mt-8">{car.name}</Text>
+      <Text className="font-pblack text-3xl mt-8">{car.name}</Text>
       <Title title="Car Overview" more={false} />
       <ContentContainer otherStyles="space-y-3">
         <View className="">

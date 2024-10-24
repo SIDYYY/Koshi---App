@@ -15,7 +15,7 @@ const Toast = ({ text1, text2 }) => {
         resizeMode="contain"
       />
       <View className="max-w-[70%]">
-        <Text className="text-base font-black">{text1}</Text>
+        <Text className="text-base font-pblack">{text1}</Text>
         <Text className="text-[12px] text-gray_inactive">{text2}</Text>
       </View>
     </View>

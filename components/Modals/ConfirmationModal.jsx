@@ -21,7 +21,7 @@ const ConfirmationModal = ({
               resizeMode="contain"
             />
 
-            <Text className="text-2xl font-black text-center">{title}</Text>
+            <Text className="text-2xl font-pblack text-center">{title}</Text>
           </View>
 
           <View className="flex-row space-x-2">
@@ -35,7 +35,9 @@ const ConfirmationModal = ({
                 setModalVisible(!modalVisible);
               }}
             >
-              <Text className="text-center text-white">Confirm</Text>
+              <Text className="text-center font-pregular text-white">
+                Confirm
+              </Text>
             </TouchableOpacity>
           </View>
         </View>

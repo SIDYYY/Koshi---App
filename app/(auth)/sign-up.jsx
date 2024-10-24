@@ -78,7 +78,7 @@ const SignUp = () => {
 
   return (
     <Container scroll={true} bg={color.green_primary} pb={false} ph={false}>
-      <Text className="mt-2 mb-14 text-[40px] text-white font-black px-4">
+      <Text className="mt-2 mb-14 text-[40px] text-white font-pblack px-4">
         Sign Up
       </Text>
       <LoadingModal
@@ -87,8 +87,8 @@ const SignUp = () => {
       />
 
       <View className="pb-4 px-4 pt-8 space-y-2 rounded-tl-3xl rounded-tr-3xl bg-white">
-        <Text className="text-2xl font-black">Create an Account</Text>
-        <Text className="text-base text-green_primary">
+        <Text className="text-2xl font-pblack">Create an Account</Text>
+        <Text className="text-base text-green_primary font-pregular">
           Please provide your details
         </Text>
       </View>
@@ -178,7 +178,9 @@ const SignUp = () => {
               onPress={() => setIsCheck(!isCheck)}
             >
               <Text
-                className={`text-base ${isCheck ? "text-green_primary" : "text-gray_inactive"}`}
+                className={`text-base font-pregular ${
+                  isCheck ? "text-green_primary" : "text-gray_inactive"
+                }`}
               >
                 Agree to terms & conditions
               </Text>

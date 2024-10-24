@@ -14,7 +14,7 @@ const ReasonsCard = ({ reasons }) => {
         resizeMode="contain"
         tintColor={color.orange_icon_bg}
       />
-      <Text className="font-black text-xl mt-4">{reasons.text}</Text>
+      <Text className="font-pblack text-xl mt-4">{reasons.text}</Text>
       <Text className="mt-2">{reasons.description}</Text>
     </Shadow>
   );

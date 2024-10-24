@@ -3,8 +3,8 @@ import React from "react";
 
 const ReasonsCard = ({ reasons }) => {
   return (
-    <View className="max-w-[250px] rounded-lg p-4 border border-gray_border">
-      <View className={`item h-10 w-10 rounded-full bg-[${reasons.bgColor}]`}>
+    <View className="max-w-[250px] rounded-2xl p-4 border border-gray_border">
+      <View className={`item h-10 w-10 rounded-full`} style={{ backgroundColor: reasons.bgColor }}>
         <Image
           source={{ uri: reasons.icon }}
           className="h-6 w-6 m-auto"
@@ -13,8 +13,8 @@ const ReasonsCard = ({ reasons }) => {
         />
       </View>
 
-      <Text className="font-black text-xl mt-4">{reasons.text}</Text>
-      <Text className="mt-2">{reasons.description}</Text>
+      <Text className="font-pblack text-xl mt-4">{reasons.text}</Text>
+      <Text className="mt-2 font-pregular">{reasons.description}</Text>
     </View>
   );
 };

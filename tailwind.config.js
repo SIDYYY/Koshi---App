@@ -53,6 +53,17 @@ module.exports = {
         // Miscellaneous
         car_model_card: "#525252", // Model car card text
       },
+      fontFamily: {
+        pthin: ["DMSans-Thin", "sans-serif"],
+        pextralight: ["DMSans-ExtraLight", "sans-serif"],
+        plight: ["DMSans-Light", "sans-serif"],
+        pregular: ["DMSans-Regular", "sans-serif"],
+        pmedium: ["DMSans-Medium", "sans-serif"],
+        psemibold: ["DMSans-SemiBold", "sans-serif"],
+        pbold: ["DMSans-Bold", "sans-serif"],
+        pextrabold: ["DMSans-ExtraBold", "sans-serif"],
+        pblack: ["DMSans-Black", "sans-serif"],
+      },
     },
   },
   plugins: [],

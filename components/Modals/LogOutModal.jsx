@@ -56,7 +56,7 @@ const LogOutModal = ({ modalVisible, setModalVisible }) => {
               resizeMode="contain"
             />
 
-            <Text className="text-2xl font-black text-center">
+            <Text className="text-2xl font-pbold text-center">
               Are you sure you want to Log-out?
             </Text>
           </View>
@@ -67,7 +67,9 @@ const LogOutModal = ({ modalVisible, setModalVisible }) => {
               className="flex-1 pt-4"
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <Text className="text-center text-red_primary">Cancel</Text>
+              <Text className="text-center text-red_primary font-pregular">
+                Cancel
+              </Text>
             </TouchableOpacity>
             <View className="border-r border-gray_border mt-2 -mb-2" />
 
@@ -76,7 +78,9 @@ const LogOutModal = ({ modalVisible, setModalVisible }) => {
               className="flex-1 pt-4"
               onPress={onLogout}
             >
-              <Text className="text-center text-green_primary">Confirm</Text>
+              <Text className="text-center text-green_primary font-pregular">
+                Confirm
+              </Text>
             </TouchableOpacity>
           </View>
         </View>

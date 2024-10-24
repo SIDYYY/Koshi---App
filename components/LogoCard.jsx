@@ -6,7 +6,7 @@ import { router } from "expo-router";
 const LogoCard = ({ logo, isSelected, otherStyles }) => {
   return (
     <TouchableOpacity
-      className="relative border border-gray_border rounded-lg justify-between"
+      className="relative border border-gray_border rounded-2xl justify-between"
       activeOpacity={0.7}
       onPress={() => router.push("/model")}
     >

@@ -24,7 +24,7 @@ const SelectCar = ({ car }) => {
           resizeMode="contain"
         />
       )}
-      <Text>{car ? car.model : "Select Car 1"}</Text>
+      <Text className="font-pregular">{car ? car.model : "Select Car 1"}</Text>
     </TouchableOpacity>
   );
 };

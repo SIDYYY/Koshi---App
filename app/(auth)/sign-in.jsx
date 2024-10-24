@@ -76,7 +76,7 @@ const SignIn = () => {
   return (
     <Container scroll={true} bg={color.green_primary} pb={false} ph={false}>
       <LoadingModal loadingModal={isLoading} label="Checking Credentials" />
-      <Text className="mt-2 px-4 mb-14 text-[40px] text-white font-black">
+      <Text className="mt-2 px-4 mb-14 text-[40px] text-white font-pblack">
         Sign In
       </Text>
       <KeyboardAvoidingView
@@ -84,8 +84,8 @@ const SignIn = () => {
         className="bg-white px-4 pt-8 rounded-tl-3xl rounded-tr-3xl flex-1"
       >
         <View className="mb-4 space-y-2">
-          <Text className="text-2xl font-black">Welcome Back!</Text>
-          <Text className="text-base text-gray_inactive">
+          <Text className="text-2xl font-pblack">Welcome Back!</Text>
+          <Text className="text-base text-gray_inactive font-pregular">
             Please Log-in your credentials
           </Text>
         </View>
@@ -119,7 +119,7 @@ const SignIn = () => {
         />
         <ErrorMessage value={databaseError} />
         <View className="pb-8 pt-4">
-          <Text className="text-gray_inactive text-right">
+          <Text className="text-gray_inactive text-right font-pregular">
             Forgot Password?
           </Text>
         </View>
@@ -135,7 +135,7 @@ const SignIn = () => {
       <View className="bg-white px-4 flex-1">
         <View className="flex-row space-x-2  items-center my-8">
           <View className="w-full flex-1 border-t border-gray_border max-h-[1px]"></View>
-          <Text className="text-gray_inactive text-center">
+          <Text className="text-gray_inactive text-center font-pregular">
             OR CONTINUE WITH
           </Text>
           <View className="w-full flex-1 border-t border-gray_border max-h-[1px] "></View>
@@ -160,7 +160,7 @@ const SignIn = () => {
               router.push("/sign-up");
             }}
           >
-            <Text className="text-center mt-8 text-base text-green_primary font-bold">
+            <Text className="text-center mt-8 text-base text-green_primary font-psemibold">
               Create an Account
             </Text>
           </TouchableOpacity>

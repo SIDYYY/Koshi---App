@@ -12,7 +12,7 @@ const FilteredCarCard = ({ car, index }) => {
     <>
       {!car && !index ? (
         <View className="m-auto">
-          <Text className="text-xl font-bold m-auto">No cars found</Text>
+          <Text className="text-xl font-pbold m-auto">No cars found</Text>
         </View>
       ) : (
         <TouchableOpacity
@@ -33,9 +33,9 @@ const FilteredCarCard = ({ car, index }) => {
           </View>
 
           <View className="justify-center">
-            <Text className="text-lg font-semibold">{car.name}</Text>
+            <Text className="text-lg font-psemibold">{car.name}</Text>
             <View className="flex-row items-center justify-center space-x-2  mt-2">
-              <Text className="text-yellow_primary font-semibold">{price}</Text>
+              <Text className="text-green_primary font-psemibold">{price}</Text>
               <View className="h-1 w-1 bg-gray_inactive rounded-full" />
               <Text>Ford</Text>
             </View>

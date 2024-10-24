@@ -17,8 +17,10 @@ const VariantCard = ({
         onPress={() => setModalVisible(true)}
       >
         <View className="w-[330px] h-16 rounded-md p-2 bg-white">
-          <Text className="font-black text-base">{variant.variant}</Text>
-          <Text className="text-green_primary">{variant.price}</Text>
+          <Text className="font-pblack text-base">{variant.variant}</Text>
+          <Text className="text-green_primary font-pregular">
+            {variant.price}
+          </Text>
         </View>
       </TouchableOpacity>
     </View>
