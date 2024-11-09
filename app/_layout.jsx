@@ -46,6 +46,8 @@ const RootLayout = () => {
           />
           <Stack.Screen name="(auth)" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="(compare)" options={{ headerShown: false }} />
+
           <Stack.Screen
             name="search/[query]"
             options={{ headerShown: false }}
