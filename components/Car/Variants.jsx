@@ -28,19 +28,19 @@ const Variants = ({ variant, isShown, onPress }) => {
           <View className="items-center space-y-2">
             <View
               className={`${
-                isShown ? "bg-green_secondary" : "bg-gray_100"
+                isShown ? "bg-green_secondary " : "bg-gray_100" 
               } rounded-full h-10 w-10`}
             >
               <Image
                 source={icons.variant}
                 className="h-6 w-6 m-auto"
-                tintColor={isShown ? "green" : "black"}
+                tintColor={isShown ? "white" : "black"}
                 resizeMode="contain"
               />
             </View>
           </View>
 
-          <View className="flex-1">
+          <View className="flex-1 my-5">
             <Text className="text-base font-pbold">{variant.variant}</Text>
             <Text className="text-green_primary font-pregular">
               {variant.price}
@@ -54,7 +54,7 @@ const Variants = ({ variant, isShown, onPress }) => {
         </TouchableOpacity>
 
         {isShown ? (
-          <View className="border-t border-light_grey_border mt-4">
+          <View className="border-t border-light_grey_border mt-4 my-5">
             <View className="flex-row space-x-4 my-8 ">
               <SpecHighlight
                 icon={icons.fuelType}

@@ -42,7 +42,7 @@ const VariantSpecs = () => {
     <CarHeader carImage={car.image} backButtonTitle="Car Variant Details">
       <Text className="font-pblack text-xl mt-8 -mb-6">{variant.variant}</Text>
       <Title title={car.name} more={false} px="px-0" otherStyles="text-gray" />
-      <ContentContainer ph={false} otherStyles="mt-6">
+      <ContentContainer ph={false} otherStyles="mt-6 ">
         <View className="flex-row space-x-4">
           <SpecHighlight
             icon={icons.fuelType}

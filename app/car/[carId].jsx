@@ -45,18 +45,18 @@ const Car = () => {
       <Title title="Car Overview" more={false} />
       <ContentContainer otherStyles="space-y-3">
         <View className="">
-          <Text className="">Price Range:</Text>
+          <Text className="font-bold mt-3">Price Range:</Text>
           <Pill label={car.price} textOnly={false} />
         </View>
         <View className="">
-          <Text className="">Body Type:</Text>
+          <Text className="font-bold mt-3">Body Type:</Text>
           <Pill label={car.bodyType} textOnly={false} />
         </View>
         <View className="">
-          <Text className="">Transmission:</Text>
+          <Text className="font-bold ">Transmission:</Text>
           <View className="flex-row ml-4 mt-2">
             <Pill label="Gasoline" otherStyles="mr-4" />
-            <Pill label="Diesel" />
+            <Pill label="Diesel" otherStyles={"mb-4"}/>
           </View>
         </View>
       </ContentContainer>

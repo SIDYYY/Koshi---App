@@ -34,8 +34,8 @@ const FormModal = ({ modalVisible, setModalVisible }) => {
     setModalVisible(!modalVisible);
     setDatabaseError("");
     reset({
-      fullName: user.name,
-      phoneNumber: user.phone_number,
+      fullName: user.name ,
+      phoneNumber: user.phone_number ,
     });
   };
 
